@@ -1,8 +1,6 @@
 ## 📋 Backlog do Produto <a id="backlog"></a>
 
 
-| Rank | User Stories                                                                                                                                                                                                                      | Esforço | Prioridade | Sprint |
-
 | Rank | Prioridade | User Stories                                                                                                                                                                                                                      | Esforço | Sprint |
 | ---- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------ |
 | 1    | Alta       | Como contratante, quero um site de treinamento para meus funcionários que contenha guia técnico sobre a metodologia Scrum, com conceitos e referências, para compreender de forma clara os processos.                                                        | 20      | 1      |

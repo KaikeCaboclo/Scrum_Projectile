@@ -74,33 +74,54 @@ div.nav-links div a:hover {
 /* HERO SECTION                         */
 /* ==================================== */
 
+/* HERO SECTION COM IMAGEM DE FUNDO */
+
+/* HERO SECTION COM IMAGEM DE FUNDO (ALTURA REDUZIDA) */
+
 .hero {
+  position: relative;
   text-align: center;
-  padding: 5rem 2rem;
-  background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
+  padding: 4rem 2rem;
   color: var(--white);
+  background: url("../img/hero-wallpaper.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* overlay escuro */
+  z-index: 1;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
   margin: 0 auto;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   margin-bottom: 1rem;
 }
 
 .subtitulo {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 300;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .descricao {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
+
 
 /* ==================================== */
 /* BOTÕES DE ACESSO (na home)           */
@@ -171,11 +192,66 @@ div.nav-links div a:hover {
 
 /* ==================================== */
 /*-----RODAPÉ-----*/
+
 #footer {
   text-align: center;
   padding: 0.5rem;
   background-color: var(--blue-dark);
   color: var(--white);
-  margin-top: 10%;
+  margin-top: 2rem; 
 }
+
 /* ==================================== */
+/* SEÇÃO DE CARDS DO SCRUM              */
+
+.scrum-cards {
+  background-color: #f9fafb;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--blue-dark);
+}
+
+.card-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 0.8rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  max-width: 300px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  color: var(--blue-dark);
+  margin-bottom: 0.8rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==================================== */
+
+

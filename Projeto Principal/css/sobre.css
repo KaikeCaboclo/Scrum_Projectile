@@ -1,15 +1,13 @@
-/* ==================================== */
-/* VARIÁVEIS E ESTILOS GLOBAIS          */
-
 :root {
   --blue-dark: #1e3a8a;
   --blue-light: #3b82f6;
   --white: #ffffff;
   --gray-light: #f9fafb;
-  --gray-dark: #374151;
+  --gray-dark: #1f2937;
   --font-family: "Poppins", sans-serif;
 }
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -21,83 +19,82 @@ body {
   background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
   color: var(--gray-dark);
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* ==================================== */
-/* CONTAINER                            */
-
-.container {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 20px;
-}
-
-/* ==================================== */
-/*----NAVBAR----*/
-
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--blue-dark);
-  padding: 1rem 2rem;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 1%;
 }
 
 .logo-area {
   display: flex;
   align-items: center;
+  margin-left: 10px;
 }
 
 .logo-img {
   width: 40px;
   height: 40px;
   object-fit: contain;
-  margin-right: 10px;
 }
 
 .logo-text {
   color: var(--white);
   font-weight: bold;
   text-decoration: none;
-  font-size: 1.3rem;
-  letter-spacing: 0.5px;
+  font-size: 1.2rem;
 }
 
 .nav-links {
+  list-style: none;
   display: flex;
-  gap: 1.5rem;
+  padding: 10px 10px;
+}
+
+.nav-links > div {
+  margin-right: 50px;
+}
+
+.nav-links > div:last-child {
+  margin-right: 10px;
 }
 
 .nav-links a {
   color: var(--white);
   text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  font-weight: 500;
+  padding: 8px;
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
 }
 
 .nav-links a:hover {
   background-color: var(--blue-light);
-  transform: scale(1.05);
 }
 
-/* ==================================== */
-/* CABEÇALHO DA PÁGINA SOBRE             */
+/* CONTEÚDO PRINCIPAL */
+.container {
+  max-width: 1100px;
+  margin: 40px auto 20px auto;
+  padding: 0 20px;
+  flex: 1;
+}
 
 .main-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .main-header h1 {
-  font-size: 2.6rem;
-  font-weight: 700;
+  font-size: 2.4rem;
   color: var(--white);
   text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);
-  letter-spacing: 1px;
   margin-bottom: 12px;
 }
 
@@ -106,13 +103,16 @@ body {
   color: #e5e7eb;
 }
 
-/* ==================================== */
-/* CARDS E SEÇÕES                         */
+/* GRID DE CARDS */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
 
 .card {
-  background: #B0C4DE;
+  background: var(--white);
   padding: 24px;
-  margin-bottom: 24px;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -123,60 +123,52 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-h2 {
+.card h2 {
   color: var(--blue-dark);
   margin-bottom: 0.8rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
-.lead {
-  font-size: 1.1rem;
-  color: var(--gray-dark);
+.relevancia-card {
+  grid-column: 1 / -1;
+  background-color: var(--white);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.relevancia-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.relevancia-card {
+  grid-column: 1 / -1; /* ocupa todas as colunas da grid */
+  background-color: var(--white);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  margin-top: 20px;
+}
+
+.relevancia-card h2 {
+  font-size: 1.8rem;
   margin-bottom: 1rem;
+  color: var(--blue-dark);
 }
 
-ul {
-  padding-left: 20px;
-  line-height: 1.8;
+.relevancia-card p {
+  font-size: 1rem;
+  color: var(--gray-dark);
+  line-height: 1.7;
 }
 
-/* ==================================== */
-/*-----RODAPÉ-----*/
-
-footer {
-  margin-top: 40px;
+/* FOOTER  */
+#footer {
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: var(--blue-dark);
   color: var(--white);
-  border-radius: 10px;
-  font-size: 0.95rem;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* ==================================== */
-/* RESPONSIVIDADE                       */
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .sobre h1 {
-    font-size: 2rem;
-  }
-
-  .sobre p {
-    font-size: 1rem;
-  }
-
-  .card {
-    padding: 18px;
-  }
 }
