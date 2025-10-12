@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="../../css/stylemodulos.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="icon" href="../../img/logo.png" type="image/png">
-
 </head>
+
 <body>
   <!-- Navbar -->
   <header>
@@ -22,18 +22,76 @@
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../modulos.html">Módulos</a></li>
         <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
       </ul>
     </nav>
   </header>
-  <main class="artigo">
-    <h1 class="titles">O que é Scrum?</h1>
-    <p class="text">Scrum é uma metodologia ágil de gestão de projetos criada nos anos 1990, inicialmente para o desenvolvimento de software. Hoje, é utilizada em diversas áreas, como marketing, design e até desenvolvimento de hardware.</p>
-    <p class="text">O método se baseia em entregar valor desde cedo no projeto e frequentemente, partes do produto funcionando. Cada uma dessas entregas proporciona retorno ao investimento realizado pelos clientes do projeto, além de possibilitar o seu feedback rápido sobre o produto para que se realizem as mudanças ou adições necessárias. Dessa forma, seguir o Scrum evita erros a partir das direções indicadas pelo cliente durante o desenvolvimento do produto. Além disso, o acompanhamento do projeto pelo cliente torna o produto mais valoroso, pois atende a todas as necessidades do contratante e permite flexibilidade no projeto, que pode se adequar a possíveis novas demandas no projeto.</p>
-  </main>
+
+  <div class="page-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h2>Conteúdo do Curso</h2>
+
+      <p class="modulo-titulo">Módulo 1 – Introdução ao Scrum</p>
+      <ul>
+        <li><a href="oqueescrum.html" class="active">O que é Scrum?</a></li>
+        <li><a href="porqueusar.html">Por que usar Scrum?</a></li>
+        <li><a href="manifestoagil.html">Princípios e valores do manifesto ágil</a></li>
+      </ul>
+
+      <p class="modulo-titulo">Módulo 2 – Papéis no Scrum</p>
+      <ul>
+        <li><a href="scrummaster.html">Scrum Master</a></li>
+        <li><a href="productowner.html">Product Owner</a></li>
+        <li><a href="devteam.html">Time de Desenvolvimento</a></li>
+      </ul>
+
+      <p class="modulo-titulo">Módulo 3 – Artefatos do Scrum</p>
+      <ul>
+        <li><a href="artefatos.html">O que são artefatos</a></li>
+        <li><a href="productbacklog.html">Product Backlog</a></li>
+        <li><a href="sprintbacklog.html">Sprint Backlog</a></li>
+        <li><a href="incremento.html">Incremento</a></li>
+      </ul>
+
+      <p class="modulo-titulo">Módulo 4 – Eventos do Scrum</p>
+      <ul>
+        <li><a href="sprint.html">Sprint</a></li>
+        <li><a href="planning.html">Sprint Planning</a></li>
+        <li><a href="review.html">Sprint Review</a></li>
+        <li><a href="retrospective.html">Sprint Retrospective</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="artigo">
+      <h1 class="titles">O que é Scrum?</h1>
+      <p class="text">
+        Scrum é uma metodologia ágil de gestão de projetos criada nos anos 1990, inicialmente para o desenvolvimento de software.
+        Hoje, é utilizada em diversas áreas, como marketing, design e até desenvolvimento de hardware.
+      </p>
+      <p class="text">
+        O método se baseia em entregar valor desde cedo no projeto e frequentemente, partes do produto funcionando. 
+        Cada uma dessas entregas proporciona retorno ao investimento realizado pelos clientes do projeto, além de possibilitar o seu feedback rápido 
+        sobre o produto para que se realizem as mudanças ou adições necessárias.
+      </p>
+      <p class="text">
+        Dessa forma, seguir o Scrum evita erros a partir das direções indicadas pelo cliente durante o desenvolvimento do produto. 
+        Além disso, o acompanhamento do projeto pelo cliente torna o produto mais valoroso, pois atende a todas as necessidades do contratante 
+        e permite flexibilidade no projeto, que pode se adequar a possíveis novas demandas.
+      </p>
+
+      <!-- BOTÕES DE NAVEGAÇÃO -->
+      <div class="nav-buttons">
+        <button class="nav-btn" id="prevBtn">← Anterior</button>
+        <button class="nav-btn" id="nextBtn">Próximo →</button>
+      </div>
+    </main>
+  </div>
 
   <footer>
     <p>© 2025 - SCRUM ACADEMY</p>
   </footer>
+
+  <script src="../../js/modulos.js"></script>
 </body>
 </html>
