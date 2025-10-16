@@ -24,13 +24,13 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: var(--blue-dark);
-  padding:1%;
+  padding: 1%;
 }
 
 .logo-area {
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  gap: 10px;
 }
 
 .logo-img {
@@ -45,6 +45,7 @@ body {
   text-decoration: none;
   font-size: 1.2rem;
 }
+
 
 .nav-links {
   list-style: none;
@@ -64,17 +65,10 @@ div.nav-links div a{
   border-radius: 0.3rem;
   transition: background-color 0.3s ease;
 }
-
-
 div.nav-links div a:hover {
   background-color: var(--blue-light);
 }
 
-/* ==================================== */
-/* HERO SECTION                         */
-/* ==================================== */
-
-/* HERO SECTION COM IMAGEM DE FUNDO */
 
 /* HERO SECTION COM IMAGEM DE FUNDO (ALTURA REDUZIDA) */
 
@@ -83,7 +77,7 @@ div.nav-links div a:hover {
   text-align: center;
   padding: 4rem 2rem;
   color: var(--white);
-  background: url("../img/hero-wallpaper.jpg") no-repeat center center;
+  background: url("/static/img/hero-wallpaper.jpg");
   background-size: cover;
   background-attachment: fixed;
   display: flex;
@@ -195,10 +189,9 @@ div.nav-links div a:hover {
 
 #footer {
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.2rem;
   background-color: var(--blue-dark);
   color: var(--white);
-  margin-top: 2rem; 
 }
 
 /* ==================================== */
@@ -206,7 +199,7 @@ div.nav-links div a:hover {
 
 .scrum-cards {
   background-color: #f9fafb;
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
 }
 

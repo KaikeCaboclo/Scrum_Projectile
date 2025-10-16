@@ -1,0 +1,47 @@
+﻿{% extends 'base.html' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+
+{% block title %}Home | SCRUM ACADEMY{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Treinamento SCRUM para Empresas</h1>
+      <p class="subtitulo">Aprenda a aplicar o método ágil mais utilizado no mundo corporativo</p>
+      <p class="descricao">Este treinamento foi desenvolvido para capacitar os colaboradores da empresa a dominar o framework 
+      Scrum. Ao longo dos módulos, você compreenderá os papéis, eventos e artefatos que compõem o método, 
+      além de explorar boas práticas para melhorar a produtividade, a colaboração entre equipes e a entrega de 
+      valor contínuo.</p>
+    </div>
+  </section>
+
+  <section class="scrum-cards">
+    <div class="container">
+      <h2 class="section-title">Entenda os Fundamentos do Scrum</h2>
+      <div class="card-group">
+
+        <div class="card">
+          <img src="{{ url_for('static', filename='img/index-papeis.png') }}" alt="Papéis do Scrum" class="card-icon">
+          <h3>Papéis</h3>
+          <p>Scrum Master, Product Owner e Time de Desenvolvimento. Cada papel possui responsabilidades claras para garantir o sucesso do projeto.</p>
+        </div>
+
+        <div class="card">
+          <img src="{{ url_for('static', filename='img/index-eventos.png') }}" alt="Eventos do Scrum" class="card-icon">
+          <h3>Eventos</h3>
+          <p>Planejamento da Sprint, Reuniões Diárias, Revisão e Retrospectiva. Esses eventos promovem inspeção, adaptação e transparência.</p>
+        </div>
+
+        <div class="card">
+          <img src="{{ url_for('static', filename='img/index-artefatos.png') }}" alt="Artefatos do Scrum" class="card-icon">
+          <h3>Artefatos</h3>
+          <p>Product Backlog, Sprint Backlog e Incremento. Eles representam o trabalho a ser feito e os resultados das entregas.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+{% endblock %}

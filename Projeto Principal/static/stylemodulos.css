@@ -1,3 +1,11 @@
+:root {
+  --blue-dark: #1e3a8a;
+  --blue-light: #3b82f6;
+  --white: #ffffff;
+  --text-dark: #1f2937;
+  --font-family: "Poppins", sans-serif;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -5,20 +13,15 @@ body {
   color: #333;
 }
 
-header {
-  background-color: #1e3a8a;
-  color: white;
-  padding: 0.5rem 2rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
+/* ==================================== */
+/*----NAVBAR----*/
 
 .navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  background-color: var(--blue-dark);
+  padding: 1%;
 }
 
 .logo-area {
@@ -29,6 +32,8 @@ header {
 
 .logo-img {
   height: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .logo-text {
@@ -39,25 +44,34 @@ header {
 }
 
 .nav-links {
-  display: flex;
   list-style: none;
-  gap: 20px;
-  margin: 0;
+  display: flex;
+  padding: 10px 10px;
 }
-
-.nav-links a {
-  color: white;
+div.nav-links div{
+  margin-right:50px;
+}
+div.nav-links div:last-child{
+  margin-right:10px;
+}
+div.nav-links div a{
+  color: var(--white);
   text-decoration: none;
-  transition: color 0.3s;
-  font-weight: 500;
+  padding: 8px;
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
+}
+div.nav-links div a:hover {
+  background-color: var(--blue-light);
 }
 
-.nav-links a:hover {
-  color: #93c5fd;
-}
+
+/* ==================================== */
+/*----DISPOSIÇÃO DO CONTEÚDO----*/
 
 .content {
-  padding: 100px 20px 40px;
+  padding: 100px 20px 0;
+  padding-bottom: 19rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -107,21 +121,27 @@ header {
 .page-container {
   display: flex;
   margin-top: 70px;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 110px);
 }
+
+
+/* ==================================== */
+/*----SIDEBAR----*/
 
 .sidebar {
   position: fixed;
-  top: 70px;
+  top: 78px;
   left: 0;
-  bottom: 0;
+  bottom: 50px;
   width: 250px;
   background: linear-gradient(180deg, #1e3a8a 0%, #1d4ed8 100%);
   color: white;
   padding: 1.5rem 1rem;
   overflow-y: auto;
   box-shadow: 2px 0 10px rgba(0,0,0,0.15);
-  border-top-right-radius: 12px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 100;
 }
 
 .sidebar h2 {
@@ -159,19 +179,24 @@ header {
 }
 
 .sidebar .modulo-titulo {
-  font-weight: bold;
-  color: #fff;
-  margin-top: 1rem;
-  font-size: 1rem;
-  border-left: 4px solid #60a5fa;
-  padding-left: 0.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    border-left: 4px solid #60a5fa;
+    padding-left: 0.8rem;
+    background-color: rgba(255,255,255,0.1);
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
 }
 
 .artigo {
   flex: 1;
-  margin-left: 250px;
-  padding: 2.5rem 3rem;
-  max-width: 900px;
+  margin-left: 400px;
+  padding: 1rem 1rem;
+  max-width: 1000px;
+  min-height: calc(100vh - 150px);
 }
 
 .titles {
@@ -237,15 +262,22 @@ header {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+
+/* ==================================== */
+/*----RODAPÉ----*/
+
 footer {
+  position: relative;
+  bottom: 0;
   text-align: center;
-  background-color: #f3f4f6;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #555;
-  border-top: 1px solid #ddd;
-  margin-top: 40px;
+  padding: 0.2rem;
+  background-color: var(--blue-dark);
+  color: var(--white);
+  margin-top: auto;
 }
+
+/* ==================================== */
+/*----RESPONSIVIDADE----*/
 
 @media (max-width: 900px) {
   .sidebar {

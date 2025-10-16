@@ -1,34 +1,28 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Princípios e valores do manifesto ágil.</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends 'base.html' %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
-    </nav>
-  </header>
-  <main class="artigo">
-    <h1 class="titles">Princípios e valores do manifesto ágil</h1>
-    <p class="subtitles"><strong>Os doze princípios Ágeis:</strong></p>
+{% block title %}Princípios do Manifesto Ágil | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <aside class="sidebar">
+        <h2>Conteúdo do Curso</h2>
+
+        <div class="modulo-titulo">Módulo 1 – Introdução ao Scrum</div>
+        <ul>
+        <li><a href="{{ url_for('oquee_scrum') }}">O que é Scrum?</a></li>
+        <li><a href="{{ url_for('porque_scrum') }}">Por que usar Scrum?</a></li>
+        <li><a href="{{ url_for('manifesto_agil') }}" class="active">Princípios do manifesto ágil</a></li>
+        </ul>
+
+    </aside>
+
+    <main class="artigo">
+        <h1 class="titles">Princípios e valores do manifesto ágil</h1>
+        <p class="subtitles"><strong>Os doze princípios Ágeis:</strong></p>
     <p class="text"><strong>1. Nossa maior prioridade é satisfazer o cliente por meio da entrega cedo e frequente de software com valor.</strong></p>
     <p class="text">O foco no desenvolvimento do produto está na satisfação dos clientes. Gera-se, desde cedo e frequentemente, retorno ao investimento dos clientes no projeto a partir da entrega de partes do produto que atendam às suas necessidades.
     <p class="text"><strong>2. Mudanças de requisitos são bem-vindas, mesmo em fases tardias do desenvolvimento. Os processos Ágeis utilizam a mudança em favor da vantagem competitiva para o cliente.</strong></p>
@@ -54,10 +48,6 @@
     <p class="text"><strong>12. Em intervalos de tempo regulares, a equipe reflete sobre como se tornar mais efetiva e então refina e ajusta seu comportamento de acordo.</strong></p>
     <p class="text">Para se tornar cada vez mais efetiva, a equipe regularmente inspeciona suas formas de trabalho, identifica pontos de melhoria e se adapta de acordo, promovendo a melhoria contínua.</p>
     
-  </main>
-
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+    </main>
+</div>
+{% endblock %}

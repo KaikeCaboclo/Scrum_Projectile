@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Módulo 1 - Introdução ao SCRUM | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Módulo 1</h2>
+    <ul>
+      <li class="modulo-titulo">Introdução ao SCRUM</li>
+      <li><a href="{{ url_for('oquee_scrum') }}" class="{% if request.endpoint == 'oquee_scrum' %}active{% endif %}">O que é Scrum?</a></li>
+      <li><a href="{{ url_for('porque_scrum') }}" class="{% if request.endpoint == 'porque_scrum' %}active{% endif %}">Por que usar Scrum?</a></li>
+      <li><a href="{{ url_for('manifesto_agil') }}" class="{% if request.endpoint == 'manifesto_agil' %}active{% endif %}">Manifesto Ágil</a></li>
+    </ul>
+  </aside>
+
+  <!-- Conteúdo Principal -->
+  <article class="artigo">
+    <h1 class="titles">Introdução ao SCRUM</h1>
+    
+    <p class="text">Bem-vindo ao primeiro módulo da sua jornada no universo Scrum! Aqui, você dará os passos 
+      iniciais para compreender essa estrutura ágil que revolucionou a gestão de projetos. Neste módulo, vamos 
+      descomplicar o Scrum, respondendo a três perguntas essenciais: "O que é?", explorando sua estrutura e 
+      princípios básicos; "Por que usar?", destacando os benefícios de adotar essa abordagem para entregar mais 
+      valor com menos desperdício; e, por fim, "Qual a sua base?", conectando o Scrum aos valores e princípios 
+      do Manifesto Ágil. Ao final, você terá uma visão clara e sólida dos fundamentos necessários para aplicar 
+      o Scrum com confiança.</p>
+    
+    <div class="contentlinks">
+      <a href="{{ url_for('oquee_scrum') }}">📋 O que é Scrum?</a>
+      <p>Conheça a definição e os princípios básicos do framework Scrum.</p>
+    </div>
+    
+    <div class="contentlinks">
+      <a href="{{ url_for('porque_scrum') }}">❓ Por que usar Scrum?</a>
+      <p>Entenda os benefícios e vantagens de implementar Scrum em projetos.</p>
+    </div>
+    
+    <div class="contentlinks">
+      <a href="{{ url_for('manifesto_agil') }}">📜 Manifesto Ágil</a>
+      <p>Explore os valores e princípios do Manifesto Ágil que fundamentam o Scrum.</p>
+    </div>
+
+  </article>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}SCRUM ACADEMY{% endblock %}</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  {% block extra_css %}{% endblock %}
+
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo-area">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo da Empresa" class="logo-img">
+        <a href="{{ url_for('index') }}" class="logo-text">SCRUM ACADEMY</a>
+      </div>
+      <div class="nav-links">
+        <div><a href="{{ url_for('index') }}">Home</a></div>
+        <div><a href="{{ url_for('modulos') }}">Módulos</a></div>
+        <div><a href="{{ url_for('sobre') }}">Sobre</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer id="footer">
+    <p>© 2025 - SCRUM ACADEMY</p>
+  </footer>
+
+</body>
+</html>
