@@ -1,44 +1,83 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 4 – Eventos</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends 'base.html' %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% block title %}Módulo 4 - Cerimônias | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 4</h2>
+      <p>Cerimônias no Scrum</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('sprint') }}" class="{% if request.endpoint == 'sprint' %}active{% endif %}">
+        <span>🏃‍♂️</span> Sprint
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_planning') }}" class="{% if request.endpoint == 'sprint_planning' %}active{% endif %}">
+        <span>📝</span> Sprint Planning
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('daily_scrum') }}" class="{% if request.endpoint == 'daily_scrum' %}active{% endif %}">
+        <span>📅</span> Daily Scrum
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_review') }}" class="{% if request.endpoint == 'sprint_review' %}active{% endif %}">
+        <span>🔍</span> Sprint Review
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_retrospective') }}" class="{% if request.endpoint == 'sprint_retrospective' %}active{% endif %}">
+        <span>🔄</span> Sprint Retrospective
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
+  </aside>
 
-  <main class="content">
-    <h1>Módulo 4 – Ceriônias do Scrum</h1>
+  <article class="artigo">
+    <h1 class="titles">Cerimônias no Scrum</h1>
+    <p class="text">
+      Neste módulo, você aprenderá sobre as principais cerimônias do Scrum, que ajudam a equipe a planejar, revisar e 
+      melhorar continuamente seu trabalho. Cada cerimônia tem objetivos específicos e promove a transparência e a colaboração.
+    </p>
 
-    <div class="contentlinks"><a href="Sprint.html" target="_blank">Sprint</a></div>
-    <div class="contentlinks"><a href="SprintPlanning.html" target="_blank">Sprint Planning</a></div>
-    <div class="contentlinks"><a href="DailyScrum.html" target="_blank">Daily Scrum</a></div>
-    <div class="contentlinks"><a href="SprintReview.html" target="_blank">Sprint Review</a></div>
-    <div class="contentlinks"><a href="SprintRetrospective.html" target="_blank">Sprint Retrospective</a></div>
-  </main>
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('sprint') }}">🏃‍♂️ Sprint</a>
+      </label>
+      <p>Conheça a estrutura de trabalho do Sprint e como ela organiza o desenvolvimento do produto.</p>
+    </div>
 
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('sprint_planning') }}">📝 Sprint Planning</a>
+      </label>
+      <p>Entenda como planejar o que será entregue na próxima Sprint de forma eficiente.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('daily_scrum') }}">📅 Daily Scrum</a>
+      </label>
+      <p>Descubra como a reunião diária mantém a equipe alinhada e identifica impedimentos rapidamente.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('sprint_review') }}">🔍 Sprint Review</a>
+      </label>
+      <p>Aprenda a revisar o que foi entregue e coletar feedback do cliente e stakeholders.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('sprint_retrospective') }}">🔄 Sprint Retrospective</a>
+      </label>
+      <p>Saiba como refletir sobre o processo e melhorar continuamente o desempenho da equipe.</p>
+    </div>
+  </article>
+</div>
+{% endblock %}

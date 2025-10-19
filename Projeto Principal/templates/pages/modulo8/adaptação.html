@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Adaptação, Melhoria e Boas Práticas | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 8</h2>
+      <p>Boas Práticas e Dicas</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('soft_skills') }}" class="{% if request.endpoint == 'soft_skills' %}active{% endif %}">
+        <span>💡</span> Soft Skills
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('comunicacao_eficiente') }}" class="{% if request.endpoint == 'comunicacao_eficiente' %}active{% endif %}">
+        <span>🗣️</span> Comunicação Eficiente
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('transparencia') }}" class="{% if request.endpoint == 'transparencia' %}active{% endif %}">
+        <span>🔍</span> Transparência
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('inspecao_continua') }}" class="{% if request.endpoint == 'inspecao_continua' %}active{% endif %}">
+        <span>📈</span> Inspeção Contínua
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('adaptacao_boas_praticas') }}" class="{% if request.endpoint == 'adaptacao_boas_praticas' %}active{% endif %}">
+        <span>✅</span> Adaptação, Melhoria e Boas Práticas
+        <input type="checkbox" class="check">
+      </a>
+    </nav>
+  </aside>
+
+  <main class="artigo">
+    <h1 class="titles">Adaptação e Melhoria Contínua</h1>
+    <p class="text">
+      O Scrum promove ciclos curtos justamente para permitir que os times se adaptem rapidamente. 
+      A adaptação é consequência direta da inspeção: ao identificar algo que pode ser melhorado, 
+      o time se adapta para entregar mais valor. Isso exige humildade para reconhecer falhas, coragem 
+      para experimentar novas abordagens e comprometimento com a melhoria contínua.
+    </p>
+    <p class="text">
+      A Sprint Retrospective é o principal espaço para essa reflexão e adaptação. No entanto, a melhoria contínua 
+      deve ser uma mentalidade presente em todas as cerimônias e atividades do time. Após cada retrospectiva, 
+      é essencial que o time escolha pelo menos uma ação concreta de melhoria para aplicar na próxima Sprint. 
+      Pequenas mudanças consistentes produzem grandes resultados ao longo do tempo. É importante também celebrar 
+      aprendizados, e não apenas entregas: o aprendizado constante é um dos maiores ativos de times ágeis.
+    </p>
+
+    <h2 class="subtitles">Boas Práticas Comportamentais no Scrum</h2>
+    <p class="text">Algumas boas práticas comportamentais podem ajudar os times Scrum a colocarem essas ideias em prática:</p>
+
+    <ul class="boas-praticas">
+      <li>
+        <strong>Reuniões longas e improdutivas:</strong> podem ser resolvidas com o uso rigoroso de timeboxes e agendas claras.
+      </li>
+      <li>
+        <strong>Falta de alinhamento entre os membros do time:</strong> pode ser combatida com check-ins rápidos durante o dia ou com uma comunicação mais estruturada.
+      </li>
+      <li>
+        <strong>Dificuldade em dar feedback:</strong> pode ser resolvida com o uso de modelos como o DESC ou o SBI, e com a prática frequente em ambientes seguros.
+      </li>
+      <li>
+        <strong>Clima de tensão ou cultura de culpa:</strong> deve ser enfrentado com a promoção ativa de segurança psicológica e abertura para falhas como oportunidades de aprendizado.
+      </li>
+    </ul>
+  </main>
+</div>
+{% endblock %}

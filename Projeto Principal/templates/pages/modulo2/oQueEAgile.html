@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}O Que é Agile? | SCRUM ACADEMY{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 2</h2>
+      <p>Fundamentos do Agile</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('o_que_e_agile') }}" class="{% if request.endpoint == 'o_que_e_agile' %}active{% endif %}">
+        <span>📖</span> O Que é Agile
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('agile_na_pratica') }}" class="{% if request.endpoint == 'agile_na_pratica' %}active{% endif %}">
+        <span>🛠️</span> Agile na Prática
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('agile_vs_tradicional') }}" class="{% if request.endpoint == 'agile_vs_tradicional' %}active{% endif %}">
+        <span>⚖️</span> Agile vs Métodos Tradicionais
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('vantagens_do_agile') }}" class="{% if request.endpoint == 'vantagens_do_agile' %}active{% endif %}">
+        <span>✅</span> Vantagens do Agile
+        <input type="checkbox" class="check">
+      </a>
+    </nav>
+  </aside>
+  <main class="artigo">
+    <h1 class="titles">O Que é Agile?</h1>
+    <p class="text">Agile é uma filosofia de desenvolvimento criada para superar as limitações dos métodos tradicionais, que eram rígidos e pouco flexíveis. Sua base é a colaboração, a adaptação rápida às mudanças por meio de um plenejamento flexível, a entrega contínua de valor e a colaboração com o cliente, que guiará o projeto com base em suas necessidades.</p>
+    <p class="text">Hoje, frameworks como o Scrum são usados em todo o mundo e se apoiam no Agile para organizar equipes, tarefas e tornar projetos mais eficientes e os produtos melhores e mais competitivos.</p>
+  </main>
+</div> 
+{% endblock %}

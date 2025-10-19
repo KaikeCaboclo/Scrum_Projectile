@@ -1,31 +1,39 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colunas Típicas de um Scrum Board </title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{%extends "base.html" %}
+{% block title %}Colunas Típicas de um Scrum Board | SCRUM ACADEMY{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 7</h2>
+      <p>SCRUM Board e Ferramentas</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('o_que_e_scrum_board') }}" class="{% if request.endpoint == 'o_que_e_scrum_board' %}active{% endif %}">
+        <span>📋</span> O Que é Scrum Board?
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('quadro_fisico_vs_digital') }}" class="{% if request.endpoint == 'quadro_fisico_vs_digital' %}active{% endif %}">
+        <span>🖥️</span> Quadro Físico vs Digital
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('colunas_tipicas_scrum_board') }}" class="{% if request.endpoint == 'colunas_tipicas_scrum_board' %}active{% endif %}">
+        <span>📊</span> Colunas Típicas de um Scrum Board
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('ferramentas_digitais_suporte') }}" class="{% if request.endpoint == 'ferramentas_digitais_suporte' %}active{% endif %}">
+        <span>🛠️</span> Ferramentas Digitais de Suporte
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('boas_praticas_scrum_board') }}" class="{% if request.endpoint == 'boas_praticas_scrum_board' %}active{% endif %}">
+        <span>✅</span> Boas Práticas no Scrum Board
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
+  </aside>
   <main class="artigo">
     <h1 class="titles">Colunas Típicas de um Scrum Board </h1>
     <p class="text" style="width:940px">As colunas organizam as tarefas conforme seu estado atual. </p>
@@ -42,9 +50,5 @@
     </ul>
  
   </main>
-
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+</div>
+{% endblock %}

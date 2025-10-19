@@ -1,32 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scrum Master</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends 'base.html' %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% block title %}Scrum Master| SCRUM ACADEMY{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 3</h2>
+      <p>Papéis no Scrum</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('papeis_scrum') }}" class="{% if request.endpoint == 'papeis_scrum' %}active{% endif %}">
+        <span>👥</span> Papéis do Scrum
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('product_owner') }}" class="{% if request.endpoint == 'product_owner' %}active{% endif %}">
+        <span>📊</span> Product Owner
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('scrum_master') }}" class="{% if request.endpoint == 'scrum_master' %}active{% endif %}">
+        <span>🧭</span> Scrum Master
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('devteam') }}" class="{% if request.endpoint == 'devteam' %}active{% endif %}">
+        <span>💻</span> Time de Desenvolvimento
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
-  
+  </aside>
 <main class="artigo">
     <h1 class="titles">Scrum Master (SM)</h1>
     <p class="text"><strong>Facilitador do time</strong></p>
@@ -93,10 +97,4 @@
     <p class="text">Com esse propósito, o Scrum Master ensina e habilita o Time de Desenvolvimento e o Product Owner a utilizarem o Scrum, de forma que cada vez menos dependam dele para que os valores, práticas e regras do Scrum sejam seguidos e utilizados.</p>
     <p class="text">O Scrum Master poderia, por exemplo, avisar todos os dias ao Time de Desenvolvimento quando é hora de realizar a sua reunião diária. Ao agir dessa forma, no entanto, ao invés de habilitá-lo e torná-lo independente, o Scrum Master pode estar levando o Time de Desenvolvimento a sempre depender dele para avisá-lo da reunião, o que provavelmente acontecerá até o final do projeto. O Scrum Master fará melhor seu trabalho se, utilizando diferentes técnicas, for capaz de mostrar e convencer o Time de Desenvolvimento da importância de realizar a reunião sempre na mesma hora e no mesmo local, de forma que crie o hábito e se auto-organize para fazê-lo.</p>
 </main>
-
-
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+{% endblock %}

@@ -1,46 +1,50 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Papéis do Scrum</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends 'base.html' %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% block title %}Papéis no Scrum | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 3</h2>
+      <p>Papéis no Scrum</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('papeis_scrum') }}" class="{% if request.endpoint == 'papeis_scrum' %}active{% endif %}">
+        <span>👥</span> Papéis do Scrum
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('product_owner') }}" class="{% if request.endpoint == 'product_owner' %}active{% endif %}">
+        <span>📊</span> Product Owner
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('scrum_master') }}" class="{% if request.endpoint == 'scrum_master' %}active{% endif %}">
+        <span>🧭</span> Scrum Master
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('devteam') }}" class="{% if request.endpoint == 'devteam' %}active{% endif %}">
+        <span>💻</span> Time de Desenvolvimento
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
-  
-  <main class="artigo">
+  </aside>
+
+  <article class="artigo">
     <h1 class="titles">Papéis no Scrum</h1>
     <p class="text">Os esforços de desenvolvimento do Scrum consistem em uma ou mais equipes Scrum, cada uma 
-    composta por três papéis Scrum: proprietário do produto, ScrumMaster e equipe de desenvolvimento. Pode haver outros papéis ao usar o Scrum, 
-    mas o framework Scrum requer apenas os três listados aqui.</p>
-    <p class="text"><strong>O Product Owner</strong> é responsável pelo que será desenvolvido e em que ordem.</p>
-    <p class="text"><strong>O Scrum Master</strong> é responsável por orientar a equipe na criação e no cumprimento de seu próprio processo, com 
-    base no framework Scrum mais amplo.</p>
-    <p class="text"><strong>A equipe de desenvolvimento</strong> é responsável por determinar como entregar o que o Product Owner solicitou.</p>
-</main>
-
-
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+    composta por três papéis Scrum: <strong>Product Owner</strong>, <strong>Scrum Master</strong> e <strong>Time de Desenvolvimento</strong>.</p>
+    
+    <p class="text">Pode haver outros papéis ao usar o Scrum, mas o <em>framework</em> Scrum requer apenas os três listados aqui:</p>
+    
+    <p class="text"><strong>O Product Owner</strong> é responsável por <strong>o que</strong> será desenvolvido e em que ordem (o <em>backlog</em> do produto). É a voz do cliente.</p>
+    
+    <p class="text"><strong>O Scrum Master</strong> é responsável por orientar a equipe na criação e no cumprimento de seu próprio processo, com base no <em>framework</em> Scrum mais amplo. Ele atua como um líder servidor, removendo impedimentos e garantindo que o Scrum seja compreendido e aplicado.</p>
+    
+    <p class="text"><strong>O Time de Desenvolvimento</strong> (Development Team) é responsável por determinar <strong>como</strong> entregar o que o Product Owner solicitou, transformando itens do <em>backlog</em> em incrementos de produto utilizáveis a cada Sprint.</p>
+  </article>
+</div>
+{% endblock %}

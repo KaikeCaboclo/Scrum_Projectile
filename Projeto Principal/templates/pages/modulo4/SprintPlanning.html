@@ -1,39 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sprint Planning</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
-
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% extends "base.html" %}
+{% block title %}Sprint Planning | SCRUM ACADEMY{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 4</h2>
+      <p>Cerimônias no Scrum</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('sprint') }}" class="{% if request.endpoint == 'sprint' %}active{% endif %}">
+        <span>🏃‍♂️</span> Sprint
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_planning') }}" class="{% if request.endpoint == 'sprint_planning' %}active{% endif %}">
+        <span>📝</span> Sprint Planning
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('daily_scrum') }}" class="{% if request.endpoint == 'daily_scrum' %}active{% endif %}">
+        <span>📅</span> Daily Scrum
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_review') }}" class="{% if request.endpoint == 'sprint_review' %}active{% endif %}">
+        <span>🔍</span> Sprint Review
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_retrospective') }}" class="{% if request.endpoint == 'sprint_retrospective' %}active{% endif %}">
+        <span>🔄</span> Sprint Retrospective
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
+  </aside>
   <main class="artigo">
     <h1 class="titles">Sprint planning</h1>
     <p class="text">O planejamento de um ciclo de desenvolvimento, ou seja, de um Sprint, é realizado na reunião de Sprint Planning. Ela se inicia logo no primeiro momento do primeiro dia do Sprint. A reunião de Sprint Planning conta com a participação obrigatória do Product Owner e dos membros do Time de Desenvolvimento. Eles colaboram e negociam o que será desenvolvido e qual a meta desse Sprint. Os membros do Time de Desenvolvimento estabelecem então como o que foi negociado será desenvolvido.</p>
     <p class="text">Essa lista de itens selecionados do alto do Product Backlog para desenvolvimento, somada ao plano de como esse trabalho será realizado, é chamada de Sprint Backlog. Todos os membros do Time de Desenvolvimento participam da reunião com igual poder de opinião e decisão, quaisquer que sejam suas áreas de conhecimento ou de atuação. Essa reunião também conta com a participação obrigatória do ScrumMaster, que atua como um facilitador.</p>
   </main>
 
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+{% endblock %}

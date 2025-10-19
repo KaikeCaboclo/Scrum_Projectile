@@ -1,42 +1,76 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 - Fundamentos do SCRUM</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends 'base.html' %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% block title %}Módulo 2 - Fundamentos do Agile | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 2</h2>
+      <p>Fundamentos do Agile</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('o_que_e_agile') }}" class="{% if request.endpoint == 'o_que_e_agile' %}active{% endif %}">
+        <span>📖</span> O Que é Agile
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('agile_na_pratica') }}" class="{% if request.endpoint == 'agile_na_pratica' %}active{% endif %}">
+        <span>🛠️</span> Agile na Prática
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('agile_vs_tradicional') }}" class="{% if request.endpoint == 'agile_vs_tradicional' %}active{% endif %}">
+        <span>⚖️</span> Agile vs Métodos Tradicionais
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('vantagens_do_agile') }}" class="{% if request.endpoint == 'vantagens_do_agile' %}active{% endif %}">
+        <span>✅</span> Vantagens do Agile
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
+  </aside>
 
-  <main class="content">
-    <h1>Módulo 2 - Fundamentos do Agile</h1>
+  <article class="artigo">
+    <h1 class="titles">Fundamentos do Agile</h1>
+    <p class="text">
+      Neste módulo, você irá entender os conceitos fundamentais do Agile, seus princípios e como eles impactam a forma de 
+      gerenciar projetos. Será apresentado também como aplicar Agile na prática e as vantagens em relação a métodos tradicionais.
+    </p>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('o_que_e_agile') }}">📖 O Que é Agile</a>
+      </label>
+      <p>Conheça os princípios e conceitos essenciais do Agile.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('agile_na_pratica') }}">🛠️ Agile na Prática</a>
+      </label>
+      <p>Aprenda como aplicar Agile em situações reais de projetos.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('agile_vs_tradicional') }}">⚖️ Agile vs Métodos Tradicionais</a>
+      </label>
+      <p>Entenda as diferenças entre Agile e métodos tradicionais de gestão de projetos.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('vantagens_do_agile') }}">✅ Vantagens do Agile</a>
+      </label>
+      <p>Saiba quais são os principais benefícios de adotar Agile.</p>
+    </div>
 
     <div class="status-card">
       <p><strong>Status:</strong> Em andamento</p>
     </div>
-  </main>
-
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+  </article>
+</div>
+{% endblock %}

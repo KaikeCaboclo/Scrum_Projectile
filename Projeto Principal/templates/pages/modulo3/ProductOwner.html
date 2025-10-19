@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Owner</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends "base.html" %}
+{% block title %}Product Owner (PO) | SCRUM ACADEMY{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% block content %}
+
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 3</h2>
+      <p>Papéis no Scrum</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('papeis_scrum') }}" class="{% if request.endpoint == 'papeis_scrum' %}active{% endif %}">
+        <span>👥</span> Papéis do Scrum
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('product_owner') }}" class="{% if request.endpoint == 'product_owner' %}active{% endif %}">
+        <span>📊</span> Product Owner
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('scrum_master') }}" class="{% if request.endpoint == 'scrum_master' %}active{% endif %}">
+        <span>🧭</span> Scrum Master
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('devteam') }}" class="{% if request.endpoint == 'devteam' %}active{% endif %}">
+        <span>💻</span> Time de Desenvolvimento
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
+  </aside>
   
   <main class="artigo">
     <h1 class="titles">Product Owner (PO)</h1>
@@ -89,12 +94,4 @@
 
     <p class="text">O Product Owner verifica se esses entregáveis são suficientes para cumprir a Meta estabelecida junto ao Time de Desenvolvimento para o Sprint e comunica claramente se essa Meta do Sprint foi cumprida ou não.</p>
 </main>
-
-    
-
-
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+{% endblock %}

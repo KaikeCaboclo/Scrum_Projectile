@@ -9,16 +9,28 @@
 {% block content %}
 <div class="page-container">
     <aside class="sidebar">
-        <h2>Conteúdo do Curso</h2>
+  <div class="sidebar-header">
+    <h2>Módulo 1</h2>
+    <p>Introdução ao SCRUM</p>
+  </div>
 
-        <div class="modulo-titulo">Módulo 1 – Introdução ao Scrum</div>
-        <ul>
-        <li><a href="{{ url_for('oquee_scrum') }}">O que é Scrum?</a></li>
-        <li><a href="{{ url_for('porque_scrum') }}">Por que usar Scrum?</a></li>
-        <li><a href="{{ url_for('manifesto_agil') }}" class="active">Princípios do manifesto ágil</a></li>
-        </ul>
+  <nav class="sidebar-menu">
+  <a href="{{ url_for('oquee_scrum') }}" class="{% if request.endpoint == 'oquee_scrum' %}active{% endif %}">
+    <span>📋</span> O que é Scrum?
+    <input type="checkbox" class="check">
+  </a>
 
-    </aside>
+  <a href="{{ url_for('porque_scrum') }}" class="{% if request.endpoint == 'porque_scrum' %}active{% endif %}">
+    <span>❓</span> Por que usar Scrum?
+    <input type="checkbox" class="check">
+  </a>
+
+  <a href="{{ url_for('manifesto_agil') }}" class="{% if request.endpoint == 'manifesto_agil' %}active{% endif %}">
+    <span>📜</span> Manifesto Ágil
+    <input type="checkbox" class="check">
+  </a>
+</nav>
+</aside>
 
     <main class="artigo">
         <h1 class="titles">Princípios e valores do manifesto ágil</h1>

@@ -1,42 +1,72 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 5 – Artefatos</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends 'base.html' %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% block title %}Módulo 5 - Artefatos | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 5</h2>
+      <p>Artefatos do Scrum</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('artefatos') }}" class="{% if request.endpoint == 'artefatos' %}active{% endif %}">
+        <span>📦</span> Artefatos do Scrum
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('product_backlog') }}" class="{% if request.endpoint == 'product_backlog' %}active{% endif %}">
+        <span>📝</span> Product Backlog
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_backlog') }}" class="{% if request.endpoint == 'sprint_backlog' %}active{% endif %}">
+        <span>📋</span> Sprint Backlog
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('incremento') }}" class="{% if request.endpoint == 'incremento' %}active{% endif %}">
+        <span>🚀</span> Incremento
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
+  </aside>
 
-  <main class="content">
-    <h1>Módulo 5 – Artefatos</h1>
-    <div class="contentlinks"><a href="ArtefatosDoScrum.html" target="_blank">Artefatos do Scrum</a></div>
-    <div class="contentlinks"><a href="ProductBacklog.html" target="_blank">Product Backlog</a></div>
-    <div class="contentlinks"><a href="SprintBacklog.html" target="_blank">Sprint Backlog</a></div>
-    <div class="contentlinks"><a href="Incremento.html" target="_blank">Incremento</a></div>
-  </main>
+  <article class="artigo">
+    <h1 class="titles">Artefatos no Scrum</h1>
+    <p class="text">
+      Neste módulo, você conhecerá os principais artefatos do Scrum, que ajudam a organizar o trabalho e garantir a 
+      entrega de valor contínua ao cliente. Cada artefato fornece transparência, controle e foco na entrega.
+    </p>
 
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('artefatos') }}">📦 Artefatos do Scrum</a>
+      </label>
+      <p>Saiba quais são os artefatos e sua importância para a gestão do Scrum.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('product_backlog') }}">📝 Product Backlog</a>
+      </label>
+      <p>Entenda como o Product Backlog organiza e prioriza os requisitos do produto.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('sprint_backlog') }}">📋 Sprint Backlog</a>
+      </label>
+      <p>Descubra como o Sprint Backlog detalha as tarefas da Sprint e mantém o foco da equipe.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('incremento') }}">🚀 Incremento</a>
+      </label>
+      <p>Aprenda sobre o Incremento como a entrega concreta de valor ao final de cada Sprint.</p>
+    </div>
+  </article>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Módulo 2 - Vantagens do Agile | SCRUM ACADEMY{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 2</h2>
+      <p>Fundamentos do Agile</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('o_que_e_agile') }}" class="{% if request.endpoint == 'o_que_e_agile' %}active{% endif %}">
+        <span>📖</span> O Que é Agile
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('agile_na_pratica') }}" class="{% if request.endpoint == 'agile_na_pratica' %}active{% endif %}">
+        <span>🛠️</span> Agile na Prática
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('agile_vs_tradicional') }}" class="{% if request.endpoint == 'agile_vs_tradicional' %}active{% endif %}">
+        <span>⚖️</span> Agile vs Métodos Tradicionais
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('vantagens_do_agile') }}" class="{% if request.endpoint == 'vantagens_do_agile' %}active{% endif %}">
+        <span>✅</span> Vantagens do Agile
+        <input type="checkbox" class="check">
+      </a>
+    </nav>
+  </aside>
+  <main class="artigo">
+    <h1 class="titles">Vantagens do Agile</h1>
+    <p class="text">Agile permite maior flexibilidade nos projetos e adaptações rápidas a mudanças e além disso, promove colaboração contínua entre equipes e clientes, gerando produtos de maior valor por meio do foco no que gera mais valor para o cliente, garantindo maior eficiência e satisfação. Ajuda também na redução de riscos, já que problemas são identificados rapidamente e corrigidos antes que se tornem críticos.</p>
+    <p class="text">Outra vantagem é a entrega incremental de produtos, o que possibilita que partes do projeto sejam disponibilizadas mais cedo, permitindo feedback constante e ajustes imediatos.</p>
+    <p class="text">Por fim, Agile aumenta a motivação e engajamento da equipe, pois os membros participam ativamente das decisões e têm visibilidade do progresso do projeto, melhorando, por consequência, a produtividade do time.</p>
+  </main>
+</div>
+{% endblock %}

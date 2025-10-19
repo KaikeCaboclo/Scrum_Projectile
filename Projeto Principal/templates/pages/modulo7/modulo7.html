@@ -1,44 +1,83 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 7 - SCRUM Board e Ferramentas</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends 'base.html' %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% block title %}Módulo 7 - SCRUM Board e Ferramentas | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 7</h2>
+      <p>SCRUM Board e Ferramentas</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('o_que_e_scrum_board') }}" class="{% if request.endpoint == 'o_que_e_scrum_board' %}active{% endif %}">
+        <span>📋</span> O Que é Scrum Board?
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('quadro_fisico_vs_digital') }}" class="{% if request.endpoint == 'quadro_fisico_vs_digital' %}active{% endif %}">
+        <span>🖥️</span> Quadro Físico vs Digital
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('colunas_tipicas_scrum_board') }}" class="{% if request.endpoint == 'colunas_tipicas_scrum_board' %}active{% endif %}">
+        <span>📊</span> Colunas Típicas de um Scrum Board
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('ferramentas_digitais_suporte') }}" class="{% if request.endpoint == 'ferramentas_digitais_suporte' %}active{% endif %}">
+        <span>🛠️</span> Ferramentas Digitais de Suporte
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('boas_praticas_scrum_board') }}" class="{% if request.endpoint == 'boas_praticas_scrum_board' %}active{% endif %}">
+        <span>✅</span> Boas Práticas no Scrum Board
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
+  </aside>
 
-  <main class="content">
-    <h1>Módulo 7 – SCRUM Board e Ferramentas</h1>
+  <article class="artigo">
+    <h1 class="titles">SCRUM Board e Ferramentas</h1>
+    <p class="text">
+      Neste módulo, você aprenderá como usar o Scrum Board, tanto físico quanto digital, e quais ferramentas podem 
+      apoiar a equipe no gerenciamento das tarefas. Também serão abordadas boas práticas para maximizar a eficiência.
+    </p>
 
-      <div class="contentlinks"><a target="_blank" href="1-OQueEScrumBoard.html">O Que é Scrum Board?</a></div>
-      <div class="contentlinks"><a target="_blank" href="2-QuadroFisicoQuadroDigital.html">Quadro Físico vs Quadro Digital</a></div>
-      <div class="contentlinks"><a target="_blank" href="3-ColunasTipicasScrumBoard.html">Colunas Tipicas de um Scrum Board.</a></div>
-      <div class="contentlinks"><a target="_blank" href="4-FerramentasDigitaisDeSuporte.html">Ferramentas Digitais de Suporte</a></div>
-      <div class="contentlinks"><a target="_blank" href="5-BoasPraticasScrumBoard.html">Boas Práticas no Uso de Scrum Board</a></div>
-  </main>
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('o_que_e_scrum_board') }}">📋 O Que é Scrum Board?</a>
+      </label>
+      <p>Compreenda o propósito e funcionamento do Scrum Board.</p>
+    </div>
 
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('quadro_fisico_vs_digital') }}">🖥️ Quadro Físico vs Digital</a>
+      </label>
+      <p>Aprenda as diferenças e vantagens de cada tipo de quadro.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('colunas_tipicas_scrum_board') }}">📊 Colunas Típicas de um Scrum Board</a>
+      </label>
+      <p>Descubra como organizar as colunas e o fluxo de trabalho no Scrum Board.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('ferramentas_digitais_suporte') }}">🛠️ Ferramentas Digitais de Suporte</a>
+      </label>
+      <p>Veja as ferramentas que podem ajudar na gestão do Scrum Board e tarefas da equipe.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('boas_praticas_scrum_board') }}">✅ Boas Práticas no Scrum Board</a>
+      </label>
+      <p>Conheça as melhores práticas para usar o Scrum Board de forma eficiente e colaborativa.</p>
+    </div>
+  </article>
+</div>
+{% endblock %}

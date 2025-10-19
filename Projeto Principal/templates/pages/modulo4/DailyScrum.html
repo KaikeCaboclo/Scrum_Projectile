@@ -1,31 +1,39 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Scrum</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends "base.html" %}
+{% block title %}Daily Scrum | SCRUM ACADEMY{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 4</h2>
+      <p>Cerimônias no Scrum</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('sprint') }}" class="{% if request.endpoint == 'sprint' %}active{% endif %}">
+        <span>🏃‍♂️</span> Sprint
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_planning') }}" class="{% if request.endpoint == 'sprint_planning' %}active{% endif %}">
+        <span>📝</span> Sprint Planning
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('daily_scrum') }}" class="{% if request.endpoint == 'daily_scrum' %}active{% endif %}">
+        <span>📅</span> Daily Scrum
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_review') }}" class="{% if request.endpoint == 'sprint_review' %}active{% endif %}">
+        <span>🔍</span> Sprint Review
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_retrospective') }}" class="{% if request.endpoint == 'sprint_retrospective' %}active{% endif %}">
+        <span>🔄</span> Sprint Retrospective
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
+  </aside>
   <main class="artigo">
     <h1 class="titles">Daily Scrum</h1>
     <p class="text">A Daily Scrum é uma reunião curta realizada diariamente pelo Time de Desenvolvimento. Essa reunião é um timebox de quinze minutos e acontece preferencialmente no mesmo local e à mesma hora. A reunião de Daily Scrum facilita a auto-organização do Time de Desenvolvimento e, assim, sua realização é de grande importância. Ela tem os propósitos de proporcionar, entre os membros do Time de Desenvolvimento, visibilidade ao trabalho realizado e a realizar, promover a comunicação sobre esse trabalho, dar visibilidade a quais obstáculos atrapalham ou atrapalharam o desenvolvimento desde a última reunião de Daily Scrum e servir de oportunidade para decisões rápidas com relação ao progresso do Sprint. Assim, o Daily Scrum produz um plano informal para o próximo dia de trabalho do Time de Desenvolvimento, ou seja, para até a próxima reunião.</p>
@@ -38,8 +46,4 @@
     <p class="text"> Para estimular a reflexão sobre o trabalho até o próximo dia e reduzir riscos, pode-se acrescentar à última questão: quais obstáculos o membro do time prevê até a próxima Daily Scrum.</p>
   </main>
 
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+{% endblock %}

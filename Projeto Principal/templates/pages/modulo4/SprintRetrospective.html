@@ -1,31 +1,39 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sprint Retrospective</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends "base.html" %}
+{% block title %}Sprint Retrospective | SCRUM ACADEMY{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 4</h2>
+      <p>Cerimônias no Scrum</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('sprint') }}" class="{% if request.endpoint == 'sprint' %}active{% endif %}">
+        <span>🏃‍♂️</span> Sprint
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_planning') }}" class="{% if request.endpoint == 'sprint_planning' %}active{% endif %}">
+        <span>📝</span> Sprint Planning
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('daily_scrum') }}" class="{% if request.endpoint == 'daily_scrum' %}active{% endif %}">
+        <span>📅</span> Daily Scrum
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_review') }}" class="{% if request.endpoint == 'sprint_review' %}active{% endif %}">
+        <span>🔍</span> Sprint Review
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('sprint_retrospective') }}" class="{% if request.endpoint == 'sprint_retrospective' %}active{% endif %}">
+        <span>🔄</span> Sprint Retrospective
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
+  </aside>
   <main class="artigo">
     <h1 class="titles">Sprint Retrospective</h1>
     <p class="text">A segunda atividade de inspeção e adaptação ao final do sprint é a Sprint Retrospective. Essa atividade frequentemente ocorre após a Sprint review e
@@ -34,8 +42,4 @@ antes do planejamento do próximo Sprint.</p>
     <p class="text">Ao final de uma Sprint Retrospective, a equipe Scrum deve ter identificado e se comprometido com um número prático de ações de melhoria de processo que serão realizadas pela equipe Scrum no próximo Sprint. Após a conclusão Sprint retrospective, todo o ciclo se repete novamente, começando com a próxima Sprint Planning, realizada para determinar o conjunto de trabalho de maior valor atual no qual a equipe deve se concentrar.</p>
   </main>
 
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+{% endblock %}

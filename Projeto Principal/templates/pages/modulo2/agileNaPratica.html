@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Agile na Prática | SCRUM ACADEMY{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 2</h2>
+      <p>Fundamentos do Agile</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('o_que_e_agile') }}" class="{% if request.endpoint == 'o_que_e_agile' %}active{% endif %}">
+        <span>📖</span> O Que é Agile
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('agile_na_pratica') }}" class="{% if request.endpoint == 'agile_na_pratica' %}active{% endif %}">
+        <span>🛠️</span> Agile na Prática
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('agile_vs_tradicional') }}" class="{% if request.endpoint == 'agile_vs_tradicional' %}active{% endif %}">
+        <span>⚖️</span> Agile vs Métodos Tradicionais
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('vantagens_do_agile') }}" class="{% if request.endpoint == 'vantagens_do_agile' %}active{% endif %}">
+        <span>✅</span> Vantagens do Agile
+        <input type="checkbox" class="check">
+      </a>
+    </nav>
+  </aside>
+  <main class="artigo">
+    <h1 class="titles">Scrum: Agile na Prática</h1>
+    <p class="text">O Scrum é um dos frameworks mais usados do Agile. Ele organiza o trabalho em sprints (1 a 4 semanas) com papéis e eventos definidos. Seus princípios básicos são:</p>
+    <p class="subtitles"><strong>Transparência</strong></p>
+    <p class="text">Uso de artefatos como Product Backlog (lista de tudo que o projeto precisa) e Sprint Backlog (tarefas da sprint atual).</p>
+    <p class="subtitles"><strong>Inspeção</strong></p>
+    <p class="text">Revisões frequentes, como a Daily Scrum (reunião rápida diária), a Sprint Review (demonstração do que foi entregue) e a Sprint Retrospective (reflexão sobre melhorias).</p>
+    <p class="subtitles"><strong>Adaptação</strong></p>
+    <p class="text">Com base nessas inspeções, o time ajusta o produto e o processo de trabalho de forma ágil e contínua.</p>
+  </main>
+</div>
+{% endblock %}
+  

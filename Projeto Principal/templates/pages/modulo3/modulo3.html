@@ -1,44 +1,74 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Papéis</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends 'base.html' %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
+{% block title %}Módulo 3 - Papéis | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 3</h2>
+      <p>Papéis no Scrum</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('papeis_scrum') }}" class="{% if request.endpoint == 'papeis_scrum' %}active{% endif %}">
+        <span>👥</span> Papéis do Scrum
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('product_owner') }}" class="{% if request.endpoint == 'product_owner' %}active{% endif %}">
+        <span>📊</span> Product Owner
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('scrum_master') }}" class="{% if request.endpoint == 'scrum_master' %}active{% endif %}">
+        <span>🧭</span> Scrum Master
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('devteam') }}" class="{% if request.endpoint == 'devteam' %}active{% endif %}">
+        <span>💻</span> Time de Desenvolvimento
+        <input type="checkbox" class="check">
+      </a>
     </nav>
-  </header>
+  </aside>
 
-  <main class="content">
-    <h1>Módulo 3 – Papéis</h1>
 
-      <div class="contentlinks"><a target="_blank" href="PapeisScrum.html">Papéis do Scrum</a></div>
-      <div class="contentlinks"><a target="_blank" href="ProductOwner.html">Product Owner</a></div>
-      <div class="contentlinks"><a target="_blank" href="ScrumMaster.html">Scrum Master</a></div>
-      <div class="contentlinks"><a target="_blank" href="DevTeam.html">Time de Desenvolvimento</a></div>
- 
-  </main>
+  <article class="artigo">
+    <h1 class="titles">Papéis no Scrum</h1>
+    <p class="text">
+      Neste módulo, você conhecerá os principais papéis que compõem o framework Scrum. Cada papel possui responsabilidades 
+      únicas e complementares que garantem o sucesso da equipe e a entrega de valor contínua ao cliente. 
+      Entender bem esses papéis é essencial para aplicar o Scrum de forma eficaz e colaborativa.
+    </p>
 
-  <footer>
-    <p>© 2025 - SCRUM Academy</p>
-  </footer>
-</body>
-</html>
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('papeis_scrum') }}">👥 Papéis do Scrum</a>
+      </label>
+      <p>Compreenda a estrutura e função de cada papel no Scrum.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('product_owner') }}">📊 Product Owner</a>
+      </label>
+      <p>Entenda o papel estratégico do Product Owner na definição de valor e priorização.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('scrum_master') }}">🧭 Scrum Master</a>
+      </label>
+      <p>Descubra como o Scrum Master apoia a equipe e garante a fluidez dos processos ágeis.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('devteam') }}">💻 Time de Desenvolvimento</a>
+      </label>
+      <p>Conheça o time responsável por transformar ideias em incrementos reais de produto.</p>
+    </div>
+  </article>
+</div>
+{% endblock %}

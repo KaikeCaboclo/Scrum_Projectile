@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Agile vs Métodos Tradicionais | SCRUM ACADEMY{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+{% block content %}
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Módulo 2</h2>
+      <p>Fundamentos do Agile</p>
+    </div>
+    <nav class="sidebar-menu">
+      <a href="{{ url_for('o_que_e_agile') }}" class="{% if request.endpoint == 'o_que_e_agile' %}active{% endif %}">
+        <span>📖</span> O Que é Agile
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('agile_na_pratica') }}" class="{% if request.endpoint == 'agile_na_pratica' %}active{% endif %}">
+        <span>🛠️</span> Agile na Prática
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('agile_vs_tradicional') }}" class="{% if request.endpoint == 'agile_vs_tradicional' %}active{% endif %}">
+        <span>⚖️</span> Agile vs Métodos Tradicionais
+        <input type="checkbox" class="check">
+      </a>
+      <a href="{{ url_for('vantagens_do_agile') }}" class="{% if request.endpoint == 'vantagens_do_agile' %}active{% endif %}">
+        <span>✅</span> Vantagens do Agile
+        <input type="checkbox" class="check">
+      </a>
+    </nav>
+  </aside>
+  <main class="artigo">
+    <h1 class="titles">Agile vs. Métodos Tradicionais</h1>
+    <p class="subtitles"><strong>Waterfall (Cascata)</strong></p>
+    <p class="text">Segue um processo linear e sequencial. Primeiro se levantam todos os requisitos, depois se faz o design, a implementação, os testes... Só no final o cliente vê o produto pronto. O problema? Alterações são difíceis, caras e lentas.</p>
+    <figure><img src="../../img/Ciclo de vida clássico.png" alt="Ciclo de vida clássico" class="figura"></figure>
+    <p class="subtitles"><strong>Agile</strong></p>
+    <p class="text">Funciona de forma iterativa e incremental. O projeto é dividido em ciclos curtos (iterações ou sprints), cada um entregando uma versão utilizável do produto. O cliente participa ativamente, dá feedback constante e o time se adapta conforme surgem novas necessidades.</p>
+    <figure><img src="../../img/Ciclo Scrum.png" alt="Ciclo do Scrum" class="figura"></figure>
+  </main>
+</div>
+{% endblock %}
+  
