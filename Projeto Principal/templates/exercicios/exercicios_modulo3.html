@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}Papéis no Scrum | SCRUM ACADEMY{% endblock %}
+{% block title %}Exercícios – Módulo 3 | SCRUM ACADEMY{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
 {% endblock %}
 
 {% block content %}
@@ -37,18 +38,36 @@
     </nav>
   </aside>
 
-  <article class="artigo">
-    <h1 class="titles">Papéis no Scrum</h1>
-    <p class="text">Os esforços de desenvolvimento do Scrum consistem em uma ou mais equipes Scrum, cada uma 
-    composta por três papéis Scrum: <strong>Product Owner</strong>, <strong>Scrum Master</strong> e <strong>Time de Desenvolvimento</strong>.</p>
-    
-    <p class="text">Pode haver outros papéis ao usar o Scrum, mas o <em>framework</em> Scrum requer apenas os três listados aqui:</p>
-    
-    <p class="text"><strong>O Product Owner</strong> é responsável por <strong>o que</strong> será desenvolvido e em que ordem (o <em>backlog</em> do produto). É a voz do cliente.</p>
-    
-    <p class="text"><strong>O Scrum Master</strong> é responsável por orientar a equipe na criação e no cumprimento de seu próprio processo, com base no <em>framework</em> Scrum mais amplo. Ele atua como um líder servidor, removendo impedimentos e garantindo que o Scrum seja compreendido e aplicado.</p>
-    
-    <p class="text"><strong>O Time de Desenvolvimento</strong> (Development Team) é responsável por determinar <strong>como</strong> entregar o que o Product Owner solicitou, transformando itens do <em>backlog</em> em incrementos de produto utilizáveis a cada Sprint.</p>
-  </article>
+  <!-- MAIN CONTENT AREA -->
+  <main class="main-content">
+    <div class="exercise-container">
+      <header class="exercise-header">
+        <h1>Módulo 3 – Papéis no Scrum</h1>
+        <p class="subtitle">Exercícios de Fixação</p>
+      </header>
+
+      <section class="exercise-section">
+        {% for questao in questoes %}
+        <div class="exercise-card">
+          <h2>{{ questao.titulo }} – Pergunta {{ loop.index }}</h2>
+          <p>{{ questao.pergunta }}</p>
+
+          <div class="opcoes">
+            {% for alternativa in questao.alternativas %}
+            <label class="opcao">
+              <input type="radio" name="questao{{ loop.parent.index0 if loop.parent else loop.index0 }}" value="{{ alternativa.letra }}">
+              <span>{{ alternativa.letra }}) {{ alternativa.texto }}</span>
+            </label>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </section>
+
+      <footer class="exercise-footer">
+        <a href="{{ url_for('modulo3') }}" class="btn-voltar">← Voltar ao Módulo 3</a>
+      </footer>
+    </div>
+  </main>
 </div>
 {% endblock %}

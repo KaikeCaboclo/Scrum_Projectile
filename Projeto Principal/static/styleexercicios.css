@@ -1,0 +1,147 @@
+/* Layout da página com sidebar */
+.page-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Área principal ao lado da sidebar */
+.main-content {
+  flex: 1;
+  margin-left: 280px; /* largura da sidebar */
+  padding: 20px;
+  background: #f5f7fa;
+}
+
+/* Container dos exercícios */
+.exercise-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.exercise-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.exercise-header h1 {
+  color: #004aad;
+  font-size: 2rem;
+}
+
+.exercise-header .subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.exercise-card {
+  background: #f9f9ff;
+  border: 1px solid #d8dcf1;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+
+.exercise-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.exercise-card h2 {
+  color: #004aad;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.opcao {
+  background: #eef1ff;
+  border: 1px solid #d1d6f0;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.opcao:hover {
+  background: #dde2ff;
+}
+
+.opcao input {
+  margin-right: 8px;
+}
+
+.btn-voltar {
+  display: inline-block;
+  background: #777;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-voltar:hover {
+  background: #555;
+}
+
+.exercise-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+  
+  .exercise-container {
+    padding: 20px;
+  }
+}
+
+.exercise-footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+.btn-voltar {
+  display: inline-block;
+  background: linear-gradient(135deg, #004aad 0%, #0066cc 100%);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 74, 173, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-voltar:hover {
+  background: linear-gradient(135deg, #003d8f 0%, #0052a3 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 74, 173, 0.4);
+}
+
+.btn-voltar:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 74, 173, 0.3);
+}

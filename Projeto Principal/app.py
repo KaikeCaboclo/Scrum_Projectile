@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import json
 
 app = Flask(__name__)
 
@@ -181,6 +182,20 @@ def inspecao_continua():
 @app.route('/modulo8/adaptacao-boas-praticas')
 def adaptacao_boas_praticas():
     return render_template('pages/modulo8/adaptação.html')
+
+@app.route('/exercicios/modulo1')
+def exercicios_modulo1():
+    with open('data/questoes_modulo1.json', encoding='utf-8') as f:
+        questoes = json.load(f)
+    return render_template('exercicios/exercicios_modulo1.html', questoes=questoes)
+
+@app.route('/exercicios/modulo3')
+def exercicios_modulo3():
+    with open('data/questoes_modulo3.json', encoding='utf-8') as f:
+        questoes = json.load(f)
+    return render_template('exercicios/exercicios_modulo3.html', questoes=questoes)
+
+
 
 
 if __name__ == '__main__':

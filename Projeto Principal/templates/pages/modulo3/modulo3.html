@@ -30,9 +30,12 @@
         <span>💻</span> Time de Desenvolvimento
         <input type="checkbox" class="check">
       </a>
+      <a href="{{ url_for('exercicios_modulo3') }}" class="{% if request.endpoint == 'exercicios_modulo3' %}active{% endif %}">
+        <span>📝</span> Exercícios
+        <input type="checkbox" class="check">
+      </a>
     </nav>
   </aside>
-
 
   <article class="artigo">
     <h1 class="titles">Papéis no Scrum</h1>
@@ -68,6 +71,13 @@
         <a href="{{ url_for('devteam') }}">💻 Time de Desenvolvimento</a>
       </label>
       <p>Conheça o time responsável por transformar ideias em incrementos reais de produto.</p>
+    </div>
+
+    <div class="contentlinks">
+      <label>
+        <a href="{{ url_for('exercicios_modulo3') }}">📝 Exercícios</a>
+      </label>
+      <p>Teste seus conhecimentos sobre os papéis do Scrum com este questionário interativo.</p>
     </div>
   </article>
 </div>

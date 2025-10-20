@@ -29,6 +29,10 @@
         <span>💻</span> Time de Desenvolvimento
         <input type="checkbox" class="check">
       </a>
+      <a href="{{ url_for('exercicios_modulo3') }}" class="{% if request.endpoint == 'exercicios_modulo3' %}active{% endif %}">
+        <span>📝</span> Exercícios
+        <input type="checkbox" class="check">
+      </a>
     </nav>
   </aside>
 <main class="artigo">

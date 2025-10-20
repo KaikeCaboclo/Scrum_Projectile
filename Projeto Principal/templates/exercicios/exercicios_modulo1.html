@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}O que é Scrum? | SCRUM ACADEMY{% endblock %}
+{% block title %}Exercícios – Módulo 1 | SCRUM ACADEMY{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
 {% endblock %}
 
 {% block content %}
@@ -40,23 +41,36 @@
 </div>
 
 
-    <main class="artigo">
-        <h1 class="titles">O que é Scrum?</h1>
-        <p class="text">
-        Scrum é uma metodologia ágil de gestão de projetos criada nos anos 1990, inicialmente para o desenvolvimento de software.
-        Hoje, é utilizada em diversas áreas, como marketing, design e até desenvolvimento de hardware.
-        </p>
-        <p class="text">
-        O método se baseia em entregar valor desde cedo no projeto e frequentemente, partes do produto funcionando. 
-        Cada uma dessas entregas proporciona retorno ao investimento realizado pelos clientes do projeto, além de possibilitar o seu feedback rápido 
-        sobre o produto para que se realizem as mudanças ou adições necessárias.
-        </p>
-        <p class="text">
-        Dessa forma, seguir o Scrum evita erros a partir das direções indicadas pelo cliente durante o desenvolvimento do produto. 
-        Além disso, o acompanhamento do projeto pelo cliente torna o produto mais valoroso, pois atende a todas as necessidades do contratante 
-        e permite flexibilidade no projeto, que pode se adequar a possíveis novas demandas.
-        </p>
+  <!-- MAIN CONTENT AREA -->
+  <main class="main-content">
+    <div class="exercise-container">
+      <header class="exercise-header">
+        <h1>Módulo 1 – Introdução ao Scrum</h1>
+        <p class="subtitle">Exercícios de Fixação</p>
+      </header>
 
-    </main>
+      <section class="exercise-section">
+        {% for questao in questoes %}
+        <div class="exercise-card">
+          <h2>{{ questao.titulo }} – Pergunta {{ loop.index }}</h2>
+          <p>{{ questao.pergunta }}</p>
+
+          <div class="opcoes">
+            {% for alternativa in questao.alternativas %}
+            <label class="opcao">
+              <input type="radio" name="questao{{ loop.parent.index0 if loop.parent else loop.index0 }}" value="{{ alternativa.letra }}">
+              <span>{{ alternativa.letra }}) {{ alternativa.texto }}</span>
+            </label>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </section>
+
+      <footer class="exercise-footer">
+        <a href="{{ url_for('modulo1') }}" class="btn-voltar">← Voltar ao Módulo 1</a>
+      </footer>
+    </div>
+  </main>
 </div>
 {% endblock %}
