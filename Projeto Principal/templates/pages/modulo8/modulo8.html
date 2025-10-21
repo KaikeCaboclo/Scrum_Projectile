@@ -14,25 +14,25 @@
       <p>Boas Práticas e Dicas</p>
     </div>
     <nav class="sidebar-menu">
-      <a href="{{ url_for('soft_skills') }}" class="{% if request.endpoint == 'soft_skills' %}active{% endif %}">
+      <a href="" data-conteudos="{{ url_for('soft_skills') }}" class="navegacacao_conteudo">
         <span>💡</span> Soft Skills
-        <input type="checkbox" class="check">
+        <input type="checkbox" class="check" name="modulo8" value="1">
       </a>
-      <a href="{{ url_for('comunicacao_eficiente') }}" class="{% if request.endpoint == 'comunicacao_eficiente' %}active{% endif %}">
+      <a href="" data-conteudos="{{ url_for('comunicacao_eficiente') }}" class="navegacacao_conteudo">
         <span>🗣️</span> Comunicação Eficiente
-        <input type="checkbox" class="check">
+        <input type="checkbox" class="check" name="modulo8" value="2">
       </a>
-      <a href="{{ url_for('transparencia') }}" class="{% if request.endpoint == 'transparencia' %}active{% endif %}">
+      <a href="" data-conteudos="{{ url_for('transparencia') }}" class="navegacacao_conteudo">
         <span>🔍</span> Transparência
-        <input type="checkbox" class="check">
+        <input type="checkbox" class="check" name="modulo8" value="3">
       </a>
-      <a href="{{ url_for('inspecao_continua') }}" class="{% if request.endpoint == 'inspecao_continua' %}active{% endif %}">
+      <a href="" data-conteudos="{{ url_for('inspecao_continua') }}" class="navegacacao_conteudo">
         <span>📈</span> Inspeção Contínua
-        <input type="checkbox" class="check">
+        <input type="checkbox" class="check" name="modulo8" value="4">
       </a>
-      <a href="{{ url_for('adaptacao_boas_praticas') }}" class="{% if request.endpoint == 'adaptacao_boas_praticas' %}active{% endif %}">
+      <a href="" data-conteudos="{{ url_for('adaptacao_boas_praticas') }}" class="navegacacao_conteudo">
         <span>✅</span> Adaptação, Melhoria e Boas Práticas
-        <input type="checkbox" class="check">
+        <input type="checkbox" class="check" name="modulo8" value="5">
       </a>
     </nav>
   </aside>
@@ -79,4 +79,5 @@
     </div>
   </article>
 </div>
+<script src="../../../static/modulos.js"></script>
 {% endblock %}

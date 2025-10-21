@@ -1,70 +1,22 @@
-{% extends 'base.html' %}
+<h1 class="titles">Por que usar Scrum?</h1>
+<p class="text">O Scrum é hoje o método ágil mais utilizado no mundo porque ajuda equipes e organizações a lidarem melhor com a complexidade dos projetos, se ater ao importante para o cliente e a entregar mais valor em menos tempo.</p>
 
-{% block title %}Por que usar Scrum? | SCRUM ACADEMY{% endblock %}
+<p class="subtitles"><strong>Entre os principais motivos para usar Scrum estão:</strong></p>
 
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
+<p><strong>Entregas frequentes:</strong></p>
+<p class="text">As entregas periódicas permitem que o cliente entregue seu feedback, que serve de guia para o desenvolvimento. Além disso, as entregas frequentes permitem retorno rápido e visível do investimento.</p>
 
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 1</h2>
-      <p>Introdução ao SCRUM</p>
-    </div>
+<p><strong>Redução de riscos:</strong></p>
+<p class="text">Em vez de descobrir erros apenas no final, cada ciclo de desenvolvimento gera visibilidade e oportunidade de correção antecipada a partir dos comentários do cliente.</p>
 
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('oquee_scrum') }}" class="{% if request.endpoint == 'oquee_scrum' %}active{% endif %}">
-        <span>📋</span> O que é Scrum?
-        <input type="checkbox" class="check">
-      </a>
+<p><strong>Maior qualidade do produto gerado:</strong></p>
+<p class="text">A parte do produto gerada em cada ciclo de desenvolvimento deve possuir a qualidade necessária para poder ser entregue para os clientes do projeto. Paralelamente, o feedback constante permite a adequação total aos requisitos do cliente.</p>
 
-      <a href="{{ url_for('porque_scrum') }}" class="{% if request.endpoint == 'porque_scrum' %}active{% endif %}">
-        <span>❓</span> Por que usar Scrum?
-        <input type="checkbox" class="check">
-      </a>
+<p><strong>Mudanças utilizadas como vantagem competitiva:</strong></p>
+<p class="text">No método Scrum, as mudanças são acolhidas como oportunidades e não como acontecimentos indesejáveis. Elas são parte do ambiente dinâmico em que os projetos estão inseridos. As mudanças também compreendem a própria descoberta dos detalhes do produto, que é um processo incremental que ocorre durante todo o projeto.</p>
 
-      <a href="{{ url_for('manifesto_agil') }}" class="{% if request.endpoint == 'manifesto_agil' %}active{% endif %}">
-        <span>📜</span> Manifesto Ágil
-        <input type="checkbox" class="check">
-      </a>
+<p><strong>Redução do desperdício:</strong></p>
+<p class="text">No Scrum, produz-se apenas o que é realmente necessário, com foco no que gera valor para o cliente.</p>
 
-      <!-- Link de Exercícios -->
-      <a href="{{ url_for('exercicios_modulo1') }}" class="{% if request.endpoint == 'exercicios_modulo1' %}active{% endif %}">
-        <span>📝</span> Exercícios
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-</div>
-
-
-    <main class="artigo">
-        <h1 class="titles">Por que usar Scrum?</h1>
-        <p class="text">O Scrum é hoje o método ágil mais utilizado no mundo porque ajuda equipes e organizações a lidarem melhor com a complexidade dos projetos, se ater ao importante para o cliente e a entregar mais valor em menos tempo.</p>
-        
-        <p class="subtitles"><strong>Entre os principais motivos para usar Scrum estão:</strong></p>
-        
-        <p><strong>Entregas frequentes:</strong></p>
-        <p class="text">As entregas periódicas permitem que o cliente entregue seu feedback, que serve de guia para o desenvolvimento. Além disso, as entregas frequentes permitem retorno rápido e visível do investimento.</p>
-        
-        <p><strong>Redução de riscos:</strong></p>
-        <p class="text">Em vez de descobrir erros apenas no final, cada ciclo de desenvolvimento gera visibilidade e oportunidade de correção antecipada a partir dos comentários do cliente.</p>
-        
-        <p><strong>Maior qualidade do produto gerado:</strong></p>
-        <p class="text">A parte do produto gerada em cada ciclo de desenvolvimento deve possuir a qualidade necessária para poder ser entregue para os clientes do projeto. Paralelamente, o feedback constante permite a adequação total aos requisitos do cliente.</p>
-        
-        <p><strong>Mudanças utilizadas como vantagem competitiva:</strong></p>
-        <p class="text">No método Scrum, as mudanças são acolhidas como oportunidades e não como acontecimentos indesejáveis. Elas são parte do ambiente dinâmico em que os projetos estão inseridos. As mudanças também compreendem a própria descoberta dos detalhes do produto, que é um processo incremental que ocorre durante todo o projeto.</p>
-        
-        <p><strong>Redução do desperdício:</strong></p>
-        <p class="text">No Scrum, produz-se apenas o que é realmente necessário, com foco no que gera valor para o cliente.</p>
-        
-        <p><strong>Aumento de produtividade:</strong></p>
-        <p class="text">A melhoria contínua dos processos de trabalho, o trabalho em equipe e a autonomia do time e um ritmo sustentável de trabalho são fatores que agregam na motivação do time e, consequentemente, aumentam a produtividade.</p>
-
-
-    </main>
-</div>
-{% endblock %}
+<p><strong>Aumento de produtividade:</strong></p>
+<p class="text">A melhoria contínua dos processos de trabalho, o trabalho em equipe e a autonomia do time e um ritmo sustentável de trabalho são fatores que agregam na motivação do time e, consequentemente, aumentam a produtividade.</p>

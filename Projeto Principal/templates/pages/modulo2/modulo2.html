@@ -14,21 +14,21 @@
       <p>Fundamentos do Agile</p>
     </div>
     <nav class="sidebar-menu">
-      <a href="{{ url_for('o_que_e_agile') }}" class="{% if request.endpoint == 'o_que_e_agile' %}active{% endif %}">
+      <a href="" data-conteudos="{{ url_for('o_que_e_agile') }}" class="navegacacao_conteudo">
         <span>📖</span> O Que é Agile
-        <input type="checkbox" class="check">
+        <input type="checkbox" class="check" name="modulo2" value="1">
       </a>
-      <a href="{{ url_for('agile_na_pratica') }}" class="{% if request.endpoint == 'agile_na_pratica' %}active{% endif %}">
+      <a href="" data-conteudos="{{ url_for('agile_na_pratica') }}" class="navegacacao_conteudo">
         <span>🛠️</span> Agile na Prática
-        <input type="checkbox" class="check">
+        <input type="checkbox" class="check" name="modulo2" value="2">
       </a>
-      <a href="{{ url_for('agile_vs_tradicional') }}" class="{% if request.endpoint == 'agile_vs_tradicional' %}active{% endif %}">
+      <a href="" data-conteudos="{{ url_for('agile_vs_tradicional') }}" class="navegacacao_conteudo">
         <span>⚖️</span> Agile vs Métodos Tradicionais
-        <input type="checkbox" class="check">
+        <input type="checkbox" class="check" name="modulo2" value="3">
       </a>
-      <a href="{{ url_for('vantagens_do_agile') }}" class="{% if request.endpoint == 'vantagens_do_agile' %}active{% endif %}">
+      <a href="" data-conteudos="{{ url_for('vantagens_do_agile') }}" class="navegacacao_conteudo">
         <span>✅</span> Vantagens do Agile
-        <input type="checkbox" class="check">
+        <input type="checkbox" class="check" name="modulo2" value="4">
       </a>
     </nav>
   </aside>
@@ -73,4 +73,5 @@
     </div>
   </article>
 </div>
+<script src="../../../static/modulos.js"></script>
 {% endblock %}

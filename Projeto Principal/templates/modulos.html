@@ -10,38 +10,39 @@
 <main class="content">
   <h1>Lista de Módulos</h1>
   <div class="modulo-grid">
-    <div class="modulo-card">
+    <div class="modulo-card" data-moduloconteudo="{{ url_for('modulo1') }}">
       <a href="{{ url_for('modulo1') }}">Módulo 1 – Introdução ao SCRUM</a>
       <p>Conheça os princípios básicos e a origem do Scrum.</p>
     </div>
-    <div class="modulo-card">
+    <div class="modulo-card"  data-moduloconteudo="{{ url_for('modulo2') }}">
       <a href="{{ url_for('modulo2') }}">Módulo 2 – Fundamentos do Agile</a>
       <p>Entenda o Manifesto Ágil e sua aplicação em projetos.</p>
     </div>
-    <div class="modulo-card">
+    <div class="modulo-card"  data-moduloconteudo="{{ url_for('modulo3') }}">
       <a href="{{ url_for('modulo3') }}">Módulo 3 – Papéis</a>
       <p>Descubra as funções do Product Owner, Scrum Master e Time.</p>
     </div>
-    <div class="modulo-card">
+    <div class="modulo-card" data-moduloconteudo="{{ url_for('modulo4') }}">
       <a href="{{ url_for('modulo4') }}">Módulo 4 – Eventos e cerimônias do Scrum</a>
       <p>Aprenda sobre sprints, dailies e reuniões de planejamento.</p>
     </div>
-    <div class="modulo-card">
+    <div class="modulo-card" data-moduloconteudo="{{ url_for('modulo5') }}">
       <a href="{{ url_for('modulo5') }}">Módulo 5 – Artefatos</a>
       <p>Explore o Product Backlog, Sprint Backlog e Incremento.</p>
     </div>
-    <div class="modulo-card">
+    <div class="modulo-card" data-moduloconteudo="{{ url_for('modulo6') }}">
       <a href="{{ url_for('modulo6') }}">Módulo 6 – Estimativa e planejamento</a>
       <p>Veja como planejar sprints e medir o progresso da equipe.</p>
     </div>
-    <div class="modulo-card">
+    <div class="modulo-card" data-moduloconteudo="{{ url_for('modulo7') }}">
       <a href="{{ url_for('modulo7') }}">Módulo 7 – Scrum Board e Ferramentas</a>
       <p>Aprenda a utilizar quadros e ferramentas para gestão ágil.</p>
     </div>
-    <div class="modulo-card">
+    <div class="modulo-card" data-moduloconteudo="{{ url_for('modulo8') }}">
       <a href="{{ url_for('modulo8') }}">Módulo 8 – Boas Práticas e Dicas</a>
       <p>Aprenda sobre boas práticas, adaptação e melhorias contínuas para equipes ágeis.</p>
 </div>
   </div>
 </main>
+<script src="../static/modulos.js"></script>
 {% endblock %}

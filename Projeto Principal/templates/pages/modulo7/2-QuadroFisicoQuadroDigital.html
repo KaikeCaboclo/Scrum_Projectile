@@ -1,52 +1,13 @@
-{% extends "base.html" %}
-{% block title %}Quadro Físico vs Quadro Digital | SCRUM ACADEMY{% endblock %}
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 7</h2>
-      <p>SCRUM Board e Ferramentas</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('o_que_e_scrum_board') }}" class="{% if request.endpoint == 'o_que_e_scrum_board' %}active{% endif %}">
-        <span>📋</span> O Que é Scrum Board?
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('quadro_fisico_vs_digital') }}" class="{% if request.endpoint == 'quadro_fisico_vs_digital' %}active{% endif %}">
-        <span>🖥️</span> Quadro Físico vs Digital
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('colunas_tipicas_scrum_board') }}" class="{% if request.endpoint == 'colunas_tipicas_scrum_board' %}active{% endif %}">
-        <span>📊</span> Colunas Típicas de um Scrum Board
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('ferramentas_digitais_suporte') }}" class="{% if request.endpoint == 'ferramentas_digitais_suporte' %}active{% endif %}">
-        <span>🛠️</span> Ferramentas Digitais de Suporte
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('boas_praticas_scrum_board') }}" class="{% if request.endpoint == 'boas_praticas_scrum_board' %}active{% endif %}">
-        <span>✅</span> Boas Práticas no Scrum Board
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-  <main class="artigo">
-    <h1 class="titles">Quadro Físico vs Quadro Digital</h1>
-    <p><strong>Quadro Físico:</strong></p>
-    <ul>
-    <li>Usado em ambientes presenciais, geralmente com post-its</li>
-    <li><strong>Vantagem:</strong> fácil visualização, interação direta</li>
-    <li><strong>Desvantagem:</strong> difícil para equipes remotas, não gera histórico automático</li>
-    </ul>
-    <p><strong>Quadro Físico:</strong></p>
-    <ul>
-    <li>Criado em ferramentas como Jira, Trello ou Azure DevOps</li>
-    <li><strong>Vantagem:</strong> acessível de qualquer lugar, gera relatórios, integrações</li>
-    <li><strong>Desvantagem:</strong> depende de software, pode exigir configuração</li>
-    </ul>
-  </main>
-</div>
-{% endblock %}
+<h1 class="titles">Quadro Físico vs Quadro Digital</h1>
+<p><strong>Quadro Físico:</strong></p>
+<ul>
+<li>Usado em ambientes presenciais, geralmente com post-its</li>
+<li><strong>Vantagem:</strong> fácil visualização, interação direta</li>
+<li><strong>Desvantagem:</strong> difícil para equipes remotas, não gera histórico automático</li>
+</ul>
+<p><strong>Quadro Físico:</strong></p>
+<ul>
+<li>Criado em ferramentas como Jira, Trello ou Azure DevOps</li>
+<li><strong>Vantagem:</strong> acessível de qualquer lugar, gera relatórios, integrações</li>
+<li><strong>Desvantagem:</strong> depende de software, pode exigir configuração</li>
+</ul>

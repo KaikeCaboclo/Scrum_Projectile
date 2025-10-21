@@ -1,43 +1,4 @@
-{% extends "base.html" %}
-{% block title %}Sprint Review | SCRUM ACADEMY{% endblock %}
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 4</h2>
-      <p>Cerimônias no Scrum</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('sprint') }}" class="{% if request.endpoint == 'sprint' %}active{% endif %}">
-        <span>🏃‍♂️</span> Sprint
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('sprint_planning') }}" class="{% if request.endpoint == 'sprint_planning' %}active{% endif %}">
-        <span>📝</span> Sprint Planning
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('daily_scrum') }}" class="{% if request.endpoint == 'daily_scrum' %}active{% endif %}">
-        <span>📅</span> Daily Scrum
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('sprint_review') }}" class="{% if request.endpoint == 'sprint_review' %}active{% endif %}">
-        <span>🔍</span> Sprint Review
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('sprint_retrospective') }}" class="{% if request.endpoint == 'sprint_retrospective' %}active{% endif %}">
-        <span>🔄</span> Sprint Retrospective
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-  <main class="artigo">
-    <h1 class="titles">Sprint Review</h1>
-    <p class="subtitles"><strong>Ao final do sprint, há duas atividades adicionais de inspeção e adaptação. Uma delas é a chamada Sprint Review.</strong></p>
-    <p class="text">O Incremento do Produto funcionando, ou seja, o valor gerado para os clientes do projeto, é o foco da demonstração. Evitam-se slides, documentos que não fazem parte do produto, explicações excessivas sobre planos ou sobre o processo de desenvolvimento, intenções não realizadas, desculpas e justificativas. Da mesma forma, questões técnicas somente serão discutidas se forem de interesse das pessoas presentes. Caso contrário, há o risco de que considerem a reunião uma perda de tempo, o que dificultará o comparecimento nas próximas. Demonstram-se apenas os itens do Sprint Backlog que estejam prontos, de acordo com a Definição de Pronto.</p>
-    <p class="text">O objetivo desta atividade é inspecionar e adaptar o produto que está sendo construído. Fundamental para esta atividade é a conversa entre os participantes, que incluem o Scrum Team, os interessados, patrocinadores, clientes e membros interessados ​​de outras equipes. A conversa se concentra na revisão dos recursos recém-concluídos no contexto do esforço geral de desenvolvimento. Todos os participantes têm visibilidade clara do que está ocorrendo e a oportunidade de ajudar a orientar o desenvolvimento futuro para garantir que a solução mais adequada ao negócio seja criada. Uma revisão bem-sucedida resulta em um fluxo bidirecional de informações. As pessoas que não fazem parte da equipe Scrum conseguem se sincronizar com o esforço de desenvolvimento e ajudar a orientar sua direção. Ao mesmo tempo, os membros da equipe Scrum adquirem uma apreciação mais profunda do lado comercial e de marketing de seu produto, recebendo feedbacks frequentes garantindo que o produto vá em direção aos interesses dos clientes. A Sprint Review, portanto, representa uma oportunidade programada para analisar e adaptar o produto.</p>
-  </main>
-{% endblock %}
+  <h1 class="titles">Sprint Review</h1>
+  <p class="subtitles"><strong>Ao final do sprint, há duas atividades adicionais de inspeção e adaptação. Uma delas é a chamada Sprint Review.</strong></p>
+  <p class="text">O Incremento do Produto funcionando, ou seja, o valor gerado para os clientes do projeto, é o foco da demonstração. Evitam-se slides, documentos que não fazem parte do produto, explicações excessivas sobre planos ou sobre o processo de desenvolvimento, intenções não realizadas, desculpas e justificativas. Da mesma forma, questões técnicas somente serão discutidas se forem de interesse das pessoas presentes. Caso contrário, há o risco de que considerem a reunião uma perda de tempo, o que dificultará o comparecimento nas próximas. Demonstram-se apenas os itens do Sprint Backlog que estejam prontos, de acordo com a Definição de Pronto.</p>
+  <p class="text">O objetivo desta atividade é inspecionar e adaptar o produto que está sendo construído. Fundamental para esta atividade é a conversa entre os participantes, que incluem o Scrum Team, os interessados, patrocinadores, clientes e membros interessados de outras equipes. A conversa se concentra na revisão dos recursos recém-concluídos no contexto do esforço geral de desenvolvimento. Todos os participantes têm visibilidade clara do que está ocorrendo e a oportunidade de ajudar a orientar o desenvolvimento futuro para garantir que a solução mais adequada ao negócio seja criada. Uma revisão bem-sucedida resulta em um fluxo bidirecional de informações. As pessoas que não fazem parte da equipe Scrum conseguem se sincronizar com o esforço de desenvolvimento e ajudar a orientar sua direção. Ao mesmo tempo, os membros da equipe Scrum adquirem uma apreciação mais profunda do lado comercial e de marketing de seu produto, recebendo feedbacks frequentes garantindo que o produto vá em direção aos interesses dos clientes. A Sprint Review, portanto, representa uma oportunidade programada para analisar e adaptar o produto.</p>

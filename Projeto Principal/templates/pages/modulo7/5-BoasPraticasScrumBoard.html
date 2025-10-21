@@ -1,48 +1,8 @@
-{% extends "base.html" %}
-{% block title %}Boas Práticas no Scrum Board | SCRUM ACADEMY
-{% endblock %}
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 7</h2>
-      <p>SCRUM Board e Ferramentas</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('o_que_e_scrum_board') }}" class="{% if request.endpoint == 'o_que_e_scrum_board' %}active{% endif %}">
-        <span>📋</span> O Que é Scrum Board?
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('quadro_fisico_vs_digital') }}" class="{% if request.endpoint == 'quadro_fisico_vs_digital' %}active{% endif %}">
-        <span>🖥️</span> Quadro Físico vs Digital
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('colunas_tipicas_scrum_board') }}" class="{% if request.endpoint == 'colunas_tipicas_scrum_board' %}active{% endif %}">
-        <span>📊</span> Colunas Típicas de um Scrum Board
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('ferramentas_digitais_suporte') }}" class="{% if request.endpoint == 'ferramentas_digitais_suporte' %}active{% endif %}">
-        <span>🛠️</span> Ferramentas Digitais de Suporte
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('boas_praticas_scrum_board') }}" class="{% if request.endpoint == 'boas_praticas_scrum_board' %}active{% endif %}">
-        <span>✅</span> Boas Práticas no Scrum Board
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
+<h1 class="titles">Boas Práticas no Uso de Scrum Board</h1>
+<ul>
+<li><strong>Transparência:</strong> todos devem ter acesso ao quadro.</li>
+<li><strong>Atualização frequente:</strong> manter atualizado diariamente, principalmente durante o Daily Scrum.</li>
+<li><strong>Definition of Done:</strong> só mover para “Done” quando cumprir todos os critérios de qualidade definido.</li>
+<li><strong>Inspeção e adaptação:</strong> o quadro deve apoiar melhorias contínuas.</li>
+</ul>
 
-  <main class="artigo">
-    <h1 class="titles">Boas Práticas no Uso de Scrum Board</h1>
-    <ul>
-    <li><strong>Transparência:</strong> todos devem ter acesso ao quadro.</li>
-    <li><strong>Atualização frequente:</strong> manter atualizado diariamente, principalmente durante o Daily Scrum.</li>
-    <li><strong>Definition of Done:</strong> só mover para “Done” quando cumprir todos os critérios de qualidade definido.</li>
-    <li><strong>Inspeção e adaptação:</strong> o quadro deve apoiar melhorias contínuas.</li>
-    </ul>
-  </main>
-</div>
-{% endblock %}

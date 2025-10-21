@@ -1,54 +1,11 @@
-{% extends 'base.html' %}
+<h1 class="titles">Papéis no Scrum</h1>
+<p class="text">Os esforços de desenvolvimento do Scrum consistem em uma ou mais equipes Scrum, cada uma 
+composta por três papéis Scrum: <strong>Product Owner</strong>, <strong>Scrum Master</strong> e <strong>Time de Desenvolvimento</strong>.</p>
 
-{% block title %}Papéis no Scrum | SCRUM ACADEMY{% endblock %}
+<p class="text">Pode haver outros papéis ao usar o Scrum, mas o <em>framework</em> Scrum requer apenas os três listados aqui:</p>
 
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
+<p class="text"><strong>O Product Owner</strong> é responsável por <strong>o que</strong> será desenvolvido e em que ordem (o <em>backlog</em> do produto). É a voz do cliente.</p>
 
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 3</h2>
-      <p>Papéis no Scrum</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('papeis_scrum') }}" class="{% if request.endpoint == 'papeis_scrum' %}active{% endif %}">
-        <span>👥</span> Papéis do Scrum
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('product_owner') }}" class="{% if request.endpoint == 'product_owner' %}active{% endif %}">
-        <span>📊</span> Product Owner
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('scrum_master') }}" class="{% if request.endpoint == 'scrum_master' %}active{% endif %}">
-        <span>🧭</span> Scrum Master
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('devteam') }}" class="{% if request.endpoint == 'devteam' %}active{% endif %}">
-        <span>💻</span> Time de Desenvolvimento
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('exercicios_modulo3') }}" class="{% if request.endpoint == 'exercicios_modulo3' %}active{% endif %}">
-        <span>📝</span> Exercícios
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
+<p class="text"><strong>O Scrum Master</strong> é responsável por orientar a equipe na criação e no cumprimento de seu próprio processo, com base no <em>framework</em> Scrum mais amplo. Ele atua como um líder servidor, removendo impedimentos e garantindo que o Scrum seja compreendido e aplicado.</p>
 
-  <article class="artigo">
-    <h1 class="titles">Papéis no Scrum</h1>
-    <p class="text">Os esforços de desenvolvimento do Scrum consistem em uma ou mais equipes Scrum, cada uma 
-    composta por três papéis Scrum: <strong>Product Owner</strong>, <strong>Scrum Master</strong> e <strong>Time de Desenvolvimento</strong>.</p>
-    
-    <p class="text">Pode haver outros papéis ao usar o Scrum, mas o <em>framework</em> Scrum requer apenas os três listados aqui:</p>
-    
-    <p class="text"><strong>O Product Owner</strong> é responsável por <strong>o que</strong> será desenvolvido e em que ordem (o <em>backlog</em> do produto). É a voz do cliente.</p>
-    
-    <p class="text"><strong>O Scrum Master</strong> é responsável por orientar a equipe na criação e no cumprimento de seu próprio processo, com base no <em>framework</em> Scrum mais amplo. Ele atua como um líder servidor, removendo impedimentos e garantindo que o Scrum seja compreendido e aplicado.</p>
-    
-    <p class="text"><strong>O Time de Desenvolvimento</strong> (Development Team) é responsável por determinar <strong>como</strong> entregar o que o Product Owner solicitou, transformando itens do <em>backlog</em> em incrementos de produto utilizáveis a cada Sprint.</p>
-  </article>
-</div>
-{% endblock %}
+<p class="text"><strong>O Time de Desenvolvimento</strong> (Development Team) é responsável por determinar <strong>como</strong> entregar o que o Product Owner solicitou, transformando itens do <em>backlog</em> em incrementos de produto utilizáveis a cada Sprint.</p>

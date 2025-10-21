@@ -1,55 +1,12 @@
-{% extends "base.html" %}
-
-{% block title %}Comunicação Eficiente | SCRUM ACADEMY{% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 8</h2>
-      <p>Boas Práticas e Dicas</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('soft_skills') }}" class="{% if request.endpoint == 'soft_skills' %}active{% endif %}">
-        <span>💡</span> Soft Skills
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('comunicacao_eficiente') }}" class="{% if request.endpoint == 'comunicacao_eficiente' %}active{% endif %}">
-        <span>🗣️</span> Comunicação Eficiente
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('transparencia') }}" class="{% if request.endpoint == 'transparencia' %}active{% endif %}">
-        <span>🔍</span> Transparência
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('inspecao_continua') }}" class="{% if request.endpoint == 'inspecao_continua' %}active{% endif %}">
-        <span>📈</span> Inspeção Contínua
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('adaptacao_boas_praticas') }}" class="{% if request.endpoint == 'adaptacao_boas_praticas' %}active{% endif %}">
-        <span>✅</span> Adaptação, Melhoria e Boas Práticas
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-
-  <main class="artigo">
-    <h1 class="titles">Comunicação Eficiente</h1>
-    <p class="text">
-      Comunicação eficaz é a base para o funcionamento de qualquer time Scrum. Sem ela, até mesmo os melhores processos falham. 
-      Scrum é, essencialmente, um conjunto estruturado de conversas. Essas conversas precisam ser objetivas, constantes e abertas. 
-      As reuniões diárias (Daily Scrum) são exemplos claros disso: rápidas, objetivas, com foco no progresso e em possíveis impedimentos. 
-      Práticas como escuta ativa, comunicação não violenta e uso de linguagem clara ajudam a evitar ruídos e mal-entendidos. 
-      Além disso, é importante evitar suposições e sempre confirmar entendimentos, especialmente em equipes distribuídas ou que se comunicam principalmente por texto.
-    </p>
-    <p class="text">
-      Para garantir a efetividade da comunicação, o uso de ferramentas visuais (como quadros Kanban, burndown charts, e apresentações visuais durante o Sprint Review) facilita o alinhamento de todos. 
-      Times que compartilham contextos visuais têm mais facilidade em manter foco e transparência. Também é recomendável que o time desenvolva um vocabulário comum sobre o projeto, para evitar ambiguidades.
-    </p>
-  </main>
-</div>
-{% endblock %}
+<h1 class="titles">Comunicação Eficiente</h1>
+<p class="text">
+Comunicação eficaz é a base para o funcionamento de qualquer time Scrum. Sem ela, até mesmo os melhores processos falham. 
+Scrum é, essencialmente, um conjunto estruturado de conversas. Essas conversas precisam ser objetivas, constantes e abertas. 
+As reuniões diárias (Daily Scrum) são exemplos claros disso: rápidas, objetivas, com foco no progresso e em possíveis impedimentos. 
+Práticas como escuta ativa, comunicação não violenta e uso de linguagem clara ajudam a evitar ruídos e mal-entendidos. 
+Além disso, é importante evitar suposições e sempre confirmar entendimentos, especialmente em equipes distribuídas ou que se comunicam principalmente por texto.
+</p>
+<p class="text">
+Para garantir a efetividade da comunicação, o uso de ferramentas visuais (como quadros Kanban, burndown charts, e apresentações visuais durante o Sprint Review) facilita o alinhamento de todos. 
+Times que compartilham contextos visuais têm mais facilidade em manter foco e transparência. Também é recomendável que o time desenvolva um vocabulário comum sobre o projeto, para evitar ambiguidades.
+</p>

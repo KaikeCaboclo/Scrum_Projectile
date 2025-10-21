@@ -1,41 +1,7 @@
-{% extends "base.html" %}
-{% block title %}Sprint Backlog | SCRUM ACADEMY{% endblock %}
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
+<h1 class="titles">Sprint Backlog</h1>
+<h2 class="subtitles"><strong>O Que é Product Backlog:</strong> </h2>
 
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 5</h2>
-      <p>Artefatos do Scrum</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('artefatos') }}" class="{% if request.endpoint == 'artefatos' %}active{% endif %}">
-        <span>📦</span> Artefatos do Scrum
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('product_backlog') }}" class="{% if request.endpoint == 'product_backlog' %}active{% endif %}">
-        <span>📝</span> Product Backlog
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('sprint_backlog') }}" class="{% if request.endpoint == 'sprint_backlog' %}active{% endif %}">
-        <span>📋</span> Sprint Backlog
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('incremento') }}" class="{% if request.endpoint == 'incremento' %}active{% endif %}">
-        <span>🚀</span> Incremento
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-
-  <main class="artigo">
-    <h1 class="titles">Sprint Backlog</h1>
-    <h2 class="subtitles"><strong>O Que é Product Backlog:</strong> </h2>
-
-    <p class="text"> O Sprint Backlog é um dos três artefatos do Scrum e representa o conjunto de itens do
+<p class="text"> O Sprint Backlog é um dos três artefatos do Scrum e representa o conjunto de itens do
 <strong>Product Backlog</strong> selecionados para serem desenvolvidos durante a Sprint, junto com um
 plano detalhado para entregá-los. Esses itens são escolhidos pela equipe de
 desenvolvimento em conjunto com o <strong>Product Owner</strong> durante o evento de planejamento da
@@ -48,7 +14,3 @@ e utilizável até o final da Sprint. Ao contrário do <strong>Product Backlog</
 desenvolvimento, que o atualiza conforme o trabalho progride. Esse artefato é transparente,
 adaptável e visível para todos, funcionando como um guia operacional diário para o time e
 como uma ferramenta para inspecionar e adaptar o trabalho ao longo da Sprint.</p>
-  </main>
-</div>
-{% endblock %}
-

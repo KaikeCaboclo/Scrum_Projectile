@@ -1,20 +1,16 @@
 /* Layout da página com sidebar */
 .page-container {
-  display: flex;
   min-height: 100vh;
 }
 
 /* Área principal ao lado da sidebar */
 .main-content {
-  flex: 1;
-  margin-left: 280px; /* largura da sidebar */
   padding: 20px;
   background: #f5f7fa;
 }
 
 /* Container dos exercícios */
 .exercise-container {
-  max-width: 900px;
   margin: 0 auto;
   padding: 30px;
   background: #ffffff;

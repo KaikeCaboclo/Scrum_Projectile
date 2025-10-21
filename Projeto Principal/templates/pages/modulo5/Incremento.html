@@ -1,39 +1,6 @@
-{%extends "base.html" %}
-{% block title %}Incremento | SCRUM ACADEMY{% endblock %}
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 5</h2>
-      <p>Artefatos do Scrum</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('artefatos') }}" class="{% if request.endpoint == 'artefatos' %}active{% endif %}">
-        <span>📦</span> Artefatos do Scrum
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('product_backlog') }}" class="{% if request.endpoint == 'product_backlog' %}active{% endif %}">
-        <span>📝</span> Product Backlog
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('sprint_backlog') }}" class="{% if request.endpoint == 'sprint_backlog' %}active{% endif %}">
-        <span>📋</span> Sprint Backlog
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('incremento') }}" class="{% if request.endpoint == 'incremento' %}active{% endif %}">
-        <span>🚀</span> Incremento
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-  <main class="artigo">
-    <h1 class="titles">Incremento</h1>
-    <h2 class="subtitles"><strong>O Que é Incremento</strong></h2>
-    <p class="text"> O Incremento é o resultado concreto do trabalho realizado durante uma Sprint, que inclui
+<h1 class="titles">Incremento</h1>
+<h2 class="subtitles"><strong>O Que é Incremento</strong></h2>
+<p class="text"> O Incremento é o resultado concreto do trabalho realizado durante uma Sprint, que inclui
 todos os itens do <strong>Product Backlog</strong> completados e integrados com os incrementos das
 Sprints anteriores. O Incremento deve ser uma versão funcional, utilizável e que esteja em
 conformidade com a <strong>definição de Pronto (Definition of Done)</strong> estabelecida pela equipe.
@@ -41,6 +8,4 @@ Essa definição é um conjunto de critérios claros que garantem que o trabalho
 completo, testado e de qualidade, pronto para ser entregue ou disponibilizado ao cliente.
 Assim, o Incremento é considerado potencialmente liberável, ou seja, pode ser entregue ao
 cliente ou usuário final a qualquer momento, proporcionando valor real e imediato.</p>
-</main>
-</div>
-{% endblock %}
+

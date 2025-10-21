@@ -1,43 +1,4 @@
-{% extends 'base.html' %}
-{% block title %}Soft Skills | SCRUM ACADEMY{% endblock %}
-{% block extra_css %}  
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 8</h2>
-      <p>Boas Práticas e Dicas</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('soft_skills') }}" class="{% if request.endpoint == 'soft_skills' %}active{% endif %}">
-        <span>💡</span> Soft Skills
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('comunicacao_eficiente') }}" class="{% if request.endpoint == 'comunicacao_eficiente' %}active{% endif %}">
-        <span>🗣️</span> Comunicação Eficiente
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('transparencia') }}" class="{% if request.endpoint == 'transparencia' %}active{% endif %}">
-        <span>🔍</span> Transparência
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('inspecao_continua') }}" class="{% if request.endpoint == 'inspecao_continua' %}active{% endif %}">
-        <span>📈</span> Inspeção Contínua
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('adaptacao_boas_praticas') }}" class="{% if request.endpoint == 'adaptacao_boas_praticas' %}active{% endif %}">
-        <span>✅</span> Adaptação, Melhoria e Boas Práticas
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-<main class="artigo">
-    <h1 class="titles">	Boas Práticas e Dicas - Soft Skills </h1>
-    <p> Neste módulo, vamos explorar as boas práticas comportamentais e as habilidades interpessoais que sustentam o sucesso do Scrum na prática. Embora o framework traga papéis, eventos e artefatos bem definidos, a verdadeira agilidade só acontece quando o time atua com base em pilares humanos como comunicação eficiente, transparência, inspiração e adaptação constantes, além de uma cultura de melhoria contínua.</p>
-    <h2 class="subtitles"><strong>Soft Skills no Contexto do Scrum</strong></h2>
-    <p class="text"> Soft skills são habilidades comportamentais que influenciam diretamente a forma como as pessoas se relacionam e trabalham juntas. Não basta cumprir cerimônias; é preciso criar um ambiente onde a comunicação, a confiança e o respeito estejam presentes diariamente. As soft skills mais valorizadas no Scrum incluem: escuta ativa, empatia, assertividade, respeito mútuo, pensamento crítico e adaptabilidade.</p>
-</main>
-</div>
-{% endblock %}
+<h1 class="titles">	Boas Práticas e Dicas - Soft Skills </h1>
+<p> Neste módulo, vamos explorar as boas práticas comportamentais e as habilidades interpessoais que sustentam o sucesso do Scrum na prática. Embora o framework traga papéis, eventos e artefatos bem definidos, a verdadeira agilidade só acontece quando o time atua com base em pilares humanos como comunicação eficiente, transparência, inspiração e adaptação constantes, além de uma cultura de melhoria contínua.</p>
+<h2 class="subtitles"><strong>Soft Skills no Contexto do Scrum</strong></h2>
+<p class="text"> Soft skills são habilidades comportamentais que influenciam diretamente a forma como as pessoas se relacionam e trabalham juntas. Não basta cumprir cerimônias; é preciso criar um ambiente onde a comunicação, a confiança e o respeito estejam presentes diariamente. As soft skills mais valorizadas no Scrum incluem: escuta ativa, empatia, assertividade, respeito mútuo, pensamento crítico e adaptabilidade.</p>

@@ -1,56 +1,13 @@
-{% extends "base.html" %}
-
-{% block title %}Inspeção Contínua | SCRUM ACADEMY{% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 8</h2>
-      <p>Boas Práticas e Dicas</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('soft_skills') }}" class="{% if request.endpoint == 'soft_skills' %}active{% endif %}">
-        <span>💡</span> Soft Skills
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('comunicacao_eficiente') }}" class="{% if request.endpoint == 'comunicacao_eficiente' %}active{% endif %}">
-        <span>🗣️</span> Comunicação Eficiente
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('transparencia') }}" class="{% if request.endpoint == 'transparencia' %}active{% endif %}">
-        <span>🔍</span> Transparência
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('inspecao_continua') }}" class="{% if request.endpoint == 'inspecao_continua' %}active{% endif %}">
-        <span>📈</span> Inspeção Contínua
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('adaptacao_boas_praticas') }}" class="{% if request.endpoint == 'adaptacao_boas_praticas' %}active{% endif %}">
-        <span>✅</span> Adaptação, Melhoria e Boas Práticas
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-
-  <main class="artigo">
-    <h1 class="titles">Inspeção Contínua</h1>
-    <p class="text">
-      Inspecionar significa observar e refletir continuamente sobre o que está acontecendo. 
-      Essa prática é vital para garantir que o time esteja no caminho certo e para identificar oportunidades de melhoria. 
-      O Scrum promove a inspeção por meio de eventos como o Daily Scrum, a Sprint Review e a Sprint Retrospective.
-    </p>
-    <p class="text">
-      Mas inspecionar não é apenas "avaliar"; é observar com humildade e intenção de aprender. 
-      Times maduros conseguem fazer isso com empatia e foco em soluções. Uma habilidade essencial nesse processo 
-      é saber dar e receber feedback de forma construtiva. Modelos como DESC (Descrever, Expressar, Sugerir, Consequência) 
-      ou SBI (Situação, Comportamento, Impacto) podem ajudar nesse processo. O objetivo nunca é apontar culpados, 
-      mas sim entender o que está funcionando e o que pode melhorar.
-    </p>
-  </main>
-</div>
-{% endblock %}
+<h1 class="titles">Inspeção Contínua</h1>
+<p class="text">
+Inspecionar significa observar e refletir continuamente sobre o que está acontecendo. 
+Essa prática é vital para garantir que o time esteja no caminho certo e para identificar oportunidades de melhoria. 
+O Scrum promove a inspeção por meio de eventos como o Daily Scrum, a Sprint Review e a Sprint Retrospective.
+</p>
+<p class="text">
+Mas inspecionar não é apenas "avaliar"; é observar com humildade e intenção de aprender. 
+Times maduros conseguem fazer isso com empatia e foco em soluções. Uma habilidade essencial nesse processo 
+é saber dar e receber feedback de forma construtiva. Modelos como DESC (Descrever, Expressar, Sugerir, Consequência) 
+ou SBI (Situação, Comportamento, Impacto) podem ajudar nesse processo. O objetivo nunca é apontar culpados, 
+mas sim entender o que está funcionando e o que pode melhorar.
+</p>

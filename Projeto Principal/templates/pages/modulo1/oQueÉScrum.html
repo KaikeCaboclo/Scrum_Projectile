@@ -1,62 +1,15 @@
-{% extends 'base.html' %}
-
-{% block title %}O que é Scrum? | SCRUM ACADEMY{% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 1</h2>
-      <p>Introdução ao SCRUM</p>
-    </div>
-
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('oquee_scrum') }}" class="{% if request.endpoint == 'oquee_scrum' %}active{% endif %}">
-        <span>📋</span> O que é Scrum?
-        <input type="checkbox" class="check">
-      </a>
-
-      <a href="{{ url_for('porque_scrum') }}" class="{% if request.endpoint == 'porque_scrum' %}active{% endif %}">
-        <span>❓</span> Por que usar Scrum?
-        <input type="checkbox" class="check">
-      </a>
-
-      <a href="{{ url_for('manifesto_agil') }}" class="{% if request.endpoint == 'manifesto_agil' %}active{% endif %}">
-        <span>📜</span> Manifesto Ágil
-        <input type="checkbox" class="check">
-      </a>
-
-      <!-- Link de Exercícios -->
-      <a href="{{ url_for('exercicios_modulo1') }}" class="{% if request.endpoint == 'exercicios_modulo1' %}active{% endif %}">
-        <span>📝</span> Exercícios
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-</div>
-
-
-    <main class="artigo">
-        <h1 class="titles">O que é Scrum?</h1>
-        <p class="text">
-        Scrum é uma metodologia ágil de gestão de projetos criada nos anos 1990, inicialmente para o desenvolvimento de software.
-        Hoje, é utilizada em diversas áreas, como marketing, design e até desenvolvimento de hardware.
-        </p>
-        <p class="text">
-        O método se baseia em entregar valor desde cedo no projeto e frequentemente, partes do produto funcionando. 
-        Cada uma dessas entregas proporciona retorno ao investimento realizado pelos clientes do projeto, além de possibilitar o seu feedback rápido 
-        sobre o produto para que se realizem as mudanças ou adições necessárias.
-        </p>
-        <p class="text">
-        Dessa forma, seguir o Scrum evita erros a partir das direções indicadas pelo cliente durante o desenvolvimento do produto. 
-        Além disso, o acompanhamento do projeto pelo cliente torna o produto mais valoroso, pois atende a todas as necessidades do contratante 
-        e permite flexibilidade no projeto, que pode se adequar a possíveis novas demandas.
-        </p>
-
-    </main>
-</div>
-{% endblock %}
+<h1 class="titles">O que é Scrum?</h1>
+<p class="text">
+Scrum é uma metodologia ágil de gestão de projetos criada nos anos 1990, inicialmente para o desenvolvimento de software.
+Hoje, é utilizada em diversas áreas, como marketing, design e até desenvolvimento de hardware.
+</p>
+<p class="text">
+O método se baseia em entregar valor desde cedo no projeto e frequentemente, partes do produto funcionando. 
+Cada uma dessas entregas proporciona retorno ao investimento realizado pelos clientes do projeto, além de possibilitar o seu feedback rápido 
+sobre o produto para que se realizem as mudanças ou adições necessárias.
+</p>
+<p class="text">
+Dessa forma, seguir o Scrum evita erros a partir das direções indicadas pelo cliente durante o desenvolvimento do produto. 
+Além disso, o acompanhamento do projeto pelo cliente torna o produto mais valoroso, pois atende a todas as necessidades do contratante 
+e permite flexibilidade no projeto, que pode se adequar a possíveis novas demandas.
+</p>

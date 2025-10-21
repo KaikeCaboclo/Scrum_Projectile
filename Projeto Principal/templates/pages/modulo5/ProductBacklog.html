@@ -1,46 +1,13 @@
-{% extends "base.html" %}
-{% block title %}Product Backlog | SCRUM ACADEMY{% endblock %}
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-{% block content %}
+<h1 class="titles">Product Backlog</h1>
+<h2 class="subtitles"><strong>O Que é Product Backlog:</strong> </h2>
 
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 5</h2>
-      <p>Artefatos do Scrum</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('artefatos') }}" class="{% if request.endpoint == 'artefatos' %}active{% endif %}">
-        <span>📦</span> Artefatos do Scrum
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('product_backlog') }}" class="{% if request.endpoint == 'product_backlog' %}active{% endif %}">
-        <span>📝</span> Product Backlog
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('sprint_backlog') }}" class="{% if request.endpoint == 'sprint_backlog' %}active{% endif %}">
-        <span>📋</span> Sprint Backlog
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('incremento') }}" class="{% if request.endpoint == 'incremento' %}active{% endif %}">
-        <span>🚀</span> Incremento
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-  <main class="artigo">
-    <h1 class="titles">Product Backlog</h1>
-    <h2 class="subtitles"><strong>O Que é Product Backlog:</strong> </h2>
-
-    <p class="text"> <strong> O Product Backlog</strong> é uma lista dinâmica que contém tudo o que precisa ser feito para o
+<p class="text"> <strong> O Product Backlog</strong> é uma lista dinâmica que contém tudo o que precisa ser feito para o
 produto evoluir. Ele é de responsabilidade do <strong>Product Owner</strong>. Ordenado por prioridade de
 negócio. Atualizado constantemente com base em feedbacks e necessidades. Pense nele
 como o 'coração do produto'. Se não está no backlog, não será feito.</p>
 
-    <h2 class="subtitles"><strong>Product Backlog item-PBI:</strong> </h2>
-    <p class="text"> É o nome dado a cada item individual que compõe o <strong>Product Backlog</strong> no Scrum. Esses
+<h2 class="subtitles"><strong>Product Backlog item-PBI:</strong> </h2>
+<p class="text"> É o nome dado a cada item individual que compõe o <strong>Product Backlog</strong> no Scrum. Esses
 itens representam qualquer tipo de trabalho necessário para evoluir o produto, como novas
 funcionalidades, correções de erros, melhorias técnicas ou requisitos não funcionais. Cada
 PBI deve conter informações suficientes para que o time compreenda seu valor, sua
@@ -48,8 +15,8 @@ prioridade e o esforço estimado para realizá-lo. Os PBIs são continuamente pr
 detalhados, permitindo que a equipe de desenvolvimento trabalhe com foco nas entregas
 mais importantes e valiosas para o negócio.</p>
 
-    <h2 class="subtitles"><strong>User Stories:</strong> </h2>
-    <p class="text"> São uma forma comum e eficaz de descrever PBIs, colocando o foco nas necessidades
+<h2 class="subtitles"><strong>User Stories:</strong> </h2>
+<p class="text"> São uma forma comum e eficaz de descrever PBIs, colocando o foco nas necessidades
 reais do usuário final. Elas geralmente seguem o formato: <Strong>“Como [tipo de usuário], quero
 [ação], para que [benefício]”</strong>, o que ajuda a expressar o valor da funcionalidade de forma
 simples e objetiva. Com isso, as histórias de usuário facilitam o entendimento entre o time
@@ -57,14 +24,12 @@ técnico e os stakeholders, tornando os requisitos mais acessíveis e humanos. A
 elas incentivam a equipe a pensar não apenas no que será feito, mas para quem e por quê,
 promovendo um desenvolvimento mais orientado ao valor.</p>
 
-    <h2 class="subtitles"><strong>Critérios de aceitação:</strong> </h2>
-    <p class="text">São condições específicas e mensuráveis que definem quando uma User Storie
+<h2 class="subtitles"><strong>Critérios de aceitação:</strong> </h2>
+<p class="text">São condições específicas e mensuráveis que definem quando uma User Storie
 pode ser considerada “pronta”. Eles funcionam como um acordo entre o <strong>Product Owner </strong>e a
 equipe, estabelecendo os comportamentos esperados da funcionalidade, as regras de
 negócio que devem ser seguidas e os resultados mínimos que precisam ser atingidos. Com
 critérios bem definidos, a equipe tem mais clareza sobre o que precisa ser entregue, e os
 testes podem ser conduzidos de forma objetiva, garantindo que a entrega realmente atenda
 às expectativas. Isso contribui para a qualidade do produto e evita retrabalho.</p>
-  </main>
-</div>
-{% endblock %}
+

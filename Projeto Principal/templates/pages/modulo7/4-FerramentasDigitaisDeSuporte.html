@@ -1,47 +1,7 @@
-{% extends "base.html" %}
-{% block title %}Ferramentas Digitais de Suporte | SCRUM ACADEMY
-{% endblock %}
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 7</h2>
-      <p>SCRUM Board e Ferramentas</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('o_que_e_scrum_board') }}" class="{% if request.endpoint == 'o_que_e_scrum_board' %}active{% endif %}">
-        <span>📋</span> O Que é Scrum Board?
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('quadro_fisico_vs_digital') }}" class="{% if request.endpoint == 'quadro_fisico_vs_digital' %}active{% endif %}">
-        <span>🖥️</span> Quadro Físico vs Digital
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('colunas_tipicas_scrum_board') }}" class="{% if request.endpoint == 'colunas_tipicas_scrum_board' %}active{% endif %}">
-        <span>📊</span> Colunas Típicas de um Scrum Board
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('ferramentas_digitais_suporte') }}" class="{% if request.endpoint == 'ferramentas_digitais_suporte' %}active{% endif %}">
-        <span>🛠️</span> Ferramentas Digitais de Suporte
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('boas_praticas_scrum_board') }}" class="{% if request.endpoint == 'boas_praticas_scrum_board' %}active{% endif %}">
-        <span>✅</span> Boas Práticas no Scrum Board
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-  <main class="artigo">
-    <h1 class="titles">Ferramentas Digitais de Suporte</h1>
-    <p class="text" style="width:940px">Diversas ferramentas oferecem quadros digitais que podem ser usados em Scrum e Kanban: </p>
-    <ul>
-    <li><strong>Jira (Atlassian):</strong> Focado em times ágeis; permite backlog, sprints, relatórios de burndown e velocity.</li>
-    <li><strong>Trello:</strong> Fácil visualização, interação direta</li>
-    <li><strong>Azure DevOps (Azure Boards):</strong> Integrado ao ecossistema Microsoft, suporta sprints e relatórios de burndown.</li>
-    </ul>
-  </main>
-</div>
-{% endblock %}
+<h1 class="titles">Ferramentas Digitais de Suporte</h1>
+<p class="text" style="width:940px">Diversas ferramentas oferecem quadros digitais que podem ser usados em Scrum e Kanban: </p>
+<ul>
+<li><strong>Jira (Atlassian):</strong> Focado em times ágeis; permite backlog, sprints, relatórios de burndown e velocity.</li>
+<li><strong>Trello:</strong> Fácil visualização, interação direta</li>
+<li><strong>Azure DevOps (Azure Boards):</strong> Integrado ao ecossistema Microsoft, suporta sprints e relatórios de burndown.</li>
+</ul>

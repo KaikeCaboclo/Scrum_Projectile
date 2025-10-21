@@ -1,54 +1,13 @@
-{%extends "base.html" %}
-{% block title %}Colunas Típicas de um Scrum Board | SCRUM ACADEMY{% endblock %}
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 7</h2>
-      <p>SCRUM Board e Ferramentas</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('o_que_e_scrum_board') }}" class="{% if request.endpoint == 'o_que_e_scrum_board' %}active{% endif %}">
-        <span>📋</span> O Que é Scrum Board?
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('quadro_fisico_vs_digital') }}" class="{% if request.endpoint == 'quadro_fisico_vs_digital' %}active{% endif %}">
-        <span>🖥️</span> Quadro Físico vs Digital
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('colunas_tipicas_scrum_board') }}" class="{% if request.endpoint == 'colunas_tipicas_scrum_board' %}active{% endif %}">
-        <span>📊</span> Colunas Típicas de um Scrum Board
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('ferramentas_digitais_suporte') }}" class="{% if request.endpoint == 'ferramentas_digitais_suporte' %}active{% endif %}">
-        <span>🛠️</span> Ferramentas Digitais de Suporte
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('boas_praticas_scrum_board') }}" class="{% if request.endpoint == 'boas_praticas_scrum_board' %}active{% endif %}">
-        <span>✅</span> Boas Práticas no Scrum Board
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-  <main class="artigo">
-    <h1 class="titles">Colunas Típicas de um Scrum Board </h1>
-    <p class="text" style="width:940px">As colunas organizam as tarefas conforme seu estado atual. </p>
-    <p class="text" style="width:940px">As mais comuns são: </p>
-    <ul>
-    <li><strong>To Do (A Fazer):</strong> Tarefas planejadas para o sprint, mas ainda não iniciadas.</li>
-    <li><strong>Doing / In Progress (Em Progresso):</strong> Tarefas em andamento.</li>
-    <li><strong>Done (Concluído):</strong> Tarefas terminadas, de acordo com a Definition of Done.</li>
-    </ul>
-    <p class="text" style="width:940px">Algumas equipes também usam colunas adicionais, como: </p>
-    <ul>
-    <li><strong>Testing / Review (Em Revisão):</strong> Para revisões ou testes.</li>
-    <li><strong>Blocked (Com Impedimento):</strong> Tarefas impedidas por algum problema.</li>
-    </ul>
- 
-  </main>
-</div>
-{% endblock %}
+<h1 class="titles">Colunas Típicas de um Scrum Board </h1>
+<p class="text" style="width:940px">As colunas organizam as tarefas conforme seu estado atual. </p>
+<p class="text" style="width:940px">As mais comuns são: </p>
+<ul>
+<li><strong>To Do (A Fazer):</strong> Tarefas planejadas para o sprint, mas ainda não iniciadas.</li>
+<li><strong>Doing / In Progress (Em Progresso):</strong> Tarefas em andamento.</li>
+<li><strong>Done (Concluído):</strong> Tarefas terminadas, de acordo com a Definition of Done.</li>
+</ul>
+<p class="text" style="width:940px">Algumas equipes também usam colunas adicionais, como: </p>
+<ul>
+<li><strong>Testing / Review (Em Revisão):</strong> Para revisões ou testes.</li>
+<li><strong>Blocked (Com Impedimento):</strong> Tarefas impedidas por algum problema.</li>
+</ul>

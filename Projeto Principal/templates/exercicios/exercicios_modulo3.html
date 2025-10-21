@@ -1,7 +1,3 @@
-{% extends 'base.html' %}
-
-{% block title %}Exercícios – Módulo 3 | SCRUM ACADEMY{% endblock %}
-
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
@@ -9,35 +5,6 @@
 
 {% block content %}
 <div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 3</h2>
-      <p>Papéis no Scrum</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('papeis_scrum') }}" class="{% if request.endpoint == 'papeis_scrum' %}active{% endif %}">
-        <span>👥</span> Papéis do Scrum
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('product_owner') }}" class="{% if request.endpoint == 'product_owner' %}active{% endif %}">
-        <span>📊</span> Product Owner
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('scrum_master') }}" class="{% if request.endpoint == 'scrum_master' %}active{% endif %}">
-        <span>🧭</span> Scrum Master
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('devteam') }}" class="{% if request.endpoint == 'devteam' %}active{% endif %}">
-        <span>💻</span> Time de Desenvolvimento
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('exercicios_modulo3') }}" class="{% if request.endpoint == 'exercicios_modulo3' %}active{% endif %}">
-        <span>📝</span> Exercícios
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-
   <!-- MAIN CONTENT AREA -->
   <main class="main-content">
     <div class="exercise-container">

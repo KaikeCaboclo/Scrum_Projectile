@@ -1,76 +1,38 @@
-{% extends 'base.html' %}
-
-{% block title %}Exercícios – Módulo 1 | SCRUM ACADEMY{% endblock %}
-
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
 {% endblock %}
 
 {% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 1</h2>
-      <p>Introdução ao SCRUM</p>
-    </div>
+<!-- MAIN CONTENT AREA -->
+<main class="main-content">
+  <div class="exercise-container">
+    <header class="exercise-header">
+      <h1>Módulo 1 – Introdução ao Scrum</h1>
+      <p class="subtitle">Exercícios de Fixação</p>
+    </header>
 
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('oquee_scrum') }}" class="{% if request.endpoint == 'oquee_scrum' %}active{% endif %}">
-        <span>📋</span> O que é Scrum?
-        <input type="checkbox" class="check">
-      </a>
+    <section class="exercise-section">
+      {% for questao in questoes %}
+      <div class="exercise-card">
+        <h2>{{ questao.titulo }} – Pergunta {{ loop.index }}</h2>
+        <p>{{ questao.pergunta }}</p>
 
-      <a href="{{ url_for('porque_scrum') }}" class="{% if request.endpoint == 'porque_scrum' %}active{% endif %}">
-        <span>❓</span> Por que usar Scrum?
-        <input type="checkbox" class="check">
-      </a>
-
-      <a href="{{ url_for('manifesto_agil') }}" class="{% if request.endpoint == 'manifesto_agil' %}active{% endif %}">
-        <span>📜</span> Manifesto Ágil
-        <input type="checkbox" class="check">
-      </a>
-
-      <!-- Link de Exercícios -->
-      <a href="{{ url_for('exercicios_modulo1') }}" class="{% if request.endpoint == 'exercicios_modulo1' %}active{% endif %}">
-        <span>📝</span> Exercícios
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-</div>
-
-
-  <!-- MAIN CONTENT AREA -->
-  <main class="main-content">
-    <div class="exercise-container">
-      <header class="exercise-header">
-        <h1>Módulo 1 – Introdução ao Scrum</h1>
-        <p class="subtitle">Exercícios de Fixação</p>
-      </header>
-
-      <section class="exercise-section">
-        {% for questao in questoes %}
-        <div class="exercise-card">
-          <h2>{{ questao.titulo }} – Pergunta {{ loop.index }}</h2>
-          <p>{{ questao.pergunta }}</p>
-
-          <div class="opcoes">
-            {% for alternativa in questao.alternativas %}
-            <label class="opcao">
-              <input type="radio" name="questao{{ loop.parent.index0 if loop.parent else loop.index0 }}" value="{{ alternativa.letra }}">
-              <span>{{ alternativa.letra }}) {{ alternativa.texto }}</span>
-            </label>
-            {% endfor %}
-          </div>
+        <div class="opcoes">
+          {% for alternativa in questao.alternativas %}
+          <label class="opcao">
+            <input type="radio" name="questao{{ loop.parent.index0 if loop.parent else loop.index0 }}" value="{{ alternativa.letra }}">
+            <span>{{ alternativa.letra }} {{ alternativa.texto }}</span>
+          </label>
+          {% endfor %}
         </div>
-        {% endfor %}
-      </section>
+      </div>
+      {% endfor %}
+    </section>
 
-      <footer class="exercise-footer">
-        <a href="{{ url_for('modulo1') }}" class="btn-voltar">← Voltar ao Módulo 1</a>
-      </footer>
-    </div>
-  </main>
-</div>
+    <footer class="exercise-footer">
+      <a href="{{ url_for('modulo1') }}" class="btn-voltar">← Voltar ao Módulo 1</a>
+    </footer>
+  </div>
+</main>
 {% endblock %}

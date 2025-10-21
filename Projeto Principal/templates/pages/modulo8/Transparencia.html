@@ -1,56 +1,13 @@
-{% extends "base.html" %}
-
-{% block title %}Transparência | SCRUM ACADEMY{% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
-{% endblock %}
-
-{% block content %}
-<div class="page-container">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h2>Módulo 8</h2>
-      <p>Boas Práticas e Dicas</p>
-    </div>
-    <nav class="sidebar-menu">
-      <a href="{{ url_for('soft_skills') }}" class="{% if request.endpoint == 'soft_skills' %}active{% endif %}">
-        <span>💡</span> Soft Skills
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('comunicacao_eficiente') }}" class="{% if request.endpoint == 'comunicacao_eficiente' %}active{% endif %}">
-        <span>🗣️</span> Comunicação Eficiente
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('transparencia') }}" class="{% if request.endpoint == 'transparencia' %}active{% endif %}">
-        <span>🔍</span> Transparência
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('inspecao_continua') }}" class="{% if request.endpoint == 'inspecao_continua' %}active{% endif %}">
-        <span>📈</span> Inspeção Contínua
-        <input type="checkbox" class="check">
-      </a>
-      <a href="{{ url_for('adaptacao_boas_praticas') }}" class="{% if request.endpoint == 'adaptacao_boas_praticas' %}active{% endif %}">
-        <span>✅</span> Adaptação, Melhoria e Boas Práticas
-        <input type="checkbox" class="check">
-      </a>
-    </nav>
-  </aside>
-
-  <main class="artigo">
-    <h1 class="titles">Transparência</h1>
-    <p class="text">
-      Transparência é um dos pilares do Scrum e significa que todos os aspectos importantes do trabalho devem ser visíveis 
-      e compreensíveis para todos os envolvidos. Isso envolve desde o progresso do projeto até a clareza sobre responsabilidades 
-      e acordos do time. Um ambiente transparente não é apenas aquele onde tudo é "aberto", mas sim onde a informação correta 
-      está acessível e é compreendida por todos os envolvidos.
-    </p>
-    <p class="text">
-      Boas práticas para promover a transparência incluem: manter o Product Backlog visível e atualizado, garantir que a 
-      Definition of Done (DoD) esteja clara e seja conhecida por todos, criar acordos de equipe sobre como lidar com problemas 
-      e decisões, e ter coragem para expor dificuldades, impedimentos ou erros. Transparência também está ligada à segurança 
-      psicológica; membros do time precisam sentir que podem se expressar sem medo de julgamentos ou retaliações.
-    </p>
-  </main>
-</div>
-{% endblock %}
+<h1 class="titles">Transparência</h1>
+<p class="text">
+Transparência é um dos pilares do Scrum e significa que todos os aspectos importantes do trabalho devem ser visíveis 
+e compreensíveis para todos os envolvidos. Isso envolve desde o progresso do projeto até a clareza sobre responsabilidades 
+e acordos do time. Um ambiente transparente não é apenas aquele onde tudo é "aberto", mas sim onde a informação correta 
+está acessível e é compreendida por todos os envolvidos.
+</p>
+<p class="text">
+Boas práticas para promover a transparência incluem: manter o Product Backlog visível e atualizado, garantir que a 
+Definition of Done (DoD) esteja clara e seja conhecida por todos, criar acordos de equipe sobre como lidar com problemas 
+e decisões, e ter coragem para expor dificuldades, impedimentos ou erros. Transparência também está ligada à segurança 
+psicológica; membros do time precisam sentir que podem se expressar sem medo de julgamentos ou retaliações.
+</p>
