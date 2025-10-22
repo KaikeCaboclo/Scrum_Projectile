@@ -1,41 +1,68 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 6 – Implementação do SCRUM</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+{% extends 'base.html' %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../index.html" class="logo-text">SCRUM ACADEMY</a>
+{% block title %}Módulo 1 - Introdução ao SCRUM | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Módulo 9</h2>
+        <p>Simulações e Exercícios Práticos</p>
       </div>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
-    </nav>
-  </header>
 
-  <main class="content">
-    <h1>Módulo 9 – Implementação do SCRUM</h1>
+      <nav class="sidebar-menu">
+        <a href="" data-conteudos="{{ url_for('introducao') }}" class="navegacacao_conteudo">
+          <span>📋</span> Introdução Ao Treinamento Scrum
+          <input type="checkbox" class="check" name="modulo9" value="1">
+        </a>
 
-    <div class="status-card">
-      <p><strong>Status:</strong> Em andamento</p>
-    </div>
-  </main>
+        <a href="" data-conteudos="{{ url_for('time_scrum') }}" class="navegacacao_conteudo" >
+          <span>📝</span> O Time Scrum
+          <input type="checkbox" class="check" value="2" name="modulo9">
+        </a>
 
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+        <a href="" data-conteudos="{{ url_for('criando_bl') }}" class="navegacacao_conteudo">
+          <span>📜</span> Criando o Produto Backlog
+          <input type="checkbox" class="check" value="3" name="modulo9">
+        </a>
+
+        <a href="" data-conteudos="{{ url_for('planejamento_sprint') }}" class="navegacacao_conteudo">
+          <span>📝</span> Planejamento da Sprint
+          <input type="checkbox" class="check" value="4" name="modulo9">
+        </a>
+
+         <a href="" data-conteudos="{{ url_for('scrum_board') }}" class="navegacacao_conteudo">
+          <span>📝</span> Scrum Board
+          <input type="checkbox" class="check" value="5" name="modulo9">
+        </a>
+
+         <a href="" data-conteudos="{{ url_for('daily') }}" class="navegacacao_conteudo">
+          <span>📝</span> Daily Scrum
+          <input type="checkbox" class="check" value="6" name="modulo9">
+        </a>
+
+         <a href="" data-conteudos="{{ url_for('pratica_cerimonias') }}" class="navegacacao_conteudo">
+          <span>📝</span> Sprint Review e Retrospective
+          <input type="checkbox" class="check" value="7" name="modulo9">
+        </a>
+
+         <a href="" data-conteudos="{{ url_for('conclusao') }}" class="navegacacao_conteudo">
+          <span>📝</span> Conclusão do Treinamento Scrum
+          <input type="checkbox" class="check" value="8" name="modulo9">
+        </a>
+      </nav>
+    </aside>
+
+  <div>
+    <article class="artigo">
+      <h1 class="titles">Módulo 9</h1>
+      
+    </article>
+  </div>
+</div>
+<script src="../../../static/modulos.js"></script>
+{% endblock %}
