@@ -1,0 +1,243 @@
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
+{% endblock %}
+
+<h1>Exercícios do Módulo 2 - </h1>
+
+<div class="exercise-container">
+    <section class="exercise-section">
+
+    <div class="exercise-card">
+        <h2>O que é o Agile?</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="agile" value="1">
+            <span>Um método tradicional de desenvolvimento linear</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="agile" value="2">
+            <span>Uma filosofia que prioriza planejamento detalhado e pouca mudança</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="agile" value="correto3">
+            <span>Uma filosofia de desenvolvimento que valoriza adaptação, colaboração e entrega contínua de valor</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="agile" value="4">
+            <span>Um software usado para gerenciar projetos</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>Qual é a principal diferença entre o Agile e o modelo Waterfall?</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="waterfall" value="5">
+            <span>O Agile é mais demorado que o Waterfall</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="waterfall" value="6">
+            <span>O Waterfall é mais flexível que o Agile</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="waterfall" value="correto7">
+            <span>O Agile trabalha com ciclos curtos e feedback constante, enquanto o Waterfall é linear e rígido</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="waterfall" value="8">
+            <span>O Agile é usado apenas para projetos de software grandes</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>No método Waterfall, o cliente vê o produto:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="cliente" value="9">
+            <span>Durante cada sprint</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="cliente" value="correto10">
+            <span>Apenas no final do processo</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="cliente" value="11">
+            <span>A cada entrega parcial</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="cliente" value="12">
+            <span>No início do projeto</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>No Agile, o projeto é dividido em:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="projeto" value="13">
+            <span>Fases lineares e sequenciais</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="projeto" value="14">
+            <span>Grandes blocos de desenvolvimento fixos</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="projeto" value="correto15">
+            <span>Ciclos curtos e iterativos chamados de iterações ou sprints</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="projeto" value="16">
+            <span>Etapas de aprovação pelo cliente</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>Uma das principais vantagens do Agile é:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="vantagens" value="17">
+            <span>Dificuldade em mudar o escopo</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="vantagens" value="18">
+            <span>Atraso nas entregas parciais</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="vantagens" value="correto19">
+            <span>Alta adaptabilidade a mudanças e feedback rápido</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="vantagens" value="20">
+            <span>Pouca colaboração entre equipe e cliente</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>O que significa “Entrega Contínua de Valor” no Agile?</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="valor" value="21">
+            <span>Entregar o produto somente ao final do projeto</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="valor" value="22">
+            <span>Lançar versões completas apenas após o planejamento total</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="valor" value="correto23">
+            <span>Entregar versões parciais do produto em curtos prazos, gerando valor contínuo ao cliente</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="valor" value="24">
+            <span>Garantir que o produto não mude durante o desenvolvimento</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>No contexto do Scrum, o Product Backlog representa:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="backlog" value="25">
+            <span>As tarefas a serem executadas na sprint atual</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="backlog" value="correto26">
+            <span>A lista de tudo que o projeto precisa desenvolver</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="backlog" value="27">
+            <span>O histórico de falhas encontradas</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="backlog" value="28">
+            <span>As atividades concluídas</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>Qual evento do Scrum é uma reunião curta e diária para alinhar o time?</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="daily" value="29">
+            <span>Sprint Review</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="daily" value="30">
+            <span>Sprint Planning</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="daily" value="correto31">
+            <span>Daily Scrum</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="daily" value="32">
+            <span>Sprint Retrospective</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>A Sprint Review tem como objetivo:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="review" value="33">
+            <span>Revisar as falhas técnicas do sistema</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="review" value="correto34">
+            <span>Demonstrar o que foi entregue ao final da sprint e coletar feedback</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="review" value="35">
+            <span>Planejar a próxima sprint</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="review" value="36">
+            <span>Discutir o desempenho individual dos membros</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>A Sprint Retrospective serve para:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="retrospective" value="37">
+            <span>Apresentar o produto ao cliente</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="retrospective" value="38">
+            <span>Corrigir bugs do código</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="retrospective" value="correto39">
+            <span>Refletir sobre o processo de trabalho e propor melhorias</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="retrospective" value="40">
+            <span>Planejar o backlog do projeto</span>
+        </label>
+        </div>
+    </div>
+
+    </section>
+
+</div>

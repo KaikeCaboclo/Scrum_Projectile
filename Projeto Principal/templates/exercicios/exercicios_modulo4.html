@@ -1,0 +1,243 @@
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
+{% endblock %}
+
+<h1>Exercícios do Módulo 4 - Eventos e cerimônias do Scrum</h1>
+
+<div class="exercise-container">
+    <section class="exercise-section">
+
+        <div class="exercise-card">
+            <h2>O que é um Sprint no Scrum?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="sprint" value="correto1">
+                <span>Um ciclo de trabalho de 1 a 4 semanas</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="sprint" value="2">
+                <span>Uma reunião semanal de revisão</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="sprint" value="3">
+                <span>Um documento de planejamento</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="sprint" value="4">
+                <span>Um papel do time de desenvolvimento</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Qual o principal benefício de Sprints curtos para equipes iniciantes?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="beneficio" value="5">
+                <span>Maior complexidade de tarefas</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="beneficio" value="correto6">
+                <span>Feedback mais frequente e aprendizado rápido</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="beneficio" value="7">
+                <span>Menos entregas ao cliente</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="beneficio" value="8">
+                <span>Maior tempo para planejamento</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Quem participa da reunião de Sprint Planning?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="planning" value="9">
+                <span>Apenas o Scrum Master</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="planning" value="10">
+                <span>Somente o Product Owner</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="planning" value="correto11">
+                <span>Product Owner, Time de Desenvolvimento e Scrum Master</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="planning" value="12">
+                <span>A equipe de marketing</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O que é o Sprint Backlog?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="backlog" value="13">
+                <span>Uma lista de problemas do projeto</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="backlog" value="correto14">
+                <span>O plano e os itens selecionados para o Sprint</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="backlog" value="15">
+                <span>Um documento de metas futuras</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="backlog" value="16">
+                <span>Um relatório de impedimentos</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Qual é o objetivo da Daily Scrum?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="daily" value="17">
+                <span>Revisar o produto final com o cliente</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="daily" value="correto18">
+                <span>Planejar o trabalho diário e identificar obstáculos</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="daily" value="19">
+                <span>Analisar o backlog do produto</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="daily" value="20">
+                <span>Discutir mudanças contratuais</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Quais perguntas são respondidas durante a Daily Scrum?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="perguntas" value="correto21">
+                <span>O que fiz? O que farei? Quais obstáculos existem?</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="perguntas" value="22">
+                <span>Quem será o líder? Quais metas teremos? Como medir o sucesso?</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="perguntas" value="23">
+                <span>Quantos bugs foram corrigidos? Quais tarefas restam?</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="perguntas" value="24">
+                <span>Quem está ausente? O que deu errado?</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Qual o foco da Sprint Review?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="review" value="25">
+                <span>Avaliar o processo de trabalho</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="review" value="correto26">
+                <span>Inspecionar e adaptar o produto gerado</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="review" value="27">
+                <span>Revisar a produtividade individual</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="review" value="28">
+                <span>Documentar as falhas do time</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Quem participa da Sprint Review?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="participa" value="29">
+                <span>Somente o Product Owner</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="participa" value="30">
+                <span>Somente os desenvolvedores</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="participa" value="correto31">
+                <span>Scrum Team, clientes e partes interessadas</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="participa" value="32">
+                <span>Apenas o Scrum Master</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Qual o foco principal da Sprint Retrospective?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="retrospective" value="correto33">
+                <span>Aprimorar o processo e identificar melhorias</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="retrospective" value="34">
+                <span>Apresentar o produto final</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="retrospective" value="35">
+                <span>Definir o backlog do próximo projeto</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="retrospective" value="36">
+                <span>Analisar o desempenho financeiro</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O que deve resultar de uma Sprint Retrospective bem conduzida?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="resultado" value="37">
+                <span>Um relatório de erros</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="resultado" value="correto38">
+                <span>Ações práticas de melhoria para o próximo Sprint</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="resultado" value="39">
+                <span>Um novo backlog de produto</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="resultado" value="40">
+                <span>Uma redefinição do time Scrum</span>
+            </label>
+            </div>
+        </div>
+
+    </section>
+
+</div>

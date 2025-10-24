@@ -1,0 +1,242 @@
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
+{% endblock %}
+
+<h1>Exercícios do Módulo 5 - Artefatos</h1>
+<div class="exercise-container">
+    <section class="exercise-section">
+
+        <div class="exercise-card">
+            <h2>No Scrum, os artefatos têm como principal objetivo:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="artefatos" value="1">
+                <span>Tornar o processo burocrático.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="artefatos" value="correto2">
+                <span>Garantir transparência, alinhamento e rastreabilidade.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="artefatos" value="3">
+                <span>Substituir a comunicação entre os membros do time.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="artefatos" value="4">
+                <span>Definir regras fixas de documentação.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O Product Backlog é responsabilidade de:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="backlog" value="5">
+                <span>Scrum Master.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="backlog" value="correto6">
+                <span>Product Owner.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="backlog" value="7">
+                <span>Time de Desenvolvimento.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="backlog" value="8">
+                <span>Stakeholders externos.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O Product Backlog Item (PBI) representa:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="pbi" value="9">
+                <span>Um requisito técnico isolado.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="pbi" value="10">
+                <span>Um elemento qualquer do projeto, sem necessidade de priorização.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="pbi" value="correto11">
+                <span>Qualquer tipo de trabalho necessário para evoluir o produto.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="pbi" value="12">
+                <span>Apenas correções de erros.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>As User Stories ajudam o time Scrum a:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="userstories" value="13">
+                <span>Medir a velocidade da Sprint.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="userstories" value="correto14">
+                <span>Entender o valor e o propósito de cada funcionalidade para o usuário final.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="userstories" value="15">
+                <span>Controlar tarefas administrativas.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="userstories" value="16">
+                <span>Corrigir bugs automaticamente.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Os critérios de aceitação servem para:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="criterios" value="correto17">
+                <span>Definir quando uma história está pronta para ser testada.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="criterios" value="18">
+                <span>Descrever regras genéricas de negócio.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="criterios" value="19">
+                <span>Avaliar o desempenho do time.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="criterios" value="20">
+                <span>Garantir que o código está documentado.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O Sprint Backlog é composto por:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="sprintbacklog" value="21">
+                <span>O Product Backlog e o incremento.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="sprintbacklog" value="correto22">
+                <span>Itens selecionados do Product Backlog e um plano para entregá-los.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="sprintbacklog" value="23">
+                <span>Tarefas administrativas e relatórios.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="sprintbacklog" value="24">
+                <span>Somente bugs e correções.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>A responsabilidade de atualizar o Sprint Backlog durante a sprint é do:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="atualizar" value="25">
+                <span>Scrum Master.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="atualizar" value="26">
+                <span>Product Owner.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="atualizar" value="correto27">
+                <span>Time de Desenvolvimento.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="atualizar" value="28">
+                <span>Cliente.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O Incremento no Scrum é:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="incremento" value="29">
+                <span>O resultado potencialmente liberável da Sprint.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="incremento" value="30">
+                <span>Uma lista de tarefas pendentes.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="incremento" value="31">
+                <span>O backlog atualizado do produto.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="incremento" value="32">
+                <span>Um documento de revisão de sprint.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>A Definition of Done (DoD) é importante porque:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="dod" value="33">
+                <span>Define quando o produto está completamente pronto.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="dod" value="correto34">
+                <span>Estabelece critérios objetivos para garantir a qualidade e completude do trabalho.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="dod" value="35">
+                <span>É usada apenas pelo Product Owner.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="dod" value="36">
+                <span>Define os papéis do time.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O Incremento deve ser:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="incrementodef" value="correto37">
+                <span>Funcional, integrado e utilizável.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="incrementodef" value="38">
+                <span>Apenas documentado.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="incrementodef" value="39">
+                <span>Planejado para uma sprint futura.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="incrementodef" value="40">
+                <span>Validado apenas pelo cliente após todas as sprints.</span>
+            </label>
+            </div>
+        </div>
+
+        </section>
+
+</div>

@@ -225,13 +225,37 @@ def exercicios_modulo1():
         questoes = json.load(f)
     return render_template('exercicios/exercicios_modulo1.html', questoes=questoes)
 
+@app.route('/exercicios/modulo2')
+def exercicios_modulo2():
+    return render_template('exercicios/exercicios_modulo2.html')
+
+
 @app.route('/exercicios/modulo3')
 def exercicios_modulo3():
     with open('data/questoes_modulo3.json', encoding='utf-8') as f:
         questoes = json.load(f)
     return render_template('exercicios/exercicios_modulo3.html', questoes=questoes)
 
+@app.route('/exercicios/modulo4')
+def exercicios_modulo4():
+    return render_template('exercicios/exercicios_modulo4.html')
 
+@app.route('/exercicios/modulo5')
+def exercicios_modulo5():
+    return render_template('exercicios/exercicios_modulo5.html')
+
+@app.route('/exercicios/modulo6')
+def exercicios_modulo6():
+    return render_template('exercicios/exercicios_modulo6.html')
+
+
+@app.route('/exercicios/modulo7')
+def exercicios_modulo7():
+    return render_template('exercicios/exercicios_modulo7.html')
+
+@app.route('/exercicios/modulo8')
+def exercicios_modulo8():
+    return render_template('exercicios/exercicios_modulo8.html')
 
 
 if __name__ == '__main__':

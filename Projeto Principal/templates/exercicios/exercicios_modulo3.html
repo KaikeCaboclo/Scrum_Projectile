@@ -3,38 +3,356 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
 {% endblock %}
 
-{% block content %}
-<div class="page-container">
-  <!-- MAIN CONTENT AREA -->
-  <main class="main-content">
-    <div class="exercise-container">
-      <header class="exercise-header">
-        <h1>Módulo 3 – Papéis no Scrum</h1>
-        <p class="subtitle">Exercícios de Fixação</p>
-      </header>
+<h1 margin-bottom="10px;">Exercícios do Módulo 3 - Papéis do Scrum</h1>
+<div class="exercise-container">
+  <section class="exercise-section">
 
-      <section class="exercise-section">
-        {% for questao in questoes %}
-        <div class="exercise-card">
-          <h2>{{ questao.titulo }} – Pergunta {{ loop.index }}</h2>
-          <p>{{ questao.pergunta }}</p>
-
-          <div class="opcoes">
-            {% for alternativa in questao.alternativas %}
-            <label class="opcao">
-              <input type="radio" name="questao{{ loop.parent.index0 if loop.parent else loop.index0 }}" value="{{ alternativa.letra }}">
-              <span>{{ alternativa.letra }}) {{ alternativa.texto }}</span>
-            </label>
-            {% endfor %}
-          </div>
-        </div>
-        {% endfor %}
-      </section>
-
-      <footer class="exercise-footer">
-        <a href="{{ url_for('modulo3') }}" class="btn-voltar">← Voltar ao Módulo 3</a>
-      </footer>
+    <div class="exercise-card">
+      <h2>Qual é a principal responsabilidade do Product Owner dentro de um time Scrum?</h2>
+      <p>Qual é a principal responsabilidade do Product Owner dentro de um time Scrum?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="product" value="1">
+          <span>Organizar as reuniões de Sprint Planning</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="product" value="2">
+          <span>Garantir que os testes sejam executados corretamente</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="product" value="correto3">
+          <span>Gerenciar o Product Backlog e maximizar o valor do produto</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="product" value="4">
+          <span>Supervisionar tecnicamente a equipe de desenvolvimento</span>
+        </label>
+      </div>
     </div>
-  </main>
+
+    <div class="exercise-card">
+      <h2>O que o Product Owner deve fazer ao longo do projeto com as partes interessadas (stakeholders)?</h2>
+      <p>O que o Product Owner deve fazer ao longo do projeto com as partes interessadas (stakeholders)?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="stakeholders" value="5">
+          <span>Enviar relatórios semanais</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="stakeholders" value="6">
+          <span>Evitar interferência com os planos da equipe</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="stakeholders" value="correto7">
+          <span>Manter comunicação frequente, entender necessidades e influenciar decisões</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="stakeholders" value="8">
+          <span>Permitir que as partes interessadas alterem o Product Backlog livremente</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>O que é a Visão do Produto e qual o papel do Product Owner em relação a ela?</h2>
+      <p>O que é a Visão do Produto e qual o papel do Product Owner em relação a ela?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="visao" value="9">
+          <span>Uma meta técnica criada pelo time de desenvolvimento</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="visao" value="correto10">
+          <span>Um direcionamento estratégico criado e mantido pelo PO para guiar o desenvolvimento</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="visao" value="11">
+          <span>Um documento fixo definido no início do projeto</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="visao" value="12">
+          <span>Uma lista de funcionalidades a serem entregues</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Como o Product Owner colabora com o Time de Desenvolvimento durante um Sprint?</h2>
+      <p>Como o Product Owner colabora com o Time de Desenvolvimento durante um Sprint?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="colabora" value="13">
+          <span>Exige relatórios diários de progresso</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="colabora" value="correto14">
+          <span>Está acessível para esclarecimentos e participa do refinamento do backlog</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="colabora" value="15">
+          <span>Define sozinho os itens do Sprint Backlog</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="colabora" value="16">
+          <span>Solicita mudanças na meta do Sprint a qualquer momento</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Quando o Product Owner pode aceitar ou rejeitar as entregas do time?</h2>
+      <p>Quando o Product Owner pode aceitar ou rejeitar as entregas do time?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="aceitar" value="17">
+          <span>Durante a reunião diária (Daily Scrum)</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="aceitar" value="18">
+          <span>Ao final do Sprint Planning</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="aceitar" value="correto19">
+          <span>Na Sprint Review, com base na Definição de Pronto e Critérios de Aceitação</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="aceitar" value="20">
+          <span>Apenas após validação externa com o cliente final</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Qual das alternativas representa corretamente o papel do Scrum Master dentro de um time Scrum?</h2>
+      <p>Qual das alternativas representa corretamente o papel do Scrum Master dentro de um time Scrum?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="scrum" value="21">
+          <span>Gerenciar o cronograma e distribuir tarefas à equipe</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="scrum" value="correto22">
+          <span>Facilitar processos e remover impedimentos</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="scrum" value="23">
+          <span>Tomar decisões técnicas sobre o produto</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="scrum" value="24">
+          <span>Aprovar ou rejeitar os entregáveis do Sprint</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>O que significa dizer que o Scrum Master é “neutro”?</h2>
+      <p>O que significa dizer que o Scrum Master é “neutro”?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="neutro" value="25">
+          <span>Ele não participa das reuniões de planejamento, seu papel é de observador</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="neutro" value="correto26">
+          <span>Ele não interfere nas decisões do time, mas foca em facilita-las</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="neutro" value="27">
+          <span>Ele assume um papel decisório sobre prazos e metas</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="neutro" value="28">
+          <span>Ele atua como gerente do projeto e do time</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>O que o Scrum Master faz ao identificar um impedimento que o Time de Desenvolvimento não consegue resolver?</h2>
+      <p>O que o Scrum Master faz ao identificar um impedimento que o Time de Desenvolvimento não consegue resolver?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="impedimento" value="29">
+          <span>Solicita ao Product Owner que o resolva</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="impedimento" value="30">
+          <span>Ignora, pois problemas são de responsabilidade do time</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="impedimento" value="correto31">
+          <span>Remove o impedimento ou mobiliza recursos para removê-lo</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="impedimento" value="32">
+          <span>Suspende o Sprint até o problema ser resolvido</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Como o Scrum Master contribui para aumentar a autonomia do time?</h2>
+      <p>Como o Scrum Master contribui para aumentar a autonomia do time?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="autonomia" value="33">
+          <span>Tomando decisões no lugar do time para ganhar agilidade, assumindo assim o seu papel de líder</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="autonomia" value="34">
+          <span>Estabelecendo normas fixas e controlando sua execução</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="autonomia" value="correto35">
+          <span>Ensinando o time a se auto-organizar e tomar decisões com base em informações transparentes</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="autonomia" value="36">
+          <span>Atendendo diretamente às demandas dos stakeholders no lugar do PO</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Qual é a abordagem correta do Scrum Master para garantir que os eventos do Scrum (como a Daily Scrum) aconteçam?</h2>
+      <p>Qual é a abordagem correta do Scrum Master para garantir que os eventos do Scrum (como a Daily Scrum) aconteçam?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="eventos" value="37">
+          <span>Lembrar o time diariamente do horário da reunião</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="eventos" value="38">
+          <span>Deixar que o Product Owner lidere os eventos</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="eventos" value="correto39">
+          <span>Orientar e capacitar o time para se auto-organizar e conduzir os eventos</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="eventos" value="40">
+          <span>Coordenar todas as reuniões e tomar notas para documentação</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Qual das alternativas descreve corretamente o Time de Desenvolvimento no Scrum?</h2>
+      <p>Qual das alternativas descreve corretamente o Time de Desenvolvimento no Scrum?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="time" value="correto41">
+          <span>Um time multidisciplinar e auto-organizado, responsável por entregar incrementos do produto com valor</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="time" value="42">
+          <span>Um conjunto de desenvolvedores que executam apenas tarefas atribuídas pelo Scrum Master</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="time" value="43">
+          <span>Um grupo de especialistas liderado por um gerente de projeto</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="time" value="44">
+          <span>Um time que depende do Product Owner para planejar tecnicamente o desenvolvimento do produto</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Sobre o planejamento do trabalho durante o Sprint, é correto afirmar que:</h2>
+      <p>Sobre o planejamento do trabalho durante o Sprint, é correto afirmar que:</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="planejamento" value="45">
+          <span>O Product Owner define como os itens do Sprint Backlog serão desenvolvidos</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="planejamento" value="46">
+          <span>O Scrum Master divide as tarefas entre os membros do time</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="planejamento" value="47">
+          <span>O planejamento é feito por um gerente externo, com base na meta do Product Owner</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="planejamento" value="correto48">
+          <span>O Time de Desenvolvimento define como o trabalho será realizado, após negociar com o Product Owner o que será feito</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>O que caracteriza um impedimento para o Time de Desenvolvimento?</h2>
+      <p>O que caracteriza um impedimento para o Time de Desenvolvimento?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="impedimentoTime" value="49">
+          <span>Qualquer dúvida técnica durante o desenvolvimento</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="impedimentoTime" value="correto50">
+          <span>Um obstáculo significativo que impede ou atrasa o trabalho e que o time não consegue resolver sozinho</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="impedimentoTime" value="51">
+          <span>Problemas do dia a dia facilmente resolvidos pelo próprio time</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="impedimentoTime" value="52">
+          <span>Falta de motivação por parte de algum membro da equipe</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Em relação à auto-organização, é correto afirmar que o Time de Desenvolvimento:</h2>
+      <p>Em relação à auto-organização, é correto afirmar que o Time de Desenvolvimento:</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="autoorganizacao" value="53">
+          <span>Atua de forma isolada, sem considerar metas ou regras da organização</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="autoorganizacao" value="54">
+          <span>É autônomo, mas depende do Product Owner para decidir como realizar as tarefas</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="autoorganizacao" value="correto55">
+          <span>Gerencia seu próprio trabalho, colaborativamente, com foco nas metas e alinhado com a organização</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="autoorganizacao" value="56">
+          <span>Se auto-organiza apenas nas reuniões de Daily Scrum</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Qual o foco principal do Time de Desenvolvimento durante um Sprint?</h2>
+      <p>Qual o foco principal do Time de Desenvolvimento durante um Sprint?</p>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="foco" value="57">
+          <span>Cumprir todas as tarefas planejadas, independentemente da meta</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="foco" value="58">
+          <span>Produzir o máximo de código possível</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="foco" value="59">
+          <span>Realizar tarefas atribuídas pelo Scrum Master</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="foco" value="correto60">
+          <span>Atingir a Meta do Sprint, entregando valor ao cliente com qualidade</span>
+        </label>
+      </div>
+    </div>
+
+  </section>
+
 </div>
-{% endblock %}
+  

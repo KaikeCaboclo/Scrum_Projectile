@@ -1,0 +1,93 @@
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
+{% endblock %}
+
+<h1>Exercícios do Módulo 6 - </h1>
+
+<div class="exercise-container">
+    <section class="exercise-section">
+        
+        <div class="exercise-card">
+            <h2>Qual é o principal objetivo das estimativas no Agile?</h2>
+            <label><input type="radio" name="estimativas" value="1"> Prever o futuro com precisão absoluta</label><br>
+            <label><input type="radio" name="estimativas" value="2"> Controlar rigidamente o tempo de entrega</label><br>
+            <label><input type="radio" name="estimativas" value="correto3"> Criar uma visão compartilhada sobre o esforço relativo das tarefas</label><br>
+            <label><input type="radio" name="estimativas" value="4"> Reduzir o número de reuniões de planejamento</label>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O que é o Planning Poker?</h2>
+            <label><input type="radio" name="planning" value="5"> Uma técnica para medir velocidade da equipe</label><br>
+            <label><input type="radio" name="planning" value="correto6"> Um jogo de cartas usado para estimar o esforço das tarefas de forma colaborativa</label><br>
+            <label><input type="radio" name="planning" value="7"> Um método para definir prioridades de entrega</label><br>
+            <label><input type="radio" name="planning" value="8"> Uma ferramenta para revisar código em grupo</label>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Quais números são comumente usados nas cartas do Planning Poker?</h2>
+            <label><input type="radio" name="numeros" value="9"> 1, 2, 3, 4, 5, 6, 7</label><br>
+            <label><input type="radio" name="numeros" value="correto10"> 1, 2, 3, 5, 8, 13, 21</label><br>
+            <label><input type="radio" name="numeros" value="11"> 2, 4, 6, 8, 10, 12</label><br>
+            <label><input type="radio" name="numeros" value="12"> 5, 10, 15, 20, 25</label>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Uma das principais vantagens do Planning Poker é:</h2>
+            <label><input type="radio" name="vantagem" value="13"> Permitir que apenas o Product Owner decida o valor das estimativas</label><br>
+            <label><input type="radio" name="vantagem" value="14"> Reduzir a interação entre os membros da equipe</label><br>
+            <label><input type="radio" name="vantagem" value="correto15"> Estimular a participação e o alinhamento do time sobre a complexidade das tarefas</label><br>
+            <label><input type="radio" name="vantagem" value="16"> Focar apenas em números exatos</label>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O que o método T-shirt Sizes utiliza para estimar o esforço?</h2>
+            <label><input type="radio" name="tshirt" value="17"> Pontos de história</label><br>
+            <label><input type="radio" name="tshirt" value="18"> Horas de trabalho</label><br>
+            <label><input type="radio" name="tshirt" value="correto19"> Tamanhos relativos como P, M, G e GG</label><br>
+            <label><input type="radio" name="tshirt" value="20"> Valores monetários</label>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Qual é uma vantagem do uso do T-shirt Sizes?</h2>
+            <label><input type="radio" name="vantagemTshirt" value="21"> É detalhado e demorado</label><br>
+            <label><input type="radio" name="vantagemTshirt" value="22"> Ideal apenas para times experientes</label><br>
+            <label><input type="radio" name="vantagemTshirt" value="correto23"> É simples, rápido e ótimo para o início do projeto</label><br>
+            <label><input type="radio" name="vantagemTshirt" value="24"> Exige cálculos complexos</label>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O que é o Bucket System?</h2>
+            <label><input type="radio" name="bucket" value="correto25"> Uma técnica que distribui itens em categorias de esforço (1, 2, 3, 5, 8, etc.) de forma colaborativa</label><br>
+            <label><input type="radio" name="bucket" value="26"> Uma ferramenta para medir o desempenho individual</label><br>
+            <label><input type="radio" name="bucket" value="27"> Um modelo de documentação de backlog</label><br>
+            <label><input type="radio" name="bucket" value="28"> Uma técnica para revisar tarefas concluídas</label>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O que representa a velocidade do time (velocity) no Scrum?</h2>
+            <label><input type="radio" name="velocity" value="29"> O número de sprints concluídas</label><br>
+            <label><input type="radio" name="velocity" value="correto30"> A quantidade média de trabalho concluído por sprint</label><br>
+            <label><input type="radio" name="velocity" value="31"> O tempo gasto em reuniões</label><br>
+            <label><input type="radio" name="velocity" value="32"> O total de tarefas planejadas</label>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Por que a velocidade não deve ser comparada entre equipes diferentes?</h2>
+            <label><input type="radio" name="comparacao" value="33"> Porque a velocidade é uma métrica secreta</label><br>
+            <label><input type="radio" name="comparacao" value="correto34"> Porque cada equipe tem seu próprio contexto, ritmo e maturidade</label><br>
+            <label><input type="radio" name="comparacao" value="35"> Porque todas as equipes usam unidades diferentes de tempo</label><br>
+            <label><input type="radio" name="comparacao" value="36"> Porque o Scrum não permite medir desempenho</label>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Se um time entrega em média 30 pontos por sprint e o backlog tem 90 pontos, quantas sprints são necessárias?</h2>
+            <label><input type="radio" name="sprints" value="37"> 1 sprint</label><br>
+            <label><input type="radio" name="sprints" value="38"> 2 sprints</label><br>
+            <label><input type="radio" name="sprints" value="correto39"> 3 sprints</label><br>
+            <label><input type="radio" name="sprints" value="40"> 4 sprints</label>
+        </div>
+
+    </section>
+
+</div>

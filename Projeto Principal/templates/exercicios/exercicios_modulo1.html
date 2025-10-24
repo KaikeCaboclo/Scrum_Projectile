@@ -3,36 +3,229 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
 {% endblock %}
 
-{% block content %}
-<!-- MAIN CONTENT AREA -->
-<main class="main-content">
-  <div class="exercise-container">
-    <header class="exercise-header">
-      <h1>Módulo 1 – Introdução ao Scrum</h1>
-      <p class="subtitle">Exercícios de Fixação</p>
-    </header>
+<h1>Exercícios do Módulo 1 - Introdução ao Scrum</h1>
+<div class="exercise-container">
+  <section class="exercise-section">
 
-    <section class="exercise-section">
-      {% for questao in questoes %}
-      <div class="exercise-card">
-        <h2>{{ questao.titulo }} – Pergunta {{ loop.index }}</h2>
-        <p>{{ questao.pergunta }}</p>
-
-        <div class="opcoes">
-          {% for alternativa in questao.alternativas %}
-          <label class="opcao">
-            <input type="radio" name="questao{{ loop.parent.index0 if loop.parent else loop.index0 }}" value="{{ alternativa.letra }}">
-            <span>{{ alternativa.letra }} {{ alternativa.texto }}</span>
-          </label>
-          {% endfor %}
-        </div>
+    <div class="exercise-card">
+      <h2>O que é o método Scrum?</h2>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="metodo" value="1">
+          <span>Uma técnica de marketing digital</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="metodo" value="correto2">
+          <span>Uma metodologia ágil de gestão de projetos</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="metodo" value="3">
+          <span>Um software de controle de tarefas</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="metodo" value="4">
+          <span>Um tipo de relatório gerencial</span>
+        </label>
       </div>
-      {% endfor %}
-    </section>
+    </div>
 
-    <footer class="exercise-footer">
-      <a href="{{ url_for('modulo1') }}" class="btn-voltar">← Voltar ao Módulo 1</a>
-    </footer>
-  </div>
-</main>
-{% endblock %}
+    <div class="exercise-card">
+      <h2>Por que o Scrum é considerado um método ágil?</h2>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="considerado" value="5">
+          <span>Porque evita qualquer tipo de mudança no projeto</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="considerado" value="correto6">
+          <span>Porque entrega valor rapidamente e aceita mudanças</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="considerado" value="7">
+          <span>Porque centraliza decisões em um único líder</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="considerado" value="8">
+          <span>Porque se baseia em longos ciclos de entrega</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Qual é o principal objetivo das entregas frequentes no Scrum?</h2>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="objetivo" value="9">
+          <span>Reduzir a comunicação entre equipes</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="objetivo" value="10">
+          <span>Aumentar o controle do gerente</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="objetivo" value="correto11">
+          <span>Obter feedback rápido e gerar valor ao cliente</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="objetivo" value="12">
+          <span>Documentar mais detalhadamente o projeto</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Como o Scrum trata as mudanças durante o desenvolvimento?</h2>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="mudancas" value="13">
+          <span>Como um problema a ser evitado</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="mudancas" value="correto14">
+          <span>Como oportunidades de melhoria</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="mudancas" value="15">
+          <span>Como falhas no planejamento</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="mudancas" value="16">
+          <span>Como riscos desnecessários</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Qual é o foco principal do primeiro princípio ágil?</h2>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="foco" value="17">
+          <span>Aumentar a produtividade</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="foco" value="correto18">
+          <span>Satisfazer o cliente com entregas frequentes de valor</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="foco" value="19">
+          <span>Reduzir custos operacionais</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="foco" value="20">
+          <span>Evitar mudanças nos requisitos</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Por que a comunicação face a face é importante no Scrum?</h2>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="comunicacao" value="21">
+          <span>Porque reduz a necessidade de reuniões longas</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="comunicacao" value="correto22">
+          <span>Porque é o método mais eficiente de transmitir informações</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="comunicacao" value="23">
+          <span>Porque evita documentação</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="comunicacao" value="24">
+          <span>Porque substitui o trabalho em equipe</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>O que significa simplicidade segundo os princípios ágeis?</h2>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="simplicidade" value="correto25">
+          <span>Fazer apenas o necessário para gerar valor</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="simplicidade" value="26">
+          <span>Evitar colaboração</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="simplicidade" value="27">
+          <span>Reduzir o número de sprints</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="simplicidade" value="28">
+          <span>Focar apenas em metas individuais</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Como o Scrum promove a melhoria contínua?</h2>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="melhoria" value="29">
+          <span>Por meio de reuniões longas e detalhadas</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="melhoria" value="correto30">
+          <span>Por inspeções e adaptações regulares do processo</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="melhoria" value="31">
+          <span>Apenas por relatórios automáticos</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="melhoria" value="32">
+          <span>Através de ciclos de auditoria externos</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>Qual é a principal medida de progresso no Scrum?</h2>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="progresso" value="33">
+          <span>Quantidade de reuniões realizadas</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="progresso" value="34">
+          <span>Documentação gerada</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="progresso" value="correto35">
+          <span>Software em funcionamento</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="progresso" value="36">
+          <span>Horas trabalhadas</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <h2>O que é valorizado em uma equipe auto-organizada?</h2>
+      <div class="opcoes">
+        <label class="opcao">
+          <input type="radio" name="equipe" value="37">
+          <span>A hierarquia rígida</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="equipe" value="correto38">
+          <span>A autonomia e a colaboração para atingir metas</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="equipe" value="39">
+          <span>A supervisão constante</span>
+        </label>
+        <label class="opcao">
+          <input type="radio" name="equipe" value="40">
+          <span>A execução isolada das tarefas</span>
+        </label>
+      </div>
+    </div>
+
+  </section>
+</div>

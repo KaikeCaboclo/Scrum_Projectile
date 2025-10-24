@@ -1,0 +1,242 @@
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
+{% endblock %}
+
+<h1>Exercicios do Módulo 8 - Boas práticas e Dicas</h1>
+<div class="exercise-container">
+    <section class="exercise-section">
+
+    <div class="exercise-card">
+        <h2>No Scrum, as soft skills são:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="softskills" value="correto1">
+            <span>Habilidades comportamentais que influenciam a colaboração e o sucesso do time.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="softskills" value="2">
+            <span>Ferramentas de controle de tarefas.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="softskills" value="3">
+            <span>Técnicas de codificação.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="softskills" value="4">
+            <span>Documentos auxiliares de planejamento.</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>A comunicação eficiente em um time Scrum deve ser:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="comunicacao" value="5">
+            <span>Longa e detalhada.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="comunicacao" value="correto6">
+            <span>Objetiva, constante e aberta.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="comunicacao" value="7">
+            <span>Limitada ao Scrum Master.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="comunicacao" value="8">
+            <span>Formal e hierárquica.</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>A prática de escuta ativa significa:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="escuta" value="9">
+            <span>Esperar a vez de falar sem interromper.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="escuta" value="correto10">
+            <span>Ouvir com atenção, compreender e validar o que o outro expressa.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="escuta" value="11">
+            <span>Apenas anotar o que o outro diz.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="escuta" value="12">
+            <span>Evitar dar feedback.</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>Transparência no Scrum significa:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="transparencia" value="13">
+            <span>Divulgar todas as informações da empresa.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="transparencia" value="correto14">
+            <span>Tornar visíveis e compreensíveis os aspectos importantes do trabalho.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="transparencia" value="15">
+            <span>Compartilhar apenas dados técnicos.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="transparencia" value="16">
+            <span>Mostrar resultados somente no final do projeto.</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>A segurança psicológica é importante porque:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="seguranca" value="correto17">
+            <span>Permite que os membros expressem ideias e dificuldades sem medo de julgamentos.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="seguranca" value="18">
+            <span>Reduz a necessidade de reuniões.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="seguranca" value="19">
+            <span>Substitui a retrospectiva.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="seguranca" value="20">
+            <span>Evita a comunicação aberta.</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>Inspecionar no Scrum significa:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="inspecionar" value="21">
+            <span>Julgar erros cometidos.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="inspecionar" value="correto22">
+            <span>Observar e refletir continuamente para aprender e melhorar.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="inspecionar" value="23">
+            <span>Fazer auditorias formais.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="inspecionar" value="24">
+            <span>Controlar a produtividade do time.</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>Dar e receber feedback construtivo deve ter como foco:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="feedback" value="25">
+            <span>Apontar culpados.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="feedback" value="correto26">
+            <span>Melhorar processos e promover aprendizado.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="feedback" value="27">
+            <span>Criticar o desempenho individual.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="feedback" value="28">
+            <span>Avaliar o cumprimento de metas pessoais.</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>A adaptação no Scrum ocorre quando:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="adaptacao" value="29">
+            <span>O time ignora erros e segue o plano original.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="adaptacao" value="correto30">
+            <span>Há mudanças baseadas nas inspeções e oportunidades de melhoria.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="adaptacao" value="31">
+            <span>O cliente exige alterações de última hora.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="adaptacao" value="32">
+            <span>A equipe troca de papéis.</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>A melhoria contínua deve ser praticada:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="melhoria" value="33">
+            <span>Somente na Retrospectiva.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="melhoria" value="correto34">
+            <span>Em todas as atividades do time.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="melhoria" value="35">
+            <span>Apenas no final do projeto.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="melhoria" value="36">
+            <span>Quando houver tempo sobrando.</span>
+        </label>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h2>Uma boa prática para lidar com reuniões improdutivas é:</h2>
+        <p>Escolha a opção correta:</p>
+        <div class="opcoes">
+        <label class="opcao">
+            <input type="radio" name="reunioes" value="37">
+            <span>Aumentar a duração das reuniões.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="reunioes" value="correto38">
+            <span>Usar timeboxes e agendas claras.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="reunioes" value="39">
+            <span>Permitir conversas paralelas.</span>
+        </label>
+        <label class="opcao">
+            <input type="radio" name="reunioes" value="40">
+            <span>Deixar as reuniões sem pauta.</span>
+        </label>
+        </div>
+    </div>
+
+    </section>
+
+</div>

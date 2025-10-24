@@ -1,0 +1,241 @@
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
+{% endblock %}
+
+<h1>Exercícios do Módulo 7 - Scrum Board e ferramentas</h1>
+<div class="exercise-container">
+    <section class="exercise-section">
+        <div class="exercise-card">
+            <h2>O que é um Scrum Board?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="scrumboard" value="1">
+                <span>Um documento usado apenas pelo Product Owner.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="scrumboard" value="correto2">
+                <span>Um quadro visual que mostra o progresso das tarefas de um Sprint.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="scrumboard" value="3">
+                <span>Um relatório final de projeto.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="scrumboard" value="4">
+                <span>Um checklist de metas da empresa.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Qual é o principal objetivo do Scrum Board?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="objetivo" value="5">
+                <span>Criar novas tarefas automaticamente.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="objetivo" value="correto6">
+                <span>Tornar o trabalho visível e transparente para toda a equipe.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="objetivo" value="7">
+                <span>Controlar o tempo de cada membro da equipe.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="objetivo" value="8">
+                <span>Substituir o Product Backlog.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Qual das opções melhor descreve um quadro físico?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="quadro" value="9">
+                <span>Usado em ferramentas online como Jira.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="quadro" value="correto10">
+                <span>Feito com post-its em um ambiente presencial.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="quadro" value="11">
+                <span>Requer conexão constante à internet.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="quadro" value="12">
+                <span>Gera relatórios automáticos de desempenho.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Uma vantagem do quadro digital é:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="vantagem" value="13">
+                <span>Permitir interação direta com post-its físicos.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="vantagem" value="correto14">
+                <span>Ser acessível de qualquer lugar e gerar relatórios automáticos.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="vantagem" value="15">
+                <span>Não precisar de manutenção.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="vantagem" value="16">
+                <span>Ser mais intuitivo para equipes presenciais.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Qual das colunas abaixo não é típica de um Scrum Board?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="colunas" value="17">
+                <span>To Do</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="colunas" value="18">
+                <span>Doing</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="colunas" value="correto19">
+                <span>Planning</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="colunas" value="20">
+                <span>Done</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>A coluna “Blocked” indica que:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="blocked" value="21">
+                <span>A tarefa foi finalizada com sucesso.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="blocked" value="22">
+                <span>A tarefa está sendo revisada.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="blocked" value="correto23">
+                <span>A tarefa está impedida por algum problema.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="blocked" value="24">
+                <span>A tarefa ainda não foi iniciada.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>O que significa Definition of Done (DoD) no contexto do Scrum Board?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="dod" value="25">
+                <span>O momento em que o Product Owner revisa o sprint.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="dod" value="correto26">
+                <span>Uma lista de critérios que definem quando uma tarefa pode ser considerada concluída.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="dod" value="27">
+                <span>O backlog de tarefas pendentes.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="dod" value="28">
+                <span>Um relatório de desempenho da equipe.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Qual das seguintes é uma boa prática no uso do Scrum Board?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="boapraticas" value="29">
+                <span>Atualizar o quadro apenas no final do sprint.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="boapraticas" value="30">
+                <span>Tornar o quadro acessível apenas ao Scrum Master.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="boapraticas" value="correto31">
+                <span>Atualizar o quadro diariamente, especialmente durante o Daily Scrum.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="boapraticas" value="32">
+                <span>Usar o quadro apenas para tarefas em atraso.</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Qual ferramenta pertence ao ecossistema Microsoft e suporta sprints e relatórios de burndown?</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="ferramenta" value="33">
+                <span>Jira</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="ferramenta" value="34">
+                <span>Trello</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="ferramenta" value="correto35">
+                <span>Azure DevOps</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="ferramenta" value="36">
+                <span>Notion</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <h2>Entre as práticas recomendadas para o uso do Scrum Board estão:</h2>
+            <p>Escolha a opção correta:</p>
+            <div class="opcoes">
+            <label class="opcao">
+                <input type="radio" name="praticas" value="correto37">
+                <span>Transparência, atualização frequente e inspeção.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="praticas" value="38">
+                <span>Somente automação de tarefas.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="praticas" value="39">
+                <span>Ocultar tarefas incompletas.</span>
+            </label>
+            <label class="opcao">
+                <input type="radio" name="praticas" value="40">
+                <span>Usar o quadro apenas no final do projeto.</span>
+            </label>
+            </div>
+        </div>
+
+    </section>
+
+</div>
