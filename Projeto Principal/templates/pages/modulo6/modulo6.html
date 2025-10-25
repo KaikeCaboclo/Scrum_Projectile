@@ -1,42 +1,83 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 6 - Estimativa e planejamento</title>
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/stylemodulos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="icon" href="../../img/logo.png" type="image/png">
+{% extends 'base.html' %}
 
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo-area">
-        <img src="../../img/logo.png" alt="Logo da Empresa" class="logo-img">
-        <a href="../../index.html" class="logo-text">SCRUM ACADEMY</a>
+{% block title %}Módulo 1 - Introdução ao SCRUM | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Módulo 6</h2>
+        <p>Estimativa e Planejamento</p>
       </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../modulos.html">Módulos</a></li>
-        <li><a href="../sobre.html">Sobre</a></li>
-        <!--<li><a href="pages/progresso.html">Progresso</a></li>-->
-      </ul>
-    </nav>
-  </header>
 
-  <main class="content">
-    <h1>Módulo 6 - Estimativa e planejamento</h1>
+      <nav class="sidebar-menu">
+        <a href="" data-conteudos="{{ url_for('capacidade') }}" class="navegacacao_conteudo">
+          <span>📋</span> Planejamento
+          <input type="checkbox" class="check" value="1" name="modulo6">
+        </a>
 
-    <div class="status-card">
-      <p><strong>Status:</strong> Em andamento</p>
-    </div>
-  </main>
+        <a href="" data-conteudos="{{ url_for('poker') }}" class="navegacacao_conteudo" >
+          <span>❓</span> planning poker
+          <input type="checkbox" class="check" value="2" name="modulo6">
+        </a>
 
-  <footer>
-    <p>© 2025 - SCRUM ACADEMY</p>
-  </footer>
-</body>
-</html>
+        <a href="" data-conteudos="{{ url_for('t_shirt') }}" class="navegacacao_conteudo">
+          <span>📜</span> T-Shirt Sizes
+          <input type="checkbox" class="check" value="3" name="modulo6">
+        </a>
+
+        <a href="" data-conteudos="{{ url_for('velocidade') }}" class="navegacacao_conteudo">
+          <span>📜</span> Velocidade
+          <input type="checkbox" class="check" value="3" name="modulo6">
+        </a>
+
+        <a href="" data-conteudos="{{ url_for('outras') }}" class="navegacacao_conteudo">
+          <span>📝</span> Outras técnicas
+          <input type="checkbox" class="check" value="4" name="modulo6">
+        </a>
+
+         <a href="" data-conteudos="{{ url_for('exercicios_modulo6') }}" class="navegacacao_conteudo" id="exercicios">
+          <span>📝</span> Exercícios
+        </a>
+      </nav>
+    </aside>
+
+  <div>
+    <article class="artigo">
+      <h1 class="titles">Estimativa e planejameneto</h1>
+      <p class="text">Bem Bem-vindo ao módulo 6, estimativa e planejamento. Aqui, você aprenderá a aplicar técnicas para estimar o esforço necessário para realizar uma tarefa, além de como planejar o seu trabalho com base nessa informação.
+      </p>
+
+      <div class="contentlinks">
+        <a href="">📋 Planejamento</a>
+        <p>Entenda a capacidade de planejamento no método Scrum.</p>
+      </div>
+
+      <div class="contentlinks">
+        <a href="">❓ Planning Poker</a>
+        <p>Aprenda o método de planejamento Planning poker e como usá-lo.</p>
+      </div>
+
+      <div class="contentlinks">
+        <a href="">📜 T-Shirt Sizes</a>
+        <p>Aprenda o método de planejamento T-Shirt Sizes e como Usá-lo.</p>
+      </div>
+
+      <div class="contentlinks">
+        <a href="">📜 Velocidade.</a>
+        <p>Aprenda sobre a velocidade no método Scrum.</p>
+      </div>
+
+      <div class="contentlinks">
+        <a href="">📜 Outras técnicas.</a>
+        <p>Conheça outras técnicas de planejamento menos comuns.</p>
+      </div>
+    </article>
+  </div>
+</div>
+<script src="../../../static/modulos.js"></script>
+{% endblock %}

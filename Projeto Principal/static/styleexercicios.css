@@ -98,6 +98,48 @@
   margin-top: 40px;
 }
 
+/* Container dos botões */
+.exercise-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+/* Estilo geral dos botões */
+.exercise-actions button {
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Botão Verificar */
+.btn-verificar {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-verificar:hover {
+  background-color: #45a049;
+}
+
+/* Botão Refazer */
+.btn-refazer {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-refazer:hover {
+  background-color: #d7372c;
+}
+
+.erro{
+  font-size:20px;
+  color:#d7372c;
+}
+
 /* Responsivo para telas menores */
 @media (max-width: 768px) {
   .main-content {

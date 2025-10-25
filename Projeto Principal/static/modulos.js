@@ -1,73 +1,12 @@
-/*// modulos.js - Navegação entre páginas do módulo
-const paginasModulo1 = [
-    "modulo1",
-    "oquee_scrum", 
-    "porque_scrum",
-    "manifesto_agil"
-];
-
-// Função para navegação
-function setupNavigation() {
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    
-    if (!prevBtn || !nextBtn) return;
-    
-    // Pega a rota atual
-    const currentPath = window.location.pathname;
-    let currentRoute = '';
-    
-    // Mapeia paths para rotas do Flask
-    if (currentPath.includes('modulo1') && !currentPath.includes('oquee') && !currentPath.includes('porqueusar') && !currentPath.includes('manifestoagil')) {
-        currentRoute = 'modulo1';
-    } else if (currentPath.includes('oquee')) {
-        currentRoute = 'oquee_scrum';
-    } else if (currentPath.includes('porqueusar')) {
-        currentRoute = 'porque_scrum';
-    } else if (currentPath.includes('manifestoagil')) {
-        currentRoute = 'manifesto_agil';
-    }
-    
-    const currentIndex = paginasModulo1.indexOf(currentRoute);
-    
-    // Configura botão anterior
-    if (currentIndex > 0) {
-        prevBtn.onclick = () => {
-            const prevRoute = paginasModulo1[currentIndex - 1];
-            if (prevRoute === 'modulo1') {
-                window.location.href = "{{ url_for('modulo1') }}";
-            } else {
-                window.location.href = "{{ url_for('" + prevRoute + "') }}";
-            }
-        };
-    } else {
-        prevBtn.disabled = true;
-        prevBtn.style.opacity = "0.5";
-    }
-    
-    // Configura próximo botão
-    if (currentIndex < paginasModulo1.length - 1) {
-        nextBtn.onclick = () => {
-            const nextRoute = paginasModulo1[currentIndex + 1];
-            window.location.href = "{{ url_for('" + nextRoute + "') }}";
-        };
-    } else {
-        nextBtn.disabled = true;
-        nextBtn.style.opacity = "0.5";
-    }
-}
-
-// Executa quando a página carrega
-document.addEventListener('DOMContentLoaded', setupNavigation);*/
-
-
-
-
 /*Cards módulos (abrir link ao clicar na div)*/
 const rota_modulos=window.location.pathname.split('/').pop()
 if(rota_modulos==='modulos'){
     document.querySelectorAll('.modulo-card').forEach(modulo=>{
         modulo.addEventListener('click', redirect)
+        if(localStorage.getItem(modulo.querySelector('.progresso').id) && localStorage.getItem(modulo.querySelector('.progresso').id)>=70){
+            modulo.querySelector('.progresso').innerHTML='Concluído'
+            modulo.querySelector('.progresso').style.color='green'
+        }
     })
 }
 
@@ -92,17 +31,27 @@ if(rotasdosmodulos.includes(rota_do_modulo)){
     })
 }
 
-async function mudarconteudo(botao) {
-     if (botao.target.tagName === 'INPUT') {
+async function mudarconteudo(evento) {
+     if (evento.target.tagName === 'INPUT') {
         return;
     }
-    const local=botao.currentTarget.dataset.conteudos;
-    botao.preventDefault()
+    const evento_alvo=evento.currentTarget
+    const local=evento.currentTarget.dataset.conteudos;
+    evento.preventDefault()
     try{
         const pegar= await fetch(local)
         const transformaTXT= await pegar.text()
         document.querySelector('.artigo').innerHTML=transformaTXT;
-     } catch(erro){
+        if(evento_alvo && evento_alvo.id=='exercicios'){
+            recuperar()
+            const btn_verificar=document.querySelector('.btn-verificar')
+            btn_verificar.removeEventListener('click', verificar_respostas)
+            btn_verificar.addEventListener('click', verificar_respostas)     
+            const btn_refazer=document.querySelector('.btn-refazer') 
+            btn_refazer.removeEventListener('click', refazer)
+            btn_refazer.addEventListener('click', refazer)
+    }
+        } catch(erro){
         console.error(erro);
      }
     
@@ -122,8 +71,8 @@ if(rotasdosmodulos.includes(rota_do_modulo)){
     }
 }
 
-function guardarAvanco(input){
-    const nome=input.currentTarget.name
+function guardarAvanco(evento){
+    const nome=evento.currentTarget.name
     const listaMarcados=[]
     document.querySelectorAll('input[name="'+nome+'"]:checked').forEach(marcado=>{
         listaMarcados.push(marcado.value)
@@ -131,3 +80,85 @@ function guardarAvanco(input){
     localStorage.setItem(nome, JSON.stringify(listaMarcados))
     
 }
+/*-----------------------------------------------------------------------------------------*/
+
+/*Verificar exercicios*/
+
+function verificar_respostas(){
+    document.querySelectorAll('input[type="radio"]').forEach(conteudos=>{
+        const conteudo=conteudos.closest('label').querySelector('span')
+        conteudo.textContent=conteudo.textContent.replace('✅', '').replace('❌', '')
+        conteudo.style.color='black'})
+        document.querySelector('.erro').textContent=''
+
+        const lista_values=[]
+        let acertos=0
+
+
+    if(document.querySelectorAll('.exercise-card').length===document.querySelectorAll('input[type="radio"]:checked').length){
+    const respostas=document.querySelectorAll('input[type="radio"]:checked')
+    respostas.forEach(resposta=>{
+        if(resposta.value.includes('correto')){
+            acertos+=1
+        }
+        lista_values.push(resposta.value)
+        if(resposta.value.includes('correto')){
+            const span=resposta.closest('label').querySelector('span')
+            span.textContent+='✅'
+            span.style.color='green'
+    }   else{
+            const span=resposta.closest('label').querySelector('span')
+            span.textContent+='❌'
+            span.style.color='red'
+    }
+
+})}else{
+    document.querySelector('.erro').textContent="Responda a todas as questões!!!"
+}
+   localStorage.setItem(document.querySelector('.exercise-container').id, JSON.stringify(lista_values))
+    const porcentagem_acertos=(acertos/document.querySelectorAll('.exercise-card').length)*100
+    localStorage.setItem(document.querySelector('.exercise-section').id, porcentagem_acertos)
+}
+
+
+function recuperar(){
+    if(localStorage.getItem(document.querySelector('.exercise-container').id)){
+        document.querySelectorAll('input[type="radio"]').forEach(input=>{
+            input.removeEventListener('click', bloquear)
+            input.addEventListener('click', bloquear)
+        })
+
+    const resps_salvas=JSON.parse(localStorage.getItem(document.querySelector('.exercise-container').id))
+    resps_salvas.forEach(salva=>{
+        const resp= document.querySelector('input[type="radio"][value="'+salva+'"]');
+        resp.checked=true
+        if(salva.includes('correto')){
+        const span=resp.closest('label').querySelector('span')
+        span.textContent+='✅'
+        span.style.color='green'
+        }else{
+            const span=resp.closest('label').querySelector('span')
+            span.textContent+='❌'
+            span.style.color='red'
+        }
+    })}else{
+        return
+    }
+}
+    function bloquear(evento){
+        evento.preventDefault()
+        }
+
+/*Botão refazer*/
+function refazer(){
+    localStorage.removeItem(document.querySelector('.exercise-container').id)
+    document.querySelectorAll('input[type="radio"]').forEach(input=>{
+        input.checked=false
+        const span=input.closest('label').querySelector('span')
+        span.textContent=span.textContent.replace('✅', '').replace('❌', '')
+        span.style.color='black'
+        input.removeEventListener('click', bloquear)
+    })
+    
+}
+

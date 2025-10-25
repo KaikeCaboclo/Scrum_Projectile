@@ -133,6 +133,25 @@ def incremento():
 def modulo6():
     return render_template('pages/modulo6/modulo6.html')
 
+@app.route('/modulo6/capacidade')
+def capacidade():
+    return render_template('pages/modulo6/capacidadePlanejamento.html')
+
+@app.route('/modulo6/poker')
+def poker():
+    return render_template('pages/modulo6/planningPoker.html')
+
+@app.route('/modulo6/t-shirt')
+def t_shirt():
+    return render_template('pages/modulo6/tshirtSizes.html')
+
+@app.route('/modulo6/velocidade')
+def velocidade():
+    return render_template('pages/modulo6/velocidade.html')
+
+@app.route('/modulo6/outras')
+def outras():
+    return render_template('pages/modulo6/outrastecnicas.html')
 
 
 @app.route('/modulo7')
