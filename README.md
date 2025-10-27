@@ -120,8 +120,8 @@ Além disso, o sistema deve conter avaliações parciais e uma avaliação geral
     </tr>
     <tr>
       <td>Kaike Lima</td>
-      <td></td>
-      <td>Scrum Master<a href="https://github.com/KaikeCaboclo">
+      <td>Scrum Master</td>
+      <td><a href="https://github.com/KaikeCaboclo">
       <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a></td>
       <td><a href="https://www.linkedin.com/in/kaike-lima-728a772a6/">
       <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a></td>
