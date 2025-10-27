@@ -69,20 +69,27 @@ Além disso, o sistema deve conter avaliações parciais e uma avaliação geral
 ## 💻 Tecnologias <a id="tecnologias"></a>
 
 <h4 align="center">
- <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></a>
- <a href="https://github.com/"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a>
+ <a href="https://www.python.org/">
+   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+ </a>
+ <a href="https://github.com/">
+   <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
+ </a>
  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
-  <img src="https://img.shields.io/badge/HTML-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />
-</a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-  <img src="https://img.shields.io/badge/CSS-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />
-</a>
-<a href="https://www.atlassian.com/software/jira">
-  <img src="https://img.shields.io/badge/Jira-%23000000.svg?style=for-the-badge&logo=jira&logoColor=white" />
-</a>
-<a href="https://code.visualstudio.com/">
-  <img src="https://img.shields.io/badge/VSCode-%23007ACC.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white" />
-</a>
+   <img src="https://img.shields.io/badge/HTML-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />
+ </a>
+ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+   <img src="https://img.shields.io/badge/CSS-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />
+ </a>
+ <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+   <img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black" />
+ </a>
+ <a href="https://www.atlassian.com/software/jira">
+   <img src="https://img.shields.io/badge/Jira-%23000000.svg?style=for-the-badge&logo=jira&logoColor=white" />
+ </a>
+ <a href="https://code.visualstudio.com/">
+   <img src="https://img.shields.io/badge/VSCode-%23007ACC.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white" />
+ </a>
 </h4>
 
 ---
@@ -91,8 +98,6 @@ Além disso, o sistema deve conter avaliações parciais e uma avaliação geral
 
 * <a href="./documents/Manual de usuário.md">Manual de Usuário</a>  
 * <a href="./documents/Manual de instalação.md">Manual de Instalação</a>  
-* <a href="./documents/Padrões de commits.md">Padrões de Commits</a>  
-* <a href="./documents/Estrutura de Branches.md">Estrutura de Branches</a>  
 
 ---
 
@@ -115,15 +120,15 @@ Além disso, o sistema deve conter avaliações parciais e uma avaliação geral
     </tr>
     <tr>
       <td>Kaike Lima</td>
-      <td>Product Owner</td>
-      <td><a href="https://github.com/KaikeCaboclo">
+      <td></td>
+      <td>Scrum Master<a href="https://github.com/KaikeCaboclo">
       <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a></td>
       <td><a href="https://www.linkedin.com/in/kaike-lima-728a772a6/">
       <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a></td>
     </tr>
     <tr>
       <td>Marcos Alexandre</td>
-      <td>Scrum Master</td>
+      <td>Product Owner</td>
       <td><a href="https://github.com/MarcosAlexandre-txt"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a></td>
       <td><a href="https://www.linkedin.com/in/marcos-alexandre-cs/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a></td>
     </tr>
