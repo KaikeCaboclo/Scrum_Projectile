@@ -32,6 +32,7 @@
       </a>
       <a href="" data-conteudos="{{ url_for('exercicios_modulo2') }}" class="navegacacao_conteudo" id="exercicios">
         <span>📝</span> Exercícios
+        <input type="checkbox" class="check" name="modulo2" value="5">
       </a>
     </nav>
   </aside>
@@ -45,28 +46,28 @@
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('o_que_e_agile') }}">📖 O Que é Agile</a>
+        <a href="">📖 O Que é Agile</a>
       </label>
       <p>Conheça os princípios e conceitos essenciais do Agile.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('agile_na_pratica') }}">🛠️ Agile na Prática</a>
+        <a href="">🛠️ Agile na Prática</a>
       </label>
       <p>Aprenda como aplicar Agile em situações reais de projetos.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('agile_vs_tradicional') }}">⚖️ Agile vs Métodos Tradicionais</a>
+        <a href="">⚖️ Agile vs Métodos Tradicionais</a>
       </label>
       <p>Entenda as diferenças entre Agile e métodos tradicionais de gestão de projetos.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('vantagens_do_agile') }}">✅ Vantagens do Agile</a>
+        <a href="">✅ Vantagens do Agile</a>
       </label>
       <p>Saiba quais são os principais benefícios de adotar Agile.</p>
     </div>
@@ -76,5 +77,5 @@
     </div>
   </article>
 </div>
-<script src="../../../static/modulos.js"></script>
+<script type="module" src="{{ url_for('static', filename='script/main-script.js')}}"></script>
 {% endblock %}

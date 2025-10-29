@@ -47,39 +47,39 @@
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('papeis_scrum') }}">👥 Papéis do Scrum</a>
+        <a href="">👥 Papéis do Scrum</a>
       </label>
       <p>Compreenda a estrutura e função de cada papel no Scrum.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('product_owner') }}">📊 Product Owner</a>
+        <a href="">📊 Product Owner</a>
       </label>
       <p>Entenda o papel estratégico do Product Owner na definição de valor e priorização.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('scrum_master') }}">🧭 Scrum Master</a>
+        <a href="">🧭 Scrum Master</a>
       </label>
       <p>Descubra como o Scrum Master apoia a equipe e garante a fluidez dos processos ágeis.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('devteam') }}">💻 Time de Desenvolvimento</a>
+        <a href="">💻 Time de Desenvolvimento</a>
       </label>
       <p>Conheça o time responsável por transformar ideias em incrementos reais de produto.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('exercicios_modulo3') }}">📝 Exercícios</a>
+        <a href="">📝 Exercícios</a>
       </label>
       <p>Teste seus conhecimentos sobre os papéis do Scrum com este questionário interativo.</p>
     </div>
   </article>
 </div>
-<script src="../../../static/modulos.js"></script>
+<script type="module" src="{{ url_for('static', filename='script/main-script.js')}}"></script>
 {% endblock %}

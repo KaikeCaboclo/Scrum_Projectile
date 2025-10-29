@@ -50,21 +50,21 @@
       </p>
 
       <div class="contentlinks">
-        <a href="{{ url_for('oquee_scrum') }}">📋 O que é Scrum?</a>
+        <a href="">📋 O que é Scrum?</a>
         <p>Conheça a definição e os princípios básicos do framework Scrum.</p>
       </div>
 
       <div class="contentlinks">
-        <a href="{{ url_for('porque_scrum') }}">❓ Por que usar Scrum?</a>
+        <a href="">❓ Por que usar Scrum?</a>
         <p>Entenda os benefícios e vantagens de implementar Scrum em projetos.</p>
       </div>
 
       <div class="contentlinks">
-        <a href="{{ url_for('manifesto_agil') }}">📜 Manifesto Ágil</a>
+        <a href="">📜 Manifesto Ágil</a>
         <p>Explore os valores e princípios do Manifesto Ágil que fundamentam o Scrum.</p>
       </div>
     </article>
   </div>
 </div>
-<script src="../../../static/modulos.js"></script>
+<script type="module" src="{{ url_for('static', filename='script/main-script.js')}}"></script>
 {% endblock %}
