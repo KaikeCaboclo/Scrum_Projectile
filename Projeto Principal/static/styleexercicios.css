@@ -140,6 +140,18 @@
   color:#d7372c;
 }
 
+.correto{
+  color:#4CAF50;
+  font-size: 19px;
+  font-style: bold;
+}
+
+.errado{
+  color:#d7372c;
+  font-size: 19px;
+  font-style: bold;
+}
+
 /* Responsivo para telas menores */
 @media (max-width: 768px) {
   .main-content {

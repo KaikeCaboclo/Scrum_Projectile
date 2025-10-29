@@ -36,7 +36,8 @@
       </a>
 
       <a href="" data-conteudos="{{ url_for('exercicios_modulo4') }}" class="navegacacao_conteudo" id="exercicios">
-        <span>📝Exercícios</span>
+        <span>📝</span>Exercícios
+        <input type="checkbox" class="check" name="modulo4" value="6">
       </a>
       
     </nav>
@@ -51,39 +52,39 @@
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('sprint') }}">🏃‍♂️ Sprint</a>
+        <a href="">🏃‍♂️ Sprint</a>
       </label>
       <p>Conheça a estrutura de trabalho do Sprint e como ela organiza o desenvolvimento do produto.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('sprint_planning') }}">📝 Sprint Planning</a>
+        <a href="">📝 Sprint Planning</a>
       </label>
       <p>Entenda como planejar o que será entregue na próxima Sprint de forma eficiente.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('daily_scrum') }}">📅 Daily Scrum</a>
+        <a href="">📅 Daily Scrum</a>
       </label>
       <p>Descubra como a reunião diária mantém a equipe alinhada e identifica impedimentos rapidamente.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('sprint_review') }}">🔍 Sprint Review</a>
+        <a href="">🔍 Sprint Review</a>
       </label>
       <p>Aprenda a revisar o que foi entregue e coletar feedback do cliente e stakeholders.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('sprint_retrospective') }}">🔄 Sprint Retrospective</a>
+        <a href="">🔄 Sprint Retrospective</a>
       </label>
       <p>Saiba como refletir sobre o processo e melhorar continuamente o desempenho da equipe.</p>
     </div>
   </article>
 </div>
-<script src="../../../static/modulos.js"></script>
+<script type="module" src="{{ url_for('static', filename='script/main-script.js')}}"></script>
 {% endblock %}

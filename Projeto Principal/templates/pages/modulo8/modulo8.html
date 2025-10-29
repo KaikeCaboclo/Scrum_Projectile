@@ -35,7 +35,8 @@
         <input type="checkbox" class="check" name="modulo8" value="5">
       </a>
       <a href="" data-conteudos="{{ url_for('exercicios_modulo8') }}" class="navegacacao_conteudo" id="exercicios">
-        <span>📝Exercícios</span>
+        <span>📝</span>Exercícios
+        <input type="checkbox" class="check" name="modulo8" value="6">
       </a>
     </nav>
   </aside>
@@ -48,39 +49,39 @@
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('soft_skills') }}">💡 Soft Skills</a>
+        <a href="">💡 Soft Skills</a>
       </label>
       <p>Aprenda habilidades comportamentais essenciais para equipes ágeis, como comunicação, empatia e trabalho em equipe.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('comunicacao_eficiente') }}">🗣️ Comunicação Eficiente</a>
+        <a href="">🗣️ Comunicação Eficiente</a>
       </label>
       <p>Descubra como otimizar a comunicação dentro da equipe para evitar ruídos e aumentar a produtividade.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('transparencia') }}">🔍 Transparência</a>
+        <a href="">🔍 Transparência</a>
       </label>
       <p>Compreenda a importância da transparência nas atividades e decisões da equipe para manter confiança e alinhamento.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('inspecao_continua') }}">📈 Inspeção Contínua</a>
+        <a href="">📈 Inspeção Contínua</a>
       </label>
       <p>Aprenda a revisar constantemente processos e resultados para identificar melhorias e corrigir desvios rapidamente.</p>
     </div>
 
     <div class="contentlinks">
       <label>
-        <a href="{{ url_for('adaptacao_boas_praticas') }}">✅ Adaptação, Melhoria e Boas Práticas</a>
+        <a href="">✅ Adaptação, Melhoria e Boas Práticas</a>
       </label>
       <p>Conheça estratégias para adaptar práticas, implementar melhorias contínuas e consolidar hábitos eficientes na equipe.</p>
     </div>
   </article>
 </div>
-<script src="../../../static/modulos.js"></script>
+<script type="module" src="{{ url_for('static', filename='script/main-script.js')}}"></script>
 {% endblock %}

@@ -32,7 +32,8 @@
       </a>
 
       <a href="" data-conteudos="{{ url_for('exercicios_modulo5') }}" class="navegacacao_conteudo" id="exercicios">
-        <span>📝Exercícios</span>
+        <span>📝</span>Exercícios
+        <input type="checkbox" class="check" name="modulo5" value="5">
       </a>
     </nav>
   </aside>
@@ -73,5 +74,5 @@
     </div>
   </article>
 </div>
-<script src="../../../static/modulos.js"></script>
+<script type="module" src="{{ url_for('static', filename='script/main-script.js')}}"></script>
 {% endblock %}

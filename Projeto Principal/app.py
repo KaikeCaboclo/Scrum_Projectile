@@ -240,9 +240,7 @@ def conclusao():
 
 @app.route('/exercicios/modulo1')
 def exercicios_modulo1():
-    with open('data/questoes_modulo1.json', encoding='utf-8') as f:
-        questoes = json.load(f)
-    return render_template('exercicios/exercicios_modulo1.html', questoes=questoes)
+    return render_template('exercicios/exercicios_modulo1.html')
 
 @app.route('/exercicios/modulo2')
 def exercicios_modulo2():
@@ -251,9 +249,7 @@ def exercicios_modulo2():
 
 @app.route('/exercicios/modulo3')
 def exercicios_modulo3():
-    with open('data/questoes_modulo3.json', encoding='utf-8') as f:
-        questoes = json.load(f)
-    return render_template('exercicios/exercicios_modulo3.html', questoes=questoes)
+    return render_template('exercicios/exercicios_modulo3.html')
 
 @app.route('/exercicios/modulo4')
 def exercicios_modulo4():
