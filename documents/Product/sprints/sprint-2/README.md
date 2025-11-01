@@ -47,6 +47,13 @@ Entregar as bases avaliativas e melhorias visuais da aplicação, garantindo:
 - Incrementação do conteúdo
 <br>
 
+## 🎬 Demonstração da Sprint 2
+
+Veja aqui a demonstração em vídeo dos incrementos desenvolvidos nesta sprint:
+
+[![Assista!](https://img.youtube.com/vi/n-VlnlwjC8Y/0.jpg)](https://www.youtube.com/watch?v=n-VlnlwjC8Y)
+
+<br>
 ## Backlog da Sprint
 <a id="backlog"></a>
 
