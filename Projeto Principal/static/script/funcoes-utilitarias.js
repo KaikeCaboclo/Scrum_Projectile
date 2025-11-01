@@ -6,7 +6,7 @@ export function evento_alvo(evento){
     return evento.currentTarget
 }
 export function Checkboxes(){
-    return document.querySelectorAll('input[type="checkbox"]')
+    return document.querySelectorAll('input[type="checkbox"][class="check"]')
 }
 export function Checkboxes_marcados(){
     return document.querySelectorAll('input[type="checkbox"]:checked')

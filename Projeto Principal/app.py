@@ -18,6 +18,9 @@ def progresso():
 @app.route('/sobre')
 def sobre():
     return render_template('sobre.html')
+@app.route('/notas')
+def notas():
+    return render_template('notas.html')
 
 
 

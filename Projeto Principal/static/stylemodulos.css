@@ -48,8 +48,10 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  padding: 10px 10px;
+  padding: 10px 10px; 
+  align-items: center;
 }
+
 
 div.nav-links div {
   margin-right: 50px;
@@ -394,4 +396,60 @@ footer {
     margin-left: 0;
     padding: 1.5rem;
   }
+}
+
+
+.grafico_progrecao{
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.grafico_progresso_total{
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: relative;
+}
+
+.graficos{
+  width: 180px;
+  height: 180px;
+  text-align: center;
+  margin-bottom: 100px;
+  display: flex;
+}
+.graficos p{
+  margin-left: 10%;
+  font-size: 30px;
+  font-style: bold;
+}
+#grafico_modulo1{
+  width: 90%;
+  height: 90%;
+}
+
+.area_graficos div{
+  background-color: whitesmoke;
+  box-shadow:  -5px 5px 12px rgba(67, 65, 65, 0.3);
+  border-radius: 20px;
+  margin-left: 1%;
+  margin-top: 2%;
+  padding: 1%;
+  min-width: 90%;
+}
+.area_graficos h2{
+  margin-left: 2%;
+  font-size: 30px;
+}
+
+#mensagem-flutuante{
+  position: absolute;
+  padding: 8px 12px;
+  background-color: lightblue;
+  color: black;
+  border-radius: 4px;
+  display: none;
+  pointer-events: none;
+  z-index: 1000;
+  font-size: 14px;
 }

@@ -6,9 +6,10 @@
   <title>{% block title %}SCRUM ACADEMY{% endblock %}</title>
 
   <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+  <link rel="stylesheet" href="{{url_for('static', filename='stylemodulos.css')}}">
   <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/png">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   {% block extra_css %}{% endblock %}
 
@@ -22,11 +23,18 @@
         <a href="{{ url_for('index') }}" class="logo-text">SCRUM ACADEMY</a>
       </div>
       <div class="nav-links">
+        <div class="grafico_progresso_total"><canvas class="grafico_progrecao"></canvas></div>
         <div><a href="{{ url_for('index') }}">Home</a></div>
         <div><a href="{{ url_for('modulos') }}">Módulos</a></div>
+        <div><a href="{{ url_for('notas')}}">notas</a></div>
         <div><a href="{{ url_for('sobre') }}">Sobre</a></div>
       </div>
     </nav>
+    <div id="mensagem-flutuante">
+      <p id="mensagem">
+      
+      </p>
+    </div>
   </header>
 
   <main>
@@ -36,6 +44,6 @@
   <footer id="footer">
     <p>© 2025 - SCRUM ACADEMY</p>
   </footer>
-
+<script type="module" src="{{ url_for('static', filename='script/main-script.js')}}"></script>
 </body>
 </html>
