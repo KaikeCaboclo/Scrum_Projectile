@@ -139,7 +139,7 @@ div.nav-links div a:hover {
 
 .sidebar {
   position: absolute;
-  top: 78px;
+  top: 90px;
   left: 0;
   width: 280px;
   background: rgba(255, 255, 255, 0.7);
@@ -152,6 +152,7 @@ div.nav-links div a:hover {
   padding: 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
+  border-bottom-right-radius: 10px;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -411,35 +412,104 @@ footer {
   position: relative;
 }
 
-.graficos{
-  width: 180px;
-  height: 180px;
-  text-align: center;
-  margin-bottom: 100px;
-  display: flex;
-}
-.graficos p{
-  margin-left: 10%;
-  font-size: 30px;
-  font-style: bold;
-}
-#grafico_modulo1{
-  width: 90%;
-  height: 90%;
+
+/* Área dos gráficos */
+.titulo {
+  margin-left: 5%;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
 }
 
-.area_graficos div{
-  background-color: whitesmoke;
-  box-shadow:  -5px 5px 12px rgba(67, 65, 65, 0.3);
-  border-radius: 20px;
-  margin-left: 1%;
-  margin-top: 2%;
-  padding: 1%;
-  min-width: 90%;
+.area_graficos {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 2rem;
+  margin: 2rem 5%;
+  justify-content: center; 
 }
-.area_graficos h2{
-  margin-left: 2%;
-  font-size: 30px;
+
+.graficos {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.graficos:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.graficos canvas {
+  width: 100%;
+  height: auto;
+  max-width: 180px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Texto abaixo do gráfico */
+.graficos p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+
+@media (max-width: 1024px) {
+  .area_graficos {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .area_graficos {
+    grid-template-columns: auto; 
+  }
+
+  .titulo {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .graficos {
+    padding: 1rem;
+  }
+
+  .graficos p {
+    font-size: 1rem;
+  }
+}
+
+/*fim área gráficos*/
+
+.marcacao_erro{
+  position: absolute;
+  padding: 5px 8px;
+  background-color: red;
+  color:  white;
+  border-radius: 4px;
+  display: none;
+  pointer-events: none;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.barra_tempo{
+  width: 100%;
+  height: 10px;
+  background-color: white;
+  border-radius: 4px;
+  display: block;
 }
 
 #mensagem-flutuante{
