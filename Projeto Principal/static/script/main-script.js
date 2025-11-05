@@ -1,4 +1,13 @@
 /*Gráfico de progresso header*/
+let mychart=null
+grafico_progresso()
+
+function grafico_progresso(){
+    const progresso = localStorage.getItem('progresso-curso') || 0; 
+    if(mychart!=null){
+        mychart.destroy()
+    }
+
 const textoNoMeio= {
     id:'textoNoMeio',
     afterDraw(chart, args, options){
@@ -18,44 +27,41 @@ const textoNoMeio= {
 
 
 
-let mychart;
-
-const progresso = localStorage.getItem('progresso-curso');
-if (progresso) {
     const grafico_prog_curso = document.querySelector('.grafico_progrecao');
-    const progresso_total = (JSON.parse(progresso).length / 50) * 100;
+    const progresso_total = (JSON.parse(progresso).length / 50) * 100 || 0;
 
-    mychart = new Chart(grafico_prog_curso, {
-        type: 'doughnut',
-        data: {
-            labels: ['Concluído', 'Restante'],
-            datasets: [{
-                data: [progresso_total, 100 - progresso_total],
-                backgroundColor: [
-                    'rgba(54, 162, 235, 0.8)',
-                    'rgba(200, 200, 200, 0.3)'
-                ],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { display: false },
-                tooltip: { enabled: false },
-                textoNoMeio:{
-                    text: parseInt(`${(JSON.parse(progresso).length / 50) * 100}`)+"%",
-                    color:'white',
-                    font:'bold 10px arial'
+mychart = new Chart(grafico_prog_curso, {
+    type: 'doughnut',
+    data: {
+        labels: ['Concluído', 'Restante'],
+        datasets: [{
+            data: [progresso_total, 100 - progresso_total],
+            backgroundColor: [
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(200, 200, 200, 0.3)'
+            ],
+            borderWidth: 0
+        }]
+    },
+    options: {
+        animations: false,
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { display: false },
+            tooltip: { enabled: false },
+            textoNoMeio:{
+                text: parseInt(`${(JSON.parse(progresso).length / 50) * 100}`)+"%",
+                color:'white',
+                font:'bold 10px arial'
 
-                }
-            },
-            cutout: '60%'
+            }
         },
-        plugins:[textoNoMeio]
-    });
-}
+        cutout: '60%'
+    },
+    plugins:[textoNoMeio]
+});
+
 
 
 
@@ -83,14 +89,14 @@ function mensagem_move(evento){
 function apagar_mensagem(){
     mensagem.style.display='none'
 }
-
+}
 
 /*---------------------------*/
 
 
 /*controle de rotas*/
 var rotasdosmodulos=['modulo1', 'modulo2', 'modulo3', 'modulo4', 'modulo5', 'modulo6', 'modulo7', 'modulo8', 'modulo9']
-import {exercice_section, modulo_card, exercise_card, exercise_container, texto_opção, input_radio_marcados, input_radio, Checkboxes_marcados, Checkboxes, evento_alvo, pagina_atual} from './funcoes-utilitarias.js';
+import {exercise_section, modulo_card, exercise_card, exercise_container, texto_opção, input_radio_marcados, input_radio, Checkboxes_marcados, Checkboxes, evento_alvo, pagina_atual} from './funcoes-utilitarias.js';
 
 switch (true){
     case rotasdosmodulos.includes(pagina_atual()):
@@ -174,8 +180,9 @@ function modulos(){
 
     function progresso(evento){
         const progress=evento_alvo(evento).parentElement.id
-        if(progress.includes('ex_modulo') && (localStorage.getItem(`progresso${progress.slice(2)}`)<70 || localStorage.getItem(`progresso${progress.slice(2)}`)===null)){
-            evento_alvo(evento).checked==false
+        const memoria_progresso=localStorage.getItem(`progresso${progress.slice(2)}`)
+        if(progress.includes('ex_modulo') && (memoria_progresso<70 || memoria_progresso===null)){
+            evento_alvo(evento).checked=false
             bloquear(evento)
             marcacao_erro(evento)
             if(intervalo!=null){
@@ -196,7 +203,7 @@ function modulos(){
                 }else{
                     clearInterval(intervalo)
                 }
-            }, 50)
+            }, 35)
         }
         
 
@@ -210,12 +217,11 @@ function modulos(){
            erro.style.left=evento.pageX+10+'px'
            timeout=setTimeout(()=>{
             erro.style.display='none'
-           }, 5000)
+           }, 3500)
 
         }
-        
         let progresso=JSON.parse(localStorage.getItem('progresso-curso')) || []
-
+        
         Checkboxes().forEach(box=>{
             if(!progresso.includes(box.value) && box.checked){
             progresso.push(box.value)}else if(progresso.includes(box.value) && !box.checked){
@@ -223,13 +229,14 @@ function modulos(){
             }
         })
         localStorage.setItem('progresso-curso', JSON.stringify(progresso))
+        grafico_progresso()
     }
     if(localStorage.getItem('progresso-curso')){
         JSON.parse(localStorage.getItem('progresso-curso')).forEach(value=>{
-           const box =document.querySelector('input[type="checkbox"].check[value="'+value+'"]')
-           if(box){
-            box.checked=true
-           }
+            const box =document.querySelector('input[type="checkbox"].check[value="'+value+'"]')
+            if(box){
+                box.checked=true
+            }
         })
     }
     /*-------------------------------------------------------------------------*/
@@ -266,7 +273,7 @@ function modulos(){
         })
         localStorage.setItem(exercise_container().id, JSON.stringify(respondido))
         const porcentagem_acertos=(acertos/exercise_card().length)*100
-        localStorage.setItem(exercice_section().id, porcentagem_acertos)
+        localStorage.setItem(exercise_section().id, porcentagem_acertos)
     }else{
         document.querySelector('.erro').textContent='Responda a todas as perguntas!!!'
     }
@@ -278,6 +285,11 @@ function modulos(){
     /*botão refazer - apaga as respostas da memoria e retira as marcações */
     function refazer(){
         localStorage.removeItem(exercise_container().id)
+        localStorage.removeItem(exercise_section().id)
+        const chave="ex"+exercise_section().id.slice(9)
+        window.alert(chave)
+        document.querySelector(`.navegacacao_conteudo[id="${chave}"]`).querySelector('input').checked=false
+
         input_radio().forEach(input=>{
         input.checked=false
         texto_opção(input).textContent=texto_opção(input).textContent.replace('✅', '').replace('❌', '')

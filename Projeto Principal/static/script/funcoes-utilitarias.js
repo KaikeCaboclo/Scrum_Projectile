@@ -37,6 +37,6 @@ export function modulo_card(){
     return document.querySelectorAll('.modulo-card')
 }
 
-export function exercice_section(){
+export function exercise_section(){
     return document.querySelector('.exercise-section')
 }
