@@ -1,9 +1,31 @@
+/*Controle de storage*/
+const memoria={porcentagemProgresso:'progressoCurso', checkboxesValue:'listaCheckboxes' }
+const chaves=['porcentagemAcertos', 'respostasSalvas']
+for(let x=1; x<9; x++){
+    memoria[`modulo${x}`]={
+        [chaves[0]]:`modulo${x}Acertos`,
+        [chaves[1]]:`modulo${x}RespostasSalvas`
+    }
+}
+
+const gerenciador={
+    setStorage(chave, valor){
+        return localStorage.setItem(chave, JSON.stringify(valor))
+    },
+    getStorage(chave){
+        return JSON.parse(localStorage.getItem(chave))
+    },
+    removeStorage(chave){
+        return localStorage.removeItem(chave)
+    }
+}
+
 /*Gráfico de progresso header*/
 let mychart=null
 grafico_progresso()
 
 function grafico_progresso(){
-    const progresso = localStorage.getItem('progresso-curso') || 0; 
+    const progresso = gerenciador.getStorage('porcentagemProgresso') || 0; 
     if(mychart!=null){
         mychart.destroy()
     }
@@ -28,14 +50,13 @@ const textoNoMeio= {
 
 
     const grafico_prog_curso = document.querySelector('.grafico_progrecao');
-    const progresso_total = (JSON.parse(progresso).length / 50) * 100 || 0;
 
 mychart = new Chart(grafico_prog_curso, {
     type: 'doughnut',
     data: {
         labels: ['Concluído', 'Restante'],
         datasets: [{
-            data: [progresso_total, 100 - progresso_total],
+            data: [progresso, 100 - progresso],
             backgroundColor: [
                 'rgba(54, 162, 235, 0.8)',
                 'rgba(200, 200, 200, 0.3)'
@@ -51,7 +72,7 @@ mychart = new Chart(grafico_prog_curso, {
             legend: { display: false },
             tooltip: { enabled: false },
             textoNoMeio:{
-                text: parseInt(`${(JSON.parse(progresso).length / 50) * 100}`)+"%",
+                text: parseInt(`${progresso}`)+"%",
                 color:'white',
                 font:'bold 10px arial'
 
@@ -77,7 +98,7 @@ function mensagem_flutuante(evento){
    mensagem.style.display='block'
    mensagem.style.left=evento.pageX+'px'
    mensagem.style.top=evento.pageY+30+'px'
-   document.querySelector('#mensagem').textContent=`Curso ${(JSON.parse(progresso).length / 50) * 100}% concluído.`
+   document.querySelector('#mensagem').textContent=`Curso ${progresso}% concluído.`
     
 }
 
@@ -96,7 +117,7 @@ function apagar_mensagem(){
 
 /*controle de rotas*/
 var rotasdosmodulos=['modulo1', 'modulo2', 'modulo3', 'modulo4', 'modulo5', 'modulo6', 'modulo7', 'modulo8', 'modulo9']
-import {exercise_section, modulo_card, exercise_card, exercise_container, texto_opção, input_radio_marcados, input_radio, Checkboxes_marcados, Checkboxes, evento_alvo, pagina_atual} from './funcoes-utilitarias.js';
+import {modulo_card, exercise_card, getModulo, texto_opção, input_radio_marcados, input_radio, Checkboxes_marcados, Checkboxes, evento_alvo, pagina_atual} from './funcoes-utilitarias.js';
 
 switch (true){
     case rotasdosmodulos.includes(pagina_atual()):
@@ -118,18 +139,14 @@ function pagina_cards_modulos(){
         modulo.addEventListener('click', redirecionar)
 
         /*marcar concluído*/
-
-        modulo_card().forEach(modulo=>{
-            if(localStorage.getItem(modulo.querySelector('.progresso').id) && localStorage.getItem(modulo.querySelector('.progresso').id)>70){
+         if(gerenciador.getStorage(memoria[modulo.id].porcentagemAcertos) && gerenciador.getStorage(memoria[modulo.id].porcentagemAcertos)>70){
                 modulo.querySelector('.progresso').textContent='Concluído'
             }
-
-        })
         /*----------------*/
 
     })
     function redirecionar(evento){
-       const link= evento_alvo(evento).dataset.moduloconteudo
+       const link=evento_alvo(evento).dataset.moduloconteudo
        window.location.href=link;
 
     }
@@ -141,6 +158,7 @@ function pagina_cards_modulos(){
 /*----------------------------------------------------------------------------------------*/
 
 function modulos(){
+    const moduloAtual=document.querySelector('.page-container').id
     /*carregar conteúdo*/
     document.querySelectorAll('.navegacacao_conteudo').forEach(conteudo=>{
         conteudo.removeEventListener('click', mudarconteudo)
@@ -162,7 +180,7 @@ function modulos(){
         console.log(erro)
     }
     /*recuperar respostas dos exercicios */
-    if (evento_atual.id.includes('ex_modulo')){
+    if (evento_atual.id=='exercicios'){
         recuperar()
         botoes_exercicios()
     }
@@ -179,9 +197,10 @@ function modulos(){
     let timeout=null
 
     function progresso(evento){
-        const progress=evento_alvo(evento).parentElement.id
-        const memoria_progresso=localStorage.getItem(`progresso${progress.slice(2)}`)
-        if(progress.includes('ex_modulo') && (memoria_progresso<70 || memoria_progresso===null)){
+        if(evento){
+        const memoriaProgresso=gerenciador.getStorage(memoria[moduloAtual].porcentagemAcertos)
+        if(evento_alvo(evento).parentElement.id==='exercicios' && (memoriaProgresso<70 || memoriaProgresso===null)){
+            window.alert(evento_alvo(evento).parentElement.id='exercicios')
             evento_alvo(evento).checked=false
             bloquear(evento)
             marcacao_erro(evento)
@@ -219,20 +238,24 @@ function modulos(){
             erro.style.display='none'
            }, 3500)
 
-        }
-        let progresso=JSON.parse(localStorage.getItem('progresso-curso')) || []
+        }}
+
+        let progresso=gerenciador.getStorage('checkboxesValue') || []
         
         Checkboxes().forEach(box=>{
             if(!progresso.includes(box.value) && box.checked){
-            progresso.push(box.value)}else if(progresso.includes(box.value) && !box.checked){
+            progresso.push(box.value)}
+            else if(progresso.includes(box.value) && !box.checked){
                 progresso=progresso.filter(value => value!==box.value)
             }
         })
-        localStorage.setItem('progresso-curso', JSON.stringify(progresso))
+        gerenciador.setStorage('checkboxesValue', progresso)
+        gerenciador.setStorage('porcentagemProgresso', (progresso.length/50)*100 )
         grafico_progresso()
     }
-    if(localStorage.getItem('progresso-curso')){
-        JSON.parse(localStorage.getItem('progresso-curso')).forEach(value=>{
+    const recuperarMarcados=gerenciador.getStorage('checkboxesValue')
+    if(recuperarMarcados){
+       recuperarMarcados.forEach(value=>{
             const box =document.querySelector('input[type="checkbox"].check[value="'+value+'"]')
             if(box){
                 box.checked=true
@@ -252,6 +275,7 @@ function modulos(){
 
     /*verifica as respostas, calcula os acertos e guarda*/
     function verificacao(){
+        
         if(input_radio_marcados().length==exercise_card().length){input_radio().forEach(input=>{
             texto_opção(input).classList.remove('correto')
             texto_opção(input).classList.remove('errado')
@@ -271,11 +295,12 @@ function modulos(){
                 texto_opção(resposta).textContent+=' ❌'
             }
         })
-        localStorage.setItem(exercise_container().id, JSON.stringify(respondido))
+        gerenciador.setStorage(memoria[moduloAtual].respostasSalvas, respondido)
         const porcentagem_acertos=(acertos/exercise_card().length)*100
-        localStorage.setItem(exercise_section().id, porcentagem_acertos)
+        gerenciador.setStorage(memoria[moduloAtual].porcentagemAcertos, porcentagem_acertos)
     }else{
         document.querySelector('.erro').textContent='Responda a todas as perguntas!!!'
+        return
     }
 
         bloqueio_listeners()
@@ -284,12 +309,11 @@ function modulos(){
 
     /*botão refazer - apaga as respostas da memoria e retira as marcações */
     function refazer(){
-        localStorage.removeItem(exercise_container().id)
-        localStorage.removeItem(exercise_section().id)
-        const chave="ex"+exercise_section().id.slice(9)
-        window.alert(chave)
-        document.querySelector(`.navegacacao_conteudo[id="${chave}"]`).querySelector('input').checked=false
-
+        gerenciador.removeStorage(memoria[moduloAtual].respostasSalvas)
+        gerenciador.removeStorage(memoria[moduloAtual].porcentagemAcertos)
+        document.querySelector('#exercicios').querySelector('input').checked=false
+        grafico_progresso()
+        progresso()
         input_radio().forEach(input=>{
         input.checked=false
         texto_opção(input).textContent=texto_opção(input).textContent.replace('✅', '').replace('❌', '')
@@ -303,14 +327,10 @@ function modulos(){
 
     /*recupera respostas da memória e exibe quendo a página é aberta*/
     function recuperar(){
-        if(localStorage.getItem(exercise_container().id)){
+        if(gerenciador.getStorage(memoria[moduloAtual].respostasSalvas)){
            bloqueio_listeners()
-        }
 
-
-
-        if(localStorage.getItem(exercise_container().id)){
-            JSON.parse(localStorage.getItem(exercise_container().id)).forEach(resp=>{
+           gerenciador.getStorage(memoria[moduloAtual].respostasSalvas).forEach(resp=>{
                 document.querySelector('input[type="radio"][value="'+resp+'"]').checked=true
                 const span=texto_opção(document.querySelector('input[type="radio"][value="'+resp+'"]'))
                 if(resp.includes('correto')){
@@ -321,9 +341,8 @@ function modulos(){
                 span.textContent+=' ❌'
             }
             })
-
-
-        }else{
+        }
+        else{
             return
         }
     }
@@ -338,7 +357,7 @@ function modulos(){
     }
     /*-------------------------------------------------------*/
 
-    /*função que impede interação com os inputs radio*/
+    /*função que impede interação com os inputs*/
     function bloquear(evento){
         evento.preventDefault()
     }

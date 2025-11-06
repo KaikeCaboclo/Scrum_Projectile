@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="page-container">
+<div class="page-container" id="modulo1">
   <aside class="sidebar">
     <div class="sidebar-header">
       <h2>Módulo 1</h2>
@@ -27,7 +27,7 @@
         <span>📜</span> Manifesto Ágil
         <input type="checkbox" class="check" value="3" name="modulo1">
       </a>
-      <a href="" data-conteudos="{{ url_for('exercicios_modulo1') }}" class="navegacacao_conteudo" id="ex_modulo1">
+      <a href="" data-conteudos="{{ url_for('exercicios_modulo1') }}" class="navegacacao_conteudo" id="exercicios">
         <span>📝</span> Exercícios
         <input type="checkbox" class="check" value="4" name="modulo1">
       </a>

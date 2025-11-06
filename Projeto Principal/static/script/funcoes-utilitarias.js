@@ -25,8 +25,8 @@ export function texto_opção(input){
 
 }
 
-export function exercise_container(){
-    return document.querySelector('.exercise-container')
+export function getModulo(){
+    return document.querySelector('.page-container').id
 }
 
 export function exercise_card(){
@@ -35,8 +35,4 @@ export function exercise_card(){
 
 export function modulo_card(){
     return document.querySelectorAll('.modulo-card')
-}
-
-export function exercise_section(){
-    return document.querySelector('.exercise-section')
 }
