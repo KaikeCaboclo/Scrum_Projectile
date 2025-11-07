@@ -19,8 +19,10 @@ const gerenciador={
         return localStorage.removeItem(chave)
     }
 }
+/*-------------------------------------------------------------------*/
 
-/*Gráfico de progresso header*/
+
+/*Gráfico de progresso no header*/
 let mychart=null
 grafico_progresso()
 
@@ -87,7 +89,7 @@ mychart = new Chart(grafico_prog_curso, {
 
 
 
-
+/*Mensagem quando o mouse passa no gráfico de progresso*/
 const mensagem_div=document.querySelector('.grafico_progresso_total')
 const mensagem=document.querySelector('#mensagem-flutuante')
 mensagem_div.addEventListener('mouseenter', mensagem_flutuante)
@@ -111,8 +113,8 @@ function apagar_mensagem(){
     mensagem.style.display='none'
 }
 }
-
 /*---------------------------*/
+/*------------------------------------------------------------------------*/
 
 
 /*controle de rotas*/
@@ -127,14 +129,14 @@ switch (true){
         notas()
         break
     default:
-        pagina_cards_modulos()
+        paginaEscolherModulo()
 
     
 }
 /*---------------------------------------------------------------------------------*/
 
-/*redireciona da página modulos para o modulo desejado*/
-function pagina_cards_modulos(){
+/*redireciona da página modulos para o modulo selecionado e marca a conclusão*/
+function paginaEscolherModulo(){
     modulo_card().forEach(modulo=>{
         modulo.addEventListener('click', redirecionar)
 
@@ -159,7 +161,9 @@ function pagina_cards_modulos(){
 
 function modulos(){
     const moduloAtual=document.querySelector('.page-container').id
-    /*carregar conteúdo*/
+
+
+    /*Mudar entre os conteúdos do módulo*/
     document.querySelectorAll('.navegacacao_conteudo').forEach(conteudo=>{
         conteudo.removeEventListener('click', mudarconteudo)
         conteudo.addEventListener('click', mudarconteudo)
@@ -179,20 +183,27 @@ function modulos(){
     }catch(erro){
         console.log(erro)
     }
+
+
     /*recuperar respostas dos exercicios */
     if (evento_atual.id=='exercicios'){
         recuperar()
         botoes_exercicios()
     }
     /*------------------------------------*/
-    }
-    /*-------------------------------------------------------*/
 
-    /*recuperar marcações da sidebar */
+
+    }
+    /*-----------------------------------------------------------------------------------*/
+
+    /*Salvar progresso da sidebar e controlar marcação*/
     Checkboxes().forEach(checkboxe=>{
         checkboxe.removeEventListener('click', progresso)
         checkboxe.addEventListener('click', progresso)
     })
+
+    /*Controla a marcação do checkbox do tópico exercicios*/
+    
     let intervalo=null
     let timeout=null
 
@@ -239,6 +250,9 @@ function modulos(){
            }, 3500)
 
         }}
+        /*---------------------------------------------------*/
+
+        /*Salva as marcações de progresso na sidebar*/
 
         let progresso=gerenciador.getStorage('checkboxesValue') || []
         
@@ -253,6 +267,9 @@ function modulos(){
         gerenciador.setStorage('porcentagemProgresso', (progresso.length/50)*100 )
         grafico_progresso()
     }
+    /*---------------------------------------------------*/
+    
+    /*Recupera as marcações de progresso na sidebar*/
     const recuperarMarcados=gerenciador.getStorage('checkboxesValue')
     if(recuperarMarcados){
        recuperarMarcados.forEach(value=>{
@@ -262,8 +279,12 @@ function modulos(){
             }
         })
     }
-    /*-------------------------------------------------------------------------*/
+    /*---------------------------------------------------*/
+
+
+    /*----------------------------------------------------*/
     
+    /*Adiciona eventListeners nos botões do exercícios (verificar e refazer)*/
     function botoes_exercicios(){
         const btn_verificar=document.querySelector('.btn-verificar')
         const btn_refazer=document.querySelector('.btn-refazer')
@@ -272,6 +293,8 @@ function modulos(){
         btn_refazer.removeEventListener('click', refazer)
         btn_refazer.addEventListener('click', refazer)
     }
+
+    /*-----------------------------------------------------*/
 
     /*verifica as respostas, calcula os acertos e guarda*/
     function verificacao(){
@@ -307,7 +330,7 @@ function modulos(){
     }
     /*-----------------------------------------------------------------------------*/
 
-    /*botão refazer - apaga as respostas da memoria e retira as marcações */
+    /*botão refazer - apaga as respostas e a porcentagem de acertos da memoria e retira as marcações da questões*/
     function refazer(){
         gerenciador.removeStorage(memoria[moduloAtual].respostasSalvas)
         gerenciador.removeStorage(memoria[moduloAtual].porcentagemAcertos)
@@ -348,7 +371,7 @@ function modulos(){
     }
     /*-----------------------------------------------------------------------------------*/
 
-     /* listeners para a função que impede interação com os inputs radio*/
+     /*Listeners para chamar a função que impede interação com os inputs radio, quando são clicados*/
     function bloqueio_listeners(){
             input_radio().forEach(input=>{
                 input.removeEventListener('click', bloquear)
@@ -366,6 +389,7 @@ function modulos(){
     
 }
 
+/*Cria os gráficos da pagina de notas com as porcentagens de acertos dos exercícios de cada módulo*/
 function notas(){
     const valor={
     id:'valor',
@@ -385,6 +409,7 @@ function notas(){
 
     let mychart;
     function graficos(novo_grafico, porcentagem, resto){
+    porcentagem=parseInt(porcentagem)
     mychart = new Chart(novo_grafico, {
   type: 'doughnut',
   data: {
@@ -416,13 +441,14 @@ function notas(){
   plugins:[valor]
 });
 }
-graficos(document.getElementById('grafico_modulo1'), localStorage.getItem('progresso_modulo1'), 100-(localStorage.getItem('progresso_modulo1')))
-graficos(document.getElementById('grafico_modulo2'), localStorage.getItem('progresso_modulo2'), 100-(localStorage.getItem('progresso_modulo2')))
-graficos(document.getElementById('grafico_modulo3'), localStorage.getItem('progresso_modulo3'), 100-(localStorage.getItem('progresso_modulo3')))
-graficos(document.getElementById('grafico_modulo4'), localStorage.getItem('progresso_modulo4'), 100-(localStorage.getItem('progresso_modulo4')))
-graficos(document.getElementById('grafico_modulo5'), localStorage.getItem('progresso_modulo5'), 100-(localStorage.getItem('progresso_modulo5')))
-graficos(document.getElementById('grafico_modulo6'), localStorage.getItem('progresso_modulo6'), 100-(localStorage.getItem('progresso_modulo6')))
-graficos(document.getElementById('grafico_modulo7'), localStorage.getItem('progresso_modulo7'), 100-(localStorage.getItem('progresso_modulo7')))
-graficos(document.getElementById('grafico_modulo8'), localStorage.getItem('progresso_modulo8'), 100-(localStorage.getItem('progresso_modulo8')))
 
+graficos(document.getElementById('grafico_modulo1'), gerenciador.getStorage(memoria.modulo1.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo1.porcentagemAcertos))
+graficos(document.getElementById('grafico_modulo2'), gerenciador.getStorage(memoria.modulo2.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo2.porcentagemAcertos)|| 0)
+graficos(document.getElementById('grafico_modulo3'), gerenciador.getStorage(memoria.modulo3.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo3.porcentagemAcertos)|| 0)
+graficos(document.getElementById('grafico_modulo4'), gerenciador.getStorage(memoria.modulo4.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo4.porcentagemAcertos)|| 0)
+graficos(document.getElementById('grafico_modulo5'), gerenciador.getStorage(memoria.modulo5.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo5.porcentagemAcertos)|| 0)
+graficos(document.getElementById('grafico_modulo6'), gerenciador.getStorage(memoria.modulo6.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo6.porcentagemAcertos)|| 0)
+graficos(document.getElementById('grafico_modulo7'), gerenciador.getStorage(memoria.modulo7.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo7.porcentagemAcertos)|| 0)
+graficos(document.getElementById('grafico_modulo8'), gerenciador.getStorage(memoria.modulo8.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo8.porcentagemAcertos)|| 0)
 }
+/*-----------------------------------------------------------------------------------------------*/
