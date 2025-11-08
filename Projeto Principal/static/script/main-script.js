@@ -175,6 +175,10 @@ function modulos(){
         }
         const evento_atual=evento_alvo(evento)
         evento.preventDefault()
+        document.querySelectorAll('.navegacacao_conteudo').forEach(botao=>{
+            botao.classList.remove('active')
+        })
+        evento_atual.classList.add('active')
         try{
         const artigo = evento_alvo(evento).dataset.conteudos
         const pegar= await fetch(artigo)
@@ -263,7 +267,7 @@ function modulos(){
             }
         })
         gerenciador.setStorage('checkboxesValue', progresso)
-        gerenciador.setStorage('porcentagemProgresso', (progresso.length/50)*100 )
+        gerenciador.setStorage('porcentagemProgresso', (progresso.length/49)*100 )
         grafico_progresso()
     }
     /*---------------------------------------------------*/

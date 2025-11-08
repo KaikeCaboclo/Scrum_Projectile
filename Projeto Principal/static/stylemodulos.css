@@ -275,13 +275,12 @@ div.nav-links div a:hover {
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
 }
 
-.sidebar-menu a.active {
-  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%);
-  color: white;
-  transform: translateX(4px);
-  border-color: var(--blue-dark);
-  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.25);
-  font-weight: 600;
+.active {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
+  color: var(--blue-dark) !important; 
+  transform: translateX(8px) !important;
+  border-color: var(--blue-light) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15) !important;
 }
 
 .artigo {
@@ -348,6 +347,18 @@ div.nav-links div a:hover {
   padding: 15px 20px;
   transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.links{
+  text-decoration: none;
+  cursor: pointer;
+  color: blue;
+  transition: text-shadow, 0.3s ease ;
+}
+.links:hover{
+  text-decoration: underline;
+  text-shadow: 3px 3px 5px #94a3b8;
+
 }
 
 .contentlinks a {

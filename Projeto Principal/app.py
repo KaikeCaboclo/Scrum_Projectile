@@ -41,6 +41,7 @@ def porque_scrum():
 def manifesto_agil():
     return render_template('pages/modulo1/manifestoAgil.html')
 
+
 @app.route('/modulo2')
 def modulo2():
     return render_template('pages/modulo2/modulo2.html')
@@ -165,21 +166,22 @@ def modulo7():
 def o_que_e_scrum_board():
     return render_template('pages/modulo7/OQueEScrumBoard.html')
 
-@app.route('/quadro-fisico-vs-digital')
-def quadro_fisico_vs_digital():
+@app.route('/anatomia-Scrum-Board')
+def anatomiaScrumBoard():
     return render_template('pages/modulo7/AnatomiaBoard.html')
 
-@app.route('/colunas-tipicas-scrum-board')
-def colunas_tipicas_scrum_board():
+@app.route('/fisico-Vs-Digital')
+def fisicoVsDigital():
     return render_template('pages/modulo7/presencialvsdigital.html')
 
-@app.route('/ferramentas-digitais-suporte')
-def ferramentas_digitais_suporte():
+@app.route('/scrum-Board-Vivo')
+def scrumBoardVivo():
     return render_template('pages/modulo7/ScrumBoardvivo.html')
 
-@app.route('/boas-praticas-scrum-board')
-def boas_praticas_scrum_board():
-    return render_template('pages/modulo7/armadilhas.html.html')
+@app.route('/armadilhas')
+def armadilhas():
+    return render_template('pages/modulo7/armadilhas.html')
+
 
 @app.route('/modulo8')
 def modulo8():
