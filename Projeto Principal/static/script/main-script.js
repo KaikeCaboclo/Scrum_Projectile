@@ -211,7 +211,6 @@ function modulos(){
         if(evento){
         const memoriaProgresso=gerenciador.getStorage(memoria[moduloAtual].porcentagemAcertos)
         if(evento_alvo(evento).parentElement.id==='exercicios' && (memoriaProgresso<70 || memoriaProgresso===null)){
-            window.alert(evento_alvo(evento).parentElement.id='exercicios')
             evento_alvo(evento).checked=false
             bloquear(evento)
             marcacao_erro(evento)
