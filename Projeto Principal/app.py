@@ -163,23 +163,23 @@ def modulo7():
 
 @app.route('/o-que-e-scrum-board')
 def o_que_e_scrum_board():
-    return render_template('pages/modulo7/1-OQueEScrumBoard.html')
+    return render_template('pages/modulo7/OQueEScrumBoard.html')
 
 @app.route('/quadro-fisico-vs-digital')
 def quadro_fisico_vs_digital():
-    return render_template('pages/modulo7/2-QuadroFisicoQuadroDigital.html')
+    return render_template('pages/modulo7/AnatomiaBoard.html')
 
 @app.route('/colunas-tipicas-scrum-board')
 def colunas_tipicas_scrum_board():
-    return render_template('pages/modulo7/3-ColunasTipicasScrumBoard.html')
+    return render_template('pages/modulo7/presencialvsdigital.html')
 
 @app.route('/ferramentas-digitais-suporte')
 def ferramentas_digitais_suporte():
-    return render_template('pages/modulo7/4-FerramentasDigitaisDeSuporte.html')
+    return render_template('pages/modulo7/ScrumBoardvivo.html')
 
 @app.route('/boas-praticas-scrum-board')
 def boas_praticas_scrum_board():
-    return render_template('pages/modulo7/5-BoasPraticasScrumBoard.html')
+    return render_template('pages/modulo7/armadilhas.html.html')
 
 @app.route('/modulo8')
 def modulo8():
