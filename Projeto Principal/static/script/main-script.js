@@ -27,7 +27,7 @@ let mychart=null
 grafico_progresso()
 
 function grafico_progresso(){
-    const progresso = gerenciador.getStorage('porcentagemProgresso') || 0; 
+    const progresso = parseInt(gerenciador.getStorage('porcentagemProgresso')) || 0; 
     if(mychart!=null){
         mychart.destroy()
     }
