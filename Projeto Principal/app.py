@@ -1,5 +1,12 @@
-from flask import Flask, render_template
-import json
+from flask import Flask, render_template, jsonify, request, send_file
+from datetime import datetime
+import json, io
+from reportlab.lib.pagesizes import letter, landscape
+from reportlab.pdfgen import canvas
+from reportlab.lib.utils import ImageReader
+from reportlab.lib.colors import HexColor
+
+
 
 app = Flask(__name__)
 
@@ -276,6 +283,116 @@ def exercicios_modulo7():
 @app.route('/exercicios/modulo8')
 def exercicios_modulo8():
     return render_template('exercicios/exercicios_modulo8.html')
+
+
+
+# NOVA ROTA: Verificar elegibilidade para certificado
+@app.route('/api/verificar-certificado', methods=['POST'])
+def verificar_certificado():
+    """Verifica se o usuário pode acessar o certificado"""
+    data = request.json
+    notas = data.get('notas', {})
+    
+    # Verifica se todas as 8 notas (módulos com exercícios) estão acima de 70
+    modulos_com_nota = ['modulo1', 'modulo2', 'modulo3', 'modulo4', 
+                        'modulo5', 'modulo6', 'modulo7', 'modulo8']
+    
+    elegivel = True
+    for modulo in modulos_com_nota:
+        nota = notas.get(f'progresso_{modulo}')
+        if nota is None or float(nota) < 70:
+            elegivel = False
+            break
+    
+    return jsonify({'elegivel': elegivel})
+
+# NOVA ROTA: Página do certificado
+@app.route('/certificado')
+def certificado():
+    return render_template('certificado.html')
+
+# NOVA ROTA: Gerar PDF do certificado
+@app.route('/api/gerar-certificado', methods=['POST'])
+def gerar_certificado():
+    """Gera o PDF do certificado"""
+    data = request.json
+    nome_aluno = data.get('nome', 'Aluno')
+    data_conclusao = datetime.now().strftime('%d/%m/%Y')
+    
+    # Criar buffer para o PDF
+    buffer = io.BytesIO()
+    
+    # Criar o PDF em paisagem
+    c = canvas.Canvas(buffer, pagesize=landscape(letter))
+    width, height = landscape(letter)
+    
+    # Cor de fundo azul gradiente
+    c.setFillColor(HexColor('#1e3a8a'))
+    c.rect(0, 0, width, height, fill=1, stroke=0)
+    
+    # Borda decorativa
+    c.setStrokeColor(HexColor('#ffffff'))
+    c.setLineWidth(8)
+    c.rect(30, 30, width-60, height-60, fill=0, stroke=1)
+    
+    c.setStrokeColor(HexColor('#3b82f6'))
+    c.setLineWidth(3)
+    c.rect(40, 40, width-80, height-80, fill=0, stroke=1)
+    
+    # Título
+    c.setFillColor(HexColor('#ffffff'))
+    c.setFont("Helvetica-Bold", 48)
+    c.drawCentredString(width/2, height-120, "CERTIFICADO")
+    
+    c.setFont("Helvetica", 24)
+    c.drawCentredString(width/2, height-160, "DE CONCLUSÃO")
+    
+    # Texto principal
+    c.setFont("Helvetica", 18)
+    c.drawCentredString(width/2, height-230, "Certificamos que")
+    
+    # Nome do aluno
+    c.setFont("Helvetica-Bold", 32)
+    c.setFillColor(HexColor('#3b82f6'))
+    c.drawCentredString(width/2, height-280, nome_aluno.upper())
+    
+    # Descrição do curso
+    c.setFillColor(HexColor('#ffffff'))
+    c.setFont("Helvetica", 16)
+    texto1 = "concluiu com êxito o curso de"
+    c.drawCentredString(width/2, height-330, texto1)
+    
+    c.setFont("Helvetica-Bold", 22)
+    c.drawCentredString(width/2, height-365, "METODOLOGIA SCRUM")
+    
+    c.setFont("Helvetica", 14)
+    texto2 = "com carga horária de 40 horas, demonstrando proficiência"
+    c.drawCentredString(width/2, height-395, texto2)
+    texto3 = "em todos os módulos do programa SCRUM ACADEMY."
+    c.drawCentredString(width/2, height-415, texto3)
+    
+    # Data
+    c.setFont("Helvetica-Oblique", 12)
+    c.drawCentredString(width/2, 100, f"Concluído em: {data_conclusao}")
+    
+    # Assinaturas (simuladas)
+    c.setFont("Helvetica", 10)
+    c.line(150, 140, 300, 140)
+    c.drawCentredString(225, 125, "SCRUM ACADEMY")
+    c.drawCentredString(225, 110, "Coordenação do Curso")
+    
+    # Finalizar o PDF
+    c.showPage()
+    c.save()
+    
+    # Retornar o PDF
+    buffer.seek(0)
+    return send_file(
+        buffer,
+        mimetype='application/pdf',
+        as_attachment=True,
+        download_name=f'Certificado_SCRUM_{nome_aluno.replace(" ", "_")}.pdf'
+    )
 
 
 if __name__ == '__main__':

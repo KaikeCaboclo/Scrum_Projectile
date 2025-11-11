@@ -49,8 +49,193 @@
     </div>
 </section>
 
+<!-- SEÇÃO DO CERTIFICADO -->
+<section id="certificado-section" class="certificado-section certificado-bloqueado">
+    <div class="certificado-icon">🏆</div>
+    <h2 class="certificado-title">Certificado de Conclusão</h2>
+    <p class="certificado-descricao">
+        Complete todos os módulos com nota mínima de 70% para desbloquear seu certificado oficial!
+    </p>
+    
+    <div class="certificado-requisitos">
+        <h3 style="margin-bottom: 1rem;">Requisitos:</h3>
+        <div class="requisito-item">
+            <span class="requisito-check" id="check-modulo1">⭕</span>
+            <span>Módulo 1: <span id="nota-modulo1">0%</span></span>
+        </div>
+        <div class="requisito-item">
+            <span class="requisito-check" id="check-modulo2">⭕</span>
+            <span>Módulo 2: <span id="nota-modulo2">0%</span></span>
+        </div>
+        <div class="requisito-item">
+            <span class="requisito-check" id="check-modulo3">⭕</span>
+            <span>Módulo 3: <span id="nota-modulo3">0%</span></span>
+        </div>
+        <div class="requisito-item">
+            <span class="requisito-check" id="check-modulo4">⭕</span>
+            <span>Módulo 4: <span id="nota-modulo4">0%</span></span>
+        </div>
+        <div class="requisito-item">
+            <span class="requisito-check" id="check-modulo5">⭕</span>
+            <span>Módulo 5: <span id="nota-modulo5">0%</span></span>
+        </div>
+        <div class="requisito-item">
+            <span class="requisito-check" id="check-modulo6">⭕</span>
+            <span>Módulo 6: <span id="nota-modulo6">0%</span></span>
+        </div>
+        <div class="requisito-item">
+            <span class="requisito-check" id="check-modulo7">⭕</span>
+            <span>Módulo 7: <span id="nota-modulo7">0%</span></span>
+        </div>
+        <div class="requisito-item">
+            <span class="requisito-check" id="check-modulo8">⭕</span>
+            <span>Módulo 8: <span id="nota-modulo8">0%</span></span>
+        </div>
+    </div>
+
+    <div class="progresso-total">
+        <p>Módulos Aprovados: <span id="modulos-aprovados">0/8</span></p>
+    </div>
+
+    <button id="btn-acessar-certificado" class="btn-certificado" disabled>
+        🔒 Certificado Bloqueado
+    </button>
+</section>
 
 
+<script type="module" src="{{ url_for('static', filename='script/main-script.js')}}"></script>
+<script>
+    // Verificar elegibilidade do certificado
+    const memoria = {
+        modulo1: { porcentagemAcertos: 'modulo1Acertos' },
+        modulo2: { porcentagemAcertos: 'modulo2Acertos' },
+        modulo3: { porcentagemAcertos: 'modulo3Acertos' },
+        modulo4: { porcentagemAcertos: 'modulo4Acertos' },
+        modulo5: { porcentagemAcertos: 'modulo5Acertos' },
+        modulo6: { porcentagemAcertos: 'modulo6Acertos' },
+        modulo7: { porcentagemAcertos: 'modulo7Acertos' },
+        modulo8: { porcentagemAcertos: 'modulo8Acertos' }
+    };
+
+    const gerenciador = {
+        getStorage(chave) {
+            return JSON.parse(localStorage.getItem(chave));
+        }
+    };
+
+    // Verificar certificado quando a página carregar
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('=== DEBUG: Verificando Certificado ===');
+        verificarCertificado();
+    });
+
+    function verificarCertificado() {
+        const modulos = ['modulo1', 'modulo2', 'modulo3', 'modulo4', 
+                        'modulo5', 'modulo6', 'modulo7', 'modulo8'];
+        
+        let aprovados = 0;
+        let todasNotasAcima70 = true;
+
+        modulos.forEach((modulo) => {
+            
+            const chaveNota = memoria[modulo].porcentagemAcertos;
+            const nota = parseFloat(gerenciador.getStorage(chaveNota)) || 0;
+            
+            console.log(`${modulo}: ${nota}% (chave: ${chaveNota})`);
+            
+            const notaElement = document.getElementById(`nota-${modulo}`);
+            const checkElement = document.getElementById(`check-${modulo}`);
+            
+            if (notaElement) {
+                notaElement.textContent = nota.toFixed(0) + '%';
+            }
+            
+            if (nota >= 70) {
+                aprovados++;
+                if (checkElement) {
+                    checkElement.textContent = '✅';
+                    checkElement.style.color = '#10b981';
+                }
+            } else {
+                todasNotasAcima70 = false;
+                if (checkElement) {
+                    checkElement.textContent = '❌';
+                    checkElement.style.color = '#ef4444';
+                }
+            }
+        });
+
+        // Atualizar contador
+        document.getElementById('modulos-aprovados').textContent = `${aprovados}/8`;
+
+        // Atualizar botão e seção
+        const btnCertificado = document.getElementById('btn-acessar-certificado');
+        const certificadoSection = document.getElementById('certificado-section');
+
+        if (todasNotasAcima70) {
+            btnCertificado.disabled = false;
+            btnCertificado.textContent = '🎓 Acessar Meu Certificado';
+            btnCertificado.onclick = () => window.location.href = '{{ url_for("certificado") }}';
+            certificadoSection.classList.remove('certificado-bloqueado');
+            
+            // Adicionar animação de comemoração
+            setTimeout(() => {
+                confetti();
+            }, 500);
+        } else {
+            btnCertificado.disabled = true;
+            btnCertificado.textContent = '🔒 Certificado Bloqueado';
+            btnCertificado.onclick = () => {
+                btnCertificado.classList.add('shake');
+                setTimeout(() => btnCertificado.classList.remove('shake'), 500);
+            };
+        }
+    }
+
+    // Função simples de confetti (opcional)
+    function confetti() {
+        const duration = 3000;
+        const end = Date.now() + duration;
+
+        (function frame() {
+            const timeLeft = end - Date.now();
+            if (timeLeft <= 0) return;
+
+            const particleCount = 2;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = '-10px';
+                particle.style.width = '10px';
+                particle.style.height = '10px';
+                particle.style.backgroundColor = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444'][Math.floor(Math.random() * 4)];
+                particle.style.borderRadius = '50%';
+                particle.style.zIndex = '9999';
+                particle.style.animation = 'fall 3s linear';
+                
+                document.body.appendChild(particle);
+                
+                setTimeout(() => particle.remove(), 3000);
+            }
+
+            requestAnimationFrame(frame);
+        }());
+    }
+
+    // CSS da animação de queda
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
 
 
 <script type="module" src="{{ url_for('static', filename='script/main-script.js')}}"></script>

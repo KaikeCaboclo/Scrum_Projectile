@@ -194,7 +194,10 @@ function modulos(){
         recuperar()
         botoes_exercicios()
     }
-    /*------------------------------------*/
+
+    if(document.querySelector('#exercicios')){
+        botoes_exercicios()
+    }
 
 
     }
@@ -284,8 +287,6 @@ function modulos(){
     }
     /*---------------------------------------------------*/
 
-
-    /*----------------------------------------------------*/
     
     /*Adiciona eventListeners nos botões do exercícios (verificar e refazer)*/
     function botoes_exercicios(){

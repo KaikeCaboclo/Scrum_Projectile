@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+
+{% block title %}Meu Certificado | SCRUM ACADEMY{% endblock %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+{% block content %}
+<div class="certificado-container">
+    <div class="parabens">
+        <h2>🎉 Parabéns pela sua conquista!</h2>
+        <p>
+            Você completou todos os módulos do curso de Metodologia Scrum com excelência!
+            Este certificado comprova seu domínio dos conceitos e práticas essenciais do Scrum.
+        </p>
+        <p style="margin-top: 1rem;">
+            <strong>Digite seu nome completo abaixo para personalizar o certificado:</strong>
+        </p>
+        <input type="text" id="input-nome-aluno" class="input-nome" placeholder="Seu nome completo" value="Aluno(a) Scrum">
+    </div>
+
+    <div class="certificado-preview" id="certificado-preview">
+        <div class="selo-qualidade">
+            ★<br>SCRUM<br>ACADEMY
+        </div>
+        
+        <div class="certificado-header">
+            <h1>CERTIFICADO</h1>
+            <h2>de Conclusão</h2>
+        </div>
+
+        <div class="certificado-body">
+            <p>Certificamos que</p>
+            <div class="nome-aluno" id="nome-aluno-display">ALUNO(A) SCRUM</div>
+            <p>concluiu com êxito o curso de</p>
+            <div class="curso-nome">METODOLOGIA SCRUM</div>
+            <p>
+                com carga horária de <strong>40 horas</strong>, demonstrando proficiência<br>
+                em todos os módulos do programa SCRUM ACADEMY,<br>
+                incluindo fundamentos ágeis, papéis, eventos, artefatos e boas práticas.
+            </p>
+
+            <div class="data-conclusao" id="data-conclusao">
+                Concluído em: <span id="data-display"></span>
+            </div>
+        </div>
+
+        <div class="certificado-footer">
+            <div class="assinatura">
+                <div class="assinatura-linha"></div>
+                <p><strong>SCRUM ACADEMY</strong></p>
+                <p>Coordenação do Curso</p>
+            </div>
+            <div class="assinatura">
+                <div class="assinatura-linha"></div>
+                <p><strong>Certificação Digital</strong></p>
+                <p>ID: SA-2025-{{ range(1000, 9999) | random }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="acoes-certificado">
+        <button onclick="baixarPDF()" class="btn-acao btn-download">
+            📥 Baixar PDF
+        </button>
+        <button onclick="compartilharCertificado()" class="btn-acao btn-compartilhar">
+            🔗 Compartilhar
+        </button>
+        <a href="{{ url_for('notas') }}" class="btn-acao btn-voltar">
+            ← Voltar para Notas
+        </a>
+    </div>
+</div>
+
+<script>
+    // USAR AS MESMAS CHAVES DO main-script.js
+    const memoria = {
+        modulo1: { porcentagemAcertos: 'modulo1Acertos' },
+        modulo2: { porcentagemAcertos: 'modulo2Acertos' },
+        modulo3: { porcentagemAcertos: 'modulo3Acertos' },
+        modulo4: { porcentagemAcertos: 'modulo4Acertos' },
+        modulo5: { porcentagemAcertos: 'modulo5Acertos' },
+        modulo6: { porcentagemAcertos: 'modulo6Acertos' },
+        modulo7: { porcentagemAcertos: 'modulo7Acertos' },
+        modulo8: { porcentagemAcertos: 'modulo8Acertos' }
+    };
+
+    const gerenciador = {
+        getStorage(chave) {
+            return JSON.parse(localStorage.getItem(chave));
+        }
+    };
+
+    // Atualizar data atual
+    document.getElementById('data-display').textContent = new Date().toLocaleDateString('pt-BR');
+
+    // Atualizar nome em tempo real
+    const inputNome = document.getElementById('input-nome-aluno');
+    const nomeDisplay = document.getElementById('nome-aluno-display');
+
+    inputNome.addEventListener('input', function() {
+        const nome = this.value.trim() || 'ALUNO(A) SCRUM';
+        nomeDisplay.textContent = nome.toUpperCase();
+    });
+
+    // Carregar nome salvo se existir
+    const nomeSalvo = localStorage.getItem('nome_aluno');
+    if (nomeSalvo) {
+        inputNome.value = nomeSalvo;
+        nomeDisplay.textContent = nomeSalvo.toUpperCase();
+    }
+
+    // Salvar nome ao digitar
+    inputNome.addEventListener('change', function() {
+        localStorage.setItem('nome_aluno', this.value);
+    });
+
+    // Função para baixar PDF
+    async function baixarPDF() {
+        const nome = inputNome.value.trim() || 'Aluno';
+        
+        try {
+            const response = await fetch('/api/gerar-certificado', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ nome: nome })
+            });
+
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `Certificado_SCRUM_${nome.replace(/\s/g, '_')}.pdf`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                
+                alert('✅ Certificado baixado com sucesso!');
+            } else {
+                alert('❌ Erro ao gerar o certificado. Tente novamente.');
+            }
+        } catch (error) {
+            console.error('Erro:', error);
+            alert('❌ Erro ao baixar o certificado. Tente novamente.');
+        }
+    }
+
+    // Função para compartilhar
+    function compartilharCertificado() {
+        const nome = inputNome.value.trim() || 'Aluno';
+        const texto = `🎓 Acabei de concluir o curso de Metodologia Scrum na SCRUM ACADEMY! 
+
+Todos os módulos completos com notas acima de 70%! 💪
+
+#Scrum #Agile #Certificação #DesenvolvimentoProfissional`;
+
+        if (navigator.share) {
+            navigator.share({
+                title: 'Certificado SCRUM ACADEMY',
+                text: texto,
+            }).then(() => {
+                console.log('Compartilhado com sucesso!');
+            }).catch((error) => {
+                console.log('Erro ao compartilhar:', error);
+                copiarTexto(texto);
+            });
+        } else {
+            copiarTexto(texto);
+        }
+    }
+
+    function copiarTexto(texto) {
+        navigator.clipboard.writeText(texto).then(() => {
+            alert('✅ Texto copiado! Cole nas suas redes sociais.');
+        }).catch(() => {
+            alert('❌ Não foi possível copiar. Tente manualmente.');
+        });
+    }
+
+    // Verificar se o usuário tem permissão para acessar
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('=== VERIFICANDO ACESSO AO CERTIFICADO ===');
+        
+        const modulos = ['modulo1', 'modulo2', 'modulo3', 'modulo4', 
+                        'modulo5', 'modulo6', 'modulo7', 'modulo8'];
+        
+        let todasAprovado = true;
+        
+        modulos.forEach(modulo => {
+            const chaveNota = memoria[modulo].porcentagemAcertos;
+            const nota = parseFloat(gerenciador.getStorage(chaveNota)) || 0;
+            console.log(`${modulo}: ${nota}% (chave: ${chaveNota})`);
+            
+            if (nota < 70) {
+                todasAprovado = false;
+            }
+        });
+
+        console.log(`Acesso permitido: ${todasAprovado}`);
+
+        if (!todasAprovado) {
+            alert('⚠️ Você ainda não completou todos os requisitos para o certificado!\n\nVocê precisa ter nota mínima de 70% em todos os 8 módulos.');
+            window.location.href = '{{ url_for("notas") }}';
+        } else {
+            console.log('✅ Acesso permitido! Exibindo certificado.');
+        }
+    });
+</script>
+{% endblock %}
