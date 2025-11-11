@@ -26,7 +26,7 @@
         <div class="grafico_progresso_total"><canvas class="grafico_progrecao"></canvas></div>
         <div><a href="{{ url_for('index') }}">Home</a></div>
         <div><a href="{{ url_for('modulos') }}">Módulos</a></div>
-        <div><a href="{{ url_for('notas')}}">notas</a></div>
+        <div><a href="{{ url_for('notas')}}">Notas</a></div>
         <div><a href="{{ url_for('sobre') }}">Sobre</a></div>
       </div>
     </nav>
@@ -40,6 +40,10 @@
   <main>
     {% block content %}{% endblock %}
   </main>
+  <div class="marcacao_erro">
+    <p>Para concluir este tópico, obtenha 70% ou mais no questionário.</p>
+    <div class="barra_tempo"></div>
+  </div>
 
   <footer id="footer">
     <p>© 2025 - SCRUM ACADEMY</p>

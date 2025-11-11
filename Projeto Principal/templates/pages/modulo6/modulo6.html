@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Módulo 1 - Introdução ao SCRUM | SCRUM ACADEMY{% endblock %}
+{% block title %}Módulo 6 - Planejamento | SCRUM ACADEMY{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
 {% endblock %}
 
 {% block content %}
-<div class="page-container">
+<div class="page-container" id="modulo6">
     <aside class="sidebar">
       <div class="sidebar-header">
         <h2>Módulo 6</h2>
@@ -21,7 +21,7 @@
         </a>
 
         <a href="" data-conteudos="{{ url_for('poker') }}" class="navegacacao_conteudo" >
-          <span>❓</span> planning poker
+          <span>❓</span> Planning Poker
           <input type="checkbox" class="check" value="26" name="modulo6">
         </a>
 
