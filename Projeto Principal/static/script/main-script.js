@@ -141,7 +141,7 @@ function paginaEscolherModulo(){
         modulo.addEventListener('click', redirecionar)
 
         /*marcar concluído*/
-         if(gerenciador.getStorage(memoria[modulo.id].porcentagemAcertos) && gerenciador.getStorage(memoria[modulo.id].porcentagemAcertos)>70){
+         if(gerenciador.getStorage(memoria[modulo.id].porcentagemAcertos) && gerenciador.getStorage(memoria[modulo.id].porcentagemAcertos)>=70){
                 modulo.querySelector('.progresso').textContent='Concluído'
             }
         /*----------------*/
