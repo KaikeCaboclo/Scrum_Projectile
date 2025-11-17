@@ -1,7 +1,7 @@
 /*Controle de storage*/
 const memoria={porcentagemProgresso:'progressoCurso', checkboxesValue:'listaCheckboxes' }
 const chaves=['porcentagemAcertos', 'respostasSalvas']
-for(let x=1; x<9; x++){
+for(let x=1; x<10; x++){
     memoria[`modulo${x}`]={
         [chaves[0]]:`modulo${x}Acertos`,
         [chaves[1]]:`modulo${x}RespostasSalvas`
@@ -270,7 +270,7 @@ function modulos(){
             }
         })
         gerenciador.setStorage('checkboxesValue', progresso)
-        gerenciador.setStorage('porcentagemProgresso', (progresso.length/49)*100 )
+        gerenciador.setStorage('porcentagemProgresso', (progresso.length/43)*100 )
         grafico_progresso()
     }
     /*---------------------------------------------------*/

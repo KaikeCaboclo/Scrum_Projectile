@@ -218,37 +218,14 @@ def adaptacao_boas_praticas():
 def modulo9():
     return render_template('pages/modulo9/modulo9.html')
 
-@app.route('/introducao-treinamento')
-def introducao():
-    return render_template('pages/modulo9/1-IntroduçãoAoTreinamentoScrum.html')
+@app.route('/modulo9/simulacao')
+def simulacao():
+    return render_template('pages/modulo9/simulacao.html')
 
-@app.route('/time-scrum')
-def time_scrum():
-    return render_template('pages/modulo9/2-OTimeScrum.html')
+@app.route('/modulo9/dicas')
+def dicas():
+    return render_template('pages/modulo9/DicasESujestoes.html')
 
-@app.route('/criandobacklog')
-def criando_bl():
-    return render_template('pages/modulo9/3-CriandoOProdutoBacklog.html')
-
-@app.route('/planejamento-da-sprint')
-def planejamento_sprint():
-    return render_template('pages/modulo9/4-PlanejamentoDaSprint.html')
-
-@app.route('/scrum-board')
-def scrum_board():
-    return render_template('pages/modulo9/5-ScrumBoard.html')
-
-@app.route('/daily-na-pratica')
-def daily():
-    return render_template('pages/modulo9/6-DailyScrum.html')
-
-@app.route('/rewiew-e-retrospective-pratica')
-def pratica_cerimonias():
-    return render_template('pages/modulo9/7-Sprint Review e Retrospective.html')
-
-@app.route('/conclusao')
-def conclusao():
-    return render_template('pages/modulo9/8-ConclusaoDoTreinamentoScrum.html')
 
 @app.route('/exercicios/modulo1')
 def exercicios_modulo1():
