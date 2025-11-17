@@ -1,68 +1,74 @@
 {% extends 'base.html' %}
 
-{% block title %}Módulo 9 - Exercícios Práticos | SCRUM ACADEMY{% endblock %}
+{% block title %}Módulo – Exercícios Práticos e Simulações | SCRUM ACADEMY{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
 {% endblock %}
 
 {% block content %}
-<div class="page-container">
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <h2>Módulo 9</h2>
-        <p>Simulações e Exercícios Práticos</p>
-      </div>
+<div class="page-container" id="modulo9">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Simulações e Exercícios Práticos</h2>
+    </div>
 
-      <nav class="sidebar-menu">
-        <a href="" data-conteudos="{{ url_for('introducao') }}" class="navegacacao_conteudo">
-          <span>📋</span> Introdução Ao Treinamento Scrum
-          <input type="checkbox" class="check" name="modulo9" value="42">
-        </a>
+    <nav class="sidebar-menu">
+      <a href="" data-conteudos="{{ url_for('simulacao') }}" class="navegacacao_conteudo">
+        <span>📝</span> Proposta de Simulação
+        <input type="checkbox" class="check" value="42" name="modulo_exercicios">
+      </a>
 
-        <a href="" data-conteudos="{{ url_for('time_scrum') }}" class="navegacacao_conteudo" >
-          <span>📝</span> O Time Scrum
-          <input type="checkbox" class="check" value="43" name="modulo9">
-        </a>
+      <a href="" data-conteudos="{{ url_for('dicas') }}" class="navegacacao_conteudo">
+        <span>📋</span> Dicas e Sujestões
+        <input type="checkbox" class="check" value="43" name="modulo_exercicios">
+      </a>
+    </nav>
+  </aside>
 
-        <a href="" data-conteudos="{{ url_for('criando_bl') }}" class="navegacacao_conteudo">
-          <span>📜</span> Criando o Produto Backlog
-          <input type="checkbox" class="check" value="44" name="modulo9">
-        </a>
+  <article class="artigo">
+    <h1 class="titles">Exercícios Práticos e Simulações</h1>
 
-        <a href="" data-conteudos="{{ url_for('planejamento_sprint') }}" class="navegacacao_conteudo">
-          <span>📝</span> Planejamento da Sprint
-          <input type="checkbox" class="check" value="45" name="modulo9">
-        </a>
+    <p class="text">
+      Este módulo foi criado para que você coloque em prática tudo o que aprendeu sobre Scrum. 
+      Aqui, você vai experimentar como é planejar um projeto real utilizando os principais 
+      artefatos do framework, mas sem precisar desenvolver software de verdade. O objetivo é 
+      treinar sua capacidade de analisar requisitos, transformar necessidades do cliente em 
+      User Stories, organizar um Product Backlog completo e estruturar sprints coerentes, 
+      exatamente como uma equipe Scrum faria.
+    </p>
 
-         <a href="" data-conteudos="{{ url_for('scrum_board') }}" class="navegacacao_conteudo">
-          <span>📝</span> Scrum Board
-          <input type="checkbox" class="check" value="46" name="modulo9">
-        </a>
+    <p class="text">
+      Durante os exercícios, você construirá o planejamento completo de um aplicativo simples 
+      de gerenciamento de tarefas, seguindo uma abordagem orientada ao usuário. Você vai 
+      praticar priorização, estimativa, decomposição de tarefas, definição de objetivos de 
+      sprint e entendimento do fluxo de trabalho ágil.
+    </p>
 
-         <a href="" data-conteudos="{{ url_for('daily') }}" class="navegacacao_conteudo">
-          <span>📝</span> Daily Scrum
-          <input type="checkbox" class="check" value="47" name="modulo9">
-        </a>
+    <p class="text">
+      Além disso, você aprenderá a registrar corretamente o que pode ou não ser simulado dentro 
+      do Scrum — como a Sprint Review e a Sprint Retrospective — compreendendo na prática o que 
+      diferencia teoria de execução real.
+    </p>
 
-         <a href="" data-conteudos="{{ url_for('pratica_cerimonias') }}" class="navegacacao_conteudo">
-          <span>📝</span> Sprint Review e Retrospective
-          <input type="checkbox" class="check" value="48" name="modulo9">
-        </a>
+    <p class="text">
+      Este módulo é essencial para consolidar seu aprendizado: ao vivenciar o processo de forma 
+      guiada e lógica, você desenvolve raciocínio ágil, visão de produto e domínio do fluxo Scrum 
+      como um todo.
+    </p>
 
-         <a href="" data-conteudos="{{ url_for('conclusao') }}" class="navegacacao_conteudo">
-          <span>📝</span> Conclusão do Treinamento Scrum
-          <input type="checkbox" class="check" value="49" name="modulo9">
-        </a>
-      </nav>
-    </aside>
+    <div class="contentlinks">
+      <a href="">📝 Exercícios Práticos</a>
+      <p>Construa User Stories, Product Backlog e sprints completas com base em um projeto real.</p>
+    </div>
 
-  <div>
-    <article class="artigo">
-      <h1 class="titles">Módulo 9</h1>
-      
-    </article>
-  </div>
+    <div class="contentlinks">
+      <a href="">🎯 Simulação SCRUM</a>
+      <p>Vivencie o processo completo de planejamento de um produto utilizando pilares e artefatos do Scrum.</p>
+    </div>
+
+  </article>
 </div>
+
 <script type="module" src="{{ url_for('static', filename='script/main-script.js')}}"></script>
 {% endblock %}
