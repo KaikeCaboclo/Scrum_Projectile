@@ -543,3 +543,383 @@ footer {
   z-index: 1000;
   font-size: 14px;
 }
+
+/* Estilos para a imagem do Scrum */
+
+.scrum-image-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.scrum-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade para mobile */
+@media (max-width: 480px) {
+    .scrum-image-container {
+        margin: 20px auto;
+    }
+}
+
+
+
+/* CERTIFICADO */
+
+    .certificado-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .certificado-preview {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        padding: 4rem;
+        margin: 2rem auto;
+        max-width: 900px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .certificado-preview::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background: linear-gradient(90deg, #1e3a8a, #3b82f6, #1e3a8a);
+    }
+
+    .certificado-header {
+        color: #1e3a8a;
+        margin-bottom: 2rem;
+    }
+
+    .certificado-header h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+    }
+
+    .certificado-header h2 {
+        font-size: 1.8rem;
+        color: #3b82f6;
+        font-weight: 300;
+    }
+
+    .certificado-body {
+        padding: 2rem 0;
+        color: #1f2937;
+        line-height: 2;
+    }
+
+    .certificado-body p {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .nome-aluno {
+        font-size: 2.5rem;
+        color: #3b82f6;
+        font-weight: bold;
+        margin: 2rem 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .curso-nome {
+        font-size: 1.8rem;
+        color: #1e3a8a;
+        font-weight: bold;
+        margin: 1.5rem 0;
+    }
+
+    .certificado-footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 2px solid #e5e7eb;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+    }
+
+    .assinatura {
+        text-align: center;
+        min-width: 200px;
+    }
+
+    .assinatura-linha {
+        width: 200px;
+        height: 2px;
+        background: #1e3a8a;
+        margin: 0 auto 10px;
+    }
+
+    .assinatura p {
+        font-size: 0.9rem;
+        margin: 5px 0;
+        color: #6b7280;
+    }
+
+    .data-conclusao {
+        font-size: 1rem;
+        color: #6b7280;
+        font-style: italic;
+        margin-top: 2rem;
+    }
+
+    .acoes-certificado {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    .btn-acao {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-download {
+        background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+        color: white;
+    }
+
+    .btn-download:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+    }
+
+    .btn-compartilhar {
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+    }
+
+    .btn-compartilhar:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-voltar {
+        background: #6b7280;
+        color: white;
+    }
+
+    .btn-voltar:hover {
+        background: #4b5563;
+    }
+
+    .parabens {
+        background: linear-gradient(135deg, #fef3c7, #fde68a);
+        border-left: 5px solid #f59e0b;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
+
+    .parabens h2 {
+        color: #92400e;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .parabens p {
+        color: #78350f;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .selo-qualidade {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 0.8rem;
+        text-align: center;
+        transform: rotate(15deg);
+        box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            transform: rotate(15deg) scale(1);
+        }
+        50% {
+            transform: rotate(15deg) scale(1.05);
+        }
+    }
+
+    .input-nome {
+        padding: 0.8rem;
+        font-size: 1.1rem;
+        border: 2px solid #3b82f6;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 400px;
+        margin: 1rem auto;
+        display: block;
+        text-align: center;
+    }
+
+    @media print {
+        .acoes-certificado,
+        .parabens,
+        .navbar,
+        footer {
+            display: none !important;
+        }
+        
+        .certificado-preview {
+            box-shadow: none;
+            page-break-inside: avoid;
+        }
+    }
+
+      
+    .certificado-section {
+        text-align: center;
+        padding: 3rem 2rem;
+        margin: 3rem auto;
+        max-width: 900px;
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        color: white;
+    }
+
+    .certificado-bloqueado {
+        background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
+        opacity: 0.7;
+    }
+
+    .certificado-icon {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+
+    .certificado-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .certificado-descricao {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .certificado-requisitos {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        backdrop-filter: blur(10px);
+    }
+
+    .requisito-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 0.5rem 0;
+        font-size: 1rem;
+    }
+
+    .requisito-check {
+        font-size: 1.5rem;
+    }
+
+    .btn-certificado {
+        background-color: white;
+        color: #1e3a8a;
+        border: none;
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-certificado:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-certificado:disabled {
+        background-color: #d1d5db;
+        color: #6b7280;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    .btn-certificado:disabled:hover {
+        transform: none;
+    }
+
+    .progresso-total {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+    }
+
+    .shake {
+        animation: shake 0.5s;
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        75% { transform: translateX(10px); }
+    }
+
+     @keyframes fall {
+        to {
+            transform: translateY(100vh) rotate(360deg);
+            opacity: 0;
+        }
+
+   }
