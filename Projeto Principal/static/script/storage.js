@@ -2,7 +2,8 @@ export default function storage(){
     const memoria={
         exameFinal:{ 
         porcentagemAcertos: 'acertosExame',
-        respostasSalvas: 'exameRespostasSalvas'}, 
+        respostasSalvas: 'exameRespostasSalvas'
+    }, 
         porcentagemProgresso:'progressoCurso',
         checkboxesValue:'listaCheckboxes' 
     }

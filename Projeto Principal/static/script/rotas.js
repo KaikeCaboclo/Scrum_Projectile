@@ -11,6 +11,9 @@ switch (true){
     case PaginaAtual.includes('notas'):
         modulos.notas()
         break
+    case PaginaAtual.includes('exameFinal'):
+        modulos.exameFinal()
+        break
     default:
         modulos.AcessarModulo()
 

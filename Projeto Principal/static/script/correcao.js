@@ -44,7 +44,7 @@ export function botoesExercicios(){
         gerenciador.setStorage(memoria[moduloAtual].respostasSalvas, respondido)
         const porcentagem_acertos=(acertos/tools.exerciseCard().length)*100
         gerenciador.setStorage(memoria[moduloAtual].porcentagemAcertos, porcentagem_acertos)
-        mensagem.textContent=`Você obteve ${porcentagem_acertos}% de respostas corretas!`
+        mensagem.textContent=`Você obteve ${parseInt(porcentagem_acertos)}% de respostas corretas!`
     }
     
     else{
@@ -61,9 +61,14 @@ export function botoesExercicios(){
         const moduloAtual=document.querySelector('.page-container').id
         gerenciador.removeStorage(memoria[moduloAtual].respostasSalvas)
         gerenciador.removeStorage(memoria[moduloAtual].porcentagemAcertos)
+        
+        const exerciciosId=document.querySelector('#exercicios')
+        if (exerciciosId){
         document.querySelector('#exercicios').querySelector('input').checked=false
         progresso.CaixasDeProgresso()
         graficos(document.querySelector('.grafico_progrecao'), parseInt(gerenciador.getStorage('porcentagemProgresso')) || 0, 100- parseInt(gerenciador.getStorage('porcentagemProgresso')) || 0, 10, 'white', 1)
+        }
+        
         tools.inputTipoRadio().forEach(input=>{
         input.checked=false
         tools.textoDaOpção(input).textContent=tools.textoDaOpção(input).textContent.replace('✅', '').replace('❌', '')

@@ -12,7 +12,12 @@ export function AcessarModulo(){
 
         if((memoria[modulo.id].porcentagemAcertos) && gerenciador.getStorage(memoria[modulo.id].porcentagemAcertos)>=70){
             MarcarConcluido(modulo)
-}})
+}
+         if (modulo.id == 'modulo9' && gerenciador.getStorage('checkboxesValue').includes('42') && gerenciador.getStorage('checkboxesValue').includes('43')){
+                MarcarConcluido(modulo)
+            }
+
+})
         
 
     function redirecionar(evento){
@@ -89,4 +94,9 @@ export function notas(){
     graficos(document.getElementById('grafico_modulo7'), gerenciador.getStorage(memoria.modulo7.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo7.porcentagemAcertos)|| 0, 25, 'black', 0)
     graficos(document.getElementById('grafico_modulo8'), gerenciador.getStorage(memoria.modulo8.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo8.porcentagemAcertos)|| 0, 25, 'black', 0)
 
+}
+
+export function exameFinal(){
+    exercicios.recuperar()
+    exercicios.botoesExercicios()
 }

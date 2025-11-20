@@ -262,6 +262,11 @@ def exercicios_modulo8():
     return render_template('exercicios/exercicios_modulo8.html')
 
 
+@app.route('/exameFinal')
+def exameFinal():
+    return render_template('/exameFinal.html')
+
+
 
 # NOVA ROTA: Verificar elegibilidade para certificado
 @app.route('/api/verificar-certificado', methods=['POST'])

@@ -115,6 +115,18 @@
   transition: background-color 0.2s ease;
 }
 
+.exercise-section{
+  margin-bottom: 3%;
+}
+
+.ExameFinal{
+  justify-content: center;
+}
+
+.ExameTitle{
+  margin: 50px 200px;
+}
+
 /* Botão Verificar */
 .btn-verificar {
   background-color: #4CAF50;
