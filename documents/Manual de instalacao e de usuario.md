@@ -26,8 +26,6 @@ Para utilizar o sistema SCRUM Academy, é necessário ter instalado:
   <li>Conexão com internet (para dependências)</li>
 </ul>
 
-<br/>
-
 ---
 
 <h2 id="instalacao">🛠️ <strong>Instalação Passo a Passo</strong></h2>
@@ -106,7 +104,7 @@ http://localhost:5000
 
 ---
 
-<h2 id="problemas">🐛 <strong>Solução de Problemas Comuns</strong></h2>
+<h2 id="solucao">🐛 <strong>Solução de Problemas Comuns</strong></h2>
 
 **❌ Erro: "ModuleNotFoundError"**
 Solução possivel:

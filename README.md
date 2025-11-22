@@ -96,8 +96,7 @@ Além disso, o sistema deve conter avaliações parciais e uma avaliação geral
 
 ### 📖 Documentação <a id="manual"></a>
 
-* <a href="./documents/Manual de usuário.md">Manual de Usuário</a>  
-* <a href="./documents/Manual de instalação.md">Manual de Instalação</a>  
+* <a href="./documents/Manual de instalacao e de usuario.md">Manual de Instalação e de Usuário</a>  
 
 ---
 
