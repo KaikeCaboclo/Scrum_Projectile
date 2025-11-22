@@ -55,8 +55,12 @@
       <p>Consolide seu conhecimento colocando em prática os conceitos apresentados ao longo do curso.</p>
       <p class="progresso"></p>
     </div>
+    <div class="modulo-card" id="exameFinal" data-moduloconteudo="{{ url_for('exameFinal') }}">
+      <a href="{{ url_for('exameFinal') }}">Exame Final</a>
+      <p>Avalie o conhecimanto adquirido durante o curso e libere seu certificado.</p>
+      <p class="progresso"></p>
+    </div>
 </div>
   
 </main>
-<script type="module" src="{{ url_for('static', filename='script/main-script.js')}}"></script>
 {% endblock %}

@@ -1,0 +1,335 @@
+{% extends 'base.html '%}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylemodulos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styleexercicios.css') }}">
+{% endblock %}
+
+{% block title %}Home | SCRUM ACADEMY{% endblock %}
+
+{% block content %}
+<h1 class="titles ExameTitle">Exame Final - Scrum Academy</h1>
+<div class="page-container ExameFinal" id="exameFinal">
+    <section class="exercise-section">
+        <div class="exercise-card">
+            <h2>1. O que é Scrum?</h2>
+            <div class="opcoes">
+                <label class="opcao">
+                    <input type="radio" name="q1" value="1">
+                    <span>Uma metodologia rígida de desenvolvimento</span>
+                </label>
+                <label class="opcao">
+                    <input type="radio" name="q1" value="correto2">
+                    <span>Um framework ágil baseado em aprendizagem contínua e ciclos de inspeção e adaptação</span>
+                </label>
+                <label class="opcao">
+                    <input type="radio" name="q1" value="3">
+                    <span>Um conjunto de ferramentas de gestão</span>
+                </label>
+                <label class="opcao">
+                    <input type="radio" name="q1" value="4">
+                    <span>Um padrão internacional de engenharia</span>
+                </label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <h2>2. Em qual contexto o Scrum é mais eficiente?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q2" value="5"><span>Projetos com requisitos fixos e previsíveis</span></label>
+                <label class="opcao"><input type="radio" name="q2" value="correto6"><span>Projetos complexos e com alta incerteza</span></label>
+                <label class="opcao"><input type="radio" name="q2" value="7"><span>Projetos que não mudam ao longo do tempo</span></label>
+                <label class="opcao"><input type="radio" name="q2" value="8"><span>Projetos que exigem documentação pesada</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 3 -->
+            <h2>3. O que significa dizer que o Scrum se baseia em um processo de aprendizado contínuo?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q3" value="9"><span>Decisões tomadas por votação</span></label>
+                <label class="opcao"><input type="radio" name="q3" value="10"><span>Decisões baseadas em planejamento detalhado</span></label>
+                <label class="opcao"><input type="radio" name="q3" value="correto11"><span>Decisões guiadas por experiência, observação, inspeção e adaptação</span></label>
+                <label class="opcao"><input type="radio" name="q3" value="12"><span>Decisões definidas exclusivamente pelo gestor do projeto</span></label>
+            </div>
+        </div>
+        <div class="exercise-card"> 
+            <!-- 4 -->
+            <h2>4. Por que o Scrum usa ciclos curtos?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q4" value="13"><span>Para aumentar documentação</span></label>
+                <label class="opcao"><input type="radio" name="q4" value="correto14"><span>Para permitir inspeção e adaptação rápidas</span></label>
+                <label class="opcao"><input type="radio" name="q4" value="15"><span>Para reduzir a participação do cliente</span></label>
+                <label class="opcao"><input type="radio" name="q4" value="16"><span>Para diminuir entregas</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 5 -->
+            <h2>5. O que é um Sprint?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q5" value="17"><span>A fase final do projeto</span></label>
+                <label class="opcao"><input type="radio" name="q5" value="correto18"><span>Um ciclo fixo de produção de valor</span></label>
+                <label class="opcao"><input type="radio" name="q5" value="19"><span>Um relatório de progresso</span></label>
+                <label class="opcao"><input type="radio" name="q5" value="20"><span>Um evento opcional</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 6 -->
+            <h2>6. Qual a diferença entre Agile e Scrum?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q6" value="21"><span>Scrum é mais antigo que Agile</span></label>
+                <label class="opcao"><input type="radio" name="q6" value="22"><span>Agile é um framework e Scrum é uma metodologia</span></label>
+                <label class="opcao"><input type="radio" name="q6" value="correto23"><span>Agile é um conjunto de valores; Scrum é um framework que os implementa</span></label>
+                <label class="opcao"><input type="radio" name="q6" value="24"><span>Não há diferença</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 7 -->
+            <h2>7. Como o Scrum reduz riscos?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q7" value="25"><span>Evitando contato com o cliente</span></label>
+                <label class="opcao"><input type="radio" name="q7" value="26"><span>Permitindo mudanças apenas no fim do projeto</span></label>
+                <label class="opcao"><input type="radio" name="q7" value="correto27"><span>Trabalhando em ciclos rápidos com feedback constante</span></label>
+                <label class="opcao"><input type="radio" name="q7" value="28"><span>Usando mais documentação</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 8 -->
+            <h2>8. Por que Scrum lida bem com mudanças?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q8" value="29"><span>Porque impede alterações</span></label>
+                <label class="opcao"><input type="radio" name="q8" value="30"><span>Porque os Sprints são longos</span></label>
+                <label class="opcao"><input type="radio" name="q8" value="correto31"><span>Porque o backlog pode ser constantemente refinado</span></label>
+                <label class="opcao"><input type="radio" name="q8" value="32"><span>Porque elimina o Product Owner</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 9 -->
+            <h2>9. Quais são os três papéis do Scrum?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q9" value="33"><span>Gerente, Analista e Desenvolvedor</span></label>
+                <label class="opcao"><input type="radio" name="q9" value="correto34"><span>Product Owner, Scrum Master e Time de Desenvolvimento</span></label>
+                <label class="opcao"><input type="radio" name="q9" value="35"><span>Scrum Manager, PO Assistente e Testador</span></label>
+                <label class="opcao"><input type="radio" name="q9" value="36"><span>Product Owner, Stakeholder e Designer</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 10 -->
+            <h2>10. Por que o Product Owner tem autoridade no backlog?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q10" value="37"><span>Porque ele é o programador mais experiente</span></label>
+                <label class="opcao"><input type="radio" name="q10" value="correto38"><span>Porque representa o valor para o negócio</span></label>
+                <label class="opcao"><input type="radio" name="q10" value="39"><span>Porque ele testa o software</span></label>
+                <label class="opcao"><input type="radio" name="q10" value="40"><span>Porque ele controla o orçamento do time</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 11 -->
+            <h2>11. O Scrum Master é um gerente?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q11" value="41"><span>Sim, ele manda no time</span></label>
+                <label class="opcao"><input type="radio" name="q11" value="42"><span>Sim, ele aprova tarefas</span></label>
+                <label class="opcao"><input type="radio" name="q11" value="correto43"><span>Não, ele é um facilitador que remove impedimentos</span></label>
+                <label class="opcao"><input type="radio" name="q11" value="44"><span>Não, ele é quem faz o deploy</span></label>
+            </div>
+        </div>
+
+        <div class="exercise-card">
+            <!-- 12 -->
+            <h2>12. O que significa o time ser auto-organizado?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q12" value="45"><span>Escolhe suas próprias férias</span></label>
+                <label class="opcao"><input type="radio" name="q12" value="correto46"><span>Decide como realizar o trabalho</span></label>
+                <label class="opcao"><input type="radio" name="q12" value="47"><span>Trabalha sem Product Owner</span></label>
+                <label class="opcao"><input type="radio" name="q12" value="48"><span>Não precisa de reuniões</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 13 -->
+            <h2>13. Um erro comum sobre o Scrum Master é pensar que:</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q13" value="49"><span>Ele deve facilitar o processo</span></label>
+                <label class="opcao"><input type="radio" name="q13" value="50"><span>Ele é responsável por ensinar Scrum</span></label>
+                <label class="opcao"><input type="radio" name="q13" value="correto51"><span>Ele deve impor tarefas ao time</span></label>
+                <label class="opcao"><input type="radio" name="q13" value="52"><span>Ele ajuda a remover impedimentos</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 14 -->
+            <h2>14. O Product Owner não deve interferir no trabalho técnico porque:</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q14" value="53"><span>Ele não tem conhecimento técnico</span></label>
+                <label class="opcao"><input type="radio" name="q14" value="correto54"><span>Isso compromete a autonomia do time</span></label>
+                <label class="opcao"><input type="radio" name="q14" value="55"><span>Ele só trabalha com documentação</span></label>
+                <label class="opcao"><input type="radio" name="q14" value="56"><span>Ele não participa das reuniões</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 15 -->
+            <h2>15. Como o Scrum Master ajuda um time com muitos impedimentos?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q15" value="57"><span>Aumentando a cobrança</span></label>
+                <label class="opcao"><input type="radio" name="q15" value="correto58"><span>Removendo obstáculos e facilitando comunicação</span></label>
+                <label class="opcao"><input type="radio" name="q15" value="59"><span>Replanejando o backlog sozinho</span></label>
+                <label class="opcao"><input type="radio" name="q15" value="60"><span>Ignorando os problemas para não atrapalhar</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 16 -->
+            <h2>16. O Sprint Planning deve responder:</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q16" value="61"><span>Quem será promovido</span></label>
+                <label class="opcao"><input type="radio" name="q16" value="62"><span>Quanto custará o projeto</span></label>
+                <label class="opcao"><input type="radio" name="q16" value="correto63"><span>O que será feito e como o trabalho será realizado</span></label>
+                <label class="opcao"><input type="radio" name="q16" value="64"><span>Quem vai trabalhar no próximo projeto</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 17 -->
+            <h2>17. Uma Daily Scrum eficiente deve:</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q17" value="65"><span>Durar pelo menos 1 hora</span></label>
+                <label class="opcao"><input type="radio" name="q17" value="66"><span>Ser focada em atualização do Scrum Master</span></label>
+                <label class="opcao"><input type="radio" name="q17" value="correto67"><span>Ser curta e focada no trabalho do dia</span></label>
+                <label class="opcao"><input type="radio" name="q17" value="68"><span>Resolver impedimentos complexos ali mesmo</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 18 -->
+            <h2>18. Se o time não completar o planejado:</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q18" value="69"><span>O Scrum Master termina o trabalho</span></label>
+                <label class="opcao"><input type="radio" name="q18" value="70"><span>O time falhou e a Sprint é cancelada</span></label>
+                <label class="opcao"><input type="radio" name="q18" value="correto71"><span>Os itens incompletos voltam ao Product Backlog</span></label>
+                <label class="opcao"><input type="radio" name="q18" value="72"><span>O Product Owner trabalha junto até terminar</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 19 -->
+            <h2>19. Qual é o propósito da Sprint Review?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q19" value="73"><span>Avaliar desempenho individual</span></label>
+                <label class="opcao"><input type="radio" name="q19" value="correto74"><span>Apresentar o Incremento e coletar feedback</span></label>
+                <label class="opcao"><input type="radio" name="q19" value="75"><span>Planejar férias e folgas</span></label>
+                <label class="opcao"><input type="radio" name="q19" value="76"><span>Revisar salários</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 20 -->
+            <h2>20. Para que serve a Retrospective?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q20" value="77"><span>Criar novos requisitos</span></label>
+                <label class="opcao"><input type="radio" name="q20" value="correto78"><span>Melhorar processos e colaboração</span></label>
+                <label class="opcao"><input type="radio" name="q20" value="79"><span>Apresentar métricas ao cliente</span></label>
+                <label class="opcao"><input type="radio" name="q20" value="80"><span>Atualizar documentação técnica</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 21 -->
+            <h2>21. Pode-se adicionar itens ao Sprint Backlog durante a Sprint?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q21" value="81"><span>Nunca</span></label>
+                <label class="opcao"><input type="radio" name="q21" value="82"><span>Apenas com aprovação do gestor</span></label>
+                <label class="opcao"><input type="radio" name="q21" value="correto83"><span>Sim, se o time e o PO concordarem</span></label>
+                <label class="opcao"><input type="radio" name="q21" value="84"><span>Sim, mas apenas no último dia</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 22 -->
+            <h2>22. O que é a Definition of Done (DoD)?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q22" value="85"><span>Lista de requisitos do produto</span></label>
+                <label class="opcao"><input type="radio" name="q22" value="86"><span>Lista de tarefas por desenvolvedor</span></label>
+                <label class="opcao"><input type="radio" name="q22" value="correto87"><span>Critério que define quando algo está realmente pronto</span></label>
+                <label class="opcao"><input type="radio" name="q22" value="88"><span>Documentação obrigatória</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 23 -->
+            <h2>23. O que é o Product Backlog?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q23" value="89"><span>Lista de bugs do projeto</span></label>
+                <label class="opcao"><input type="radio" name="q23" value="correto90"><span>Lista priorizada de tudo que o produto precisa</span></label>
+                <label class="opcao"><input type="radio" name="q23" value="91"><span>Tarefas do Sprint atual</span></label>
+                <label class="opcao"><input type="radio" name="q23" value="92"><span>Documentação técnica</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 24 -->
+            <h2>24. O Sprint Backlog é:</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q24" value="93"><span>Uma lista de tarefas não priorizadas</span></label>
+                <label class="opcao"><input type="radio" name="q24" value="94"><span>Todas as reuniões da Sprint</span></label>
+                <label class="opcao"><input type="radio" name="q24" value="correto95"><span>Conjunto de itens selecionados do Backlog + plano de execução</span></label>
+                <label class="opcao"><input type="radio" name="q24" value="96"><span>Lista de testes unitários</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 25 -->
+            <h2>25. O que caracteriza o Incremento?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q25" value="97"><span>É uma versão entregue somente no fim do projeto</span></label>
+                <label class="opcao"><input type="radio" name="q25" value="correto98"><span>É uma parte funcional e potencialmente utilizável do produto</span></label>
+                <label class="opcao"><input type="radio" name="q25" value="99"><span>É o conjunto de tarefas planejadas</span></label>
+                <label class="opcao"><input type="radio" name="q25" value="100"><span>É o relatório do Sprint</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 26 -->
+            <h2>26. Por que o Product Backlog é considerado "vivo"?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q26" value="101"><span>Porque muda apenas no início do projeto</span></label>
+                <label class="opcao"><input type="radio" name="q26" value="102"><span>Porque é atualizado somente na Review</span></label>
+                <label class="opcao"><input type="radio" name="q26" value="correto103"><span>Porque evolui continuamente com feedback e prioridades</span></label>
+                <label class="opcao"><input type="radio" name="q26" value="104"><span>Porque é usado só em projetos longos</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 27 -->
+            <h2>27. A priorização do backlog é importante porque:</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q27" value="105"><span>Define quem trabalha em cada tarefa</span></label>
+                <label class="opcao"><input type="radio" name="q27" value="correto106"><span>Garante que o time comece pelo que gera mais valor</span></label>
+                <label class="opcao"><input type="radio" name="q27" value="107"><span>Evita que o cliente acompanhe o projeto</span></label>
+                <label class="opcao"><input type="radio" name="q27" value="108"><span>Elimina a necessidade de refinamento</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 28 -->
+            <h2>28. A transparência dos artefatos permite:</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q28" value="109"><span>Controle rígido do time</span></label>
+                <label class="opcao"><input type="radio" name="q28" value="correto110"><span>Decisões baseadas em dados reais</span></label>
+                <label class="opcao"><input type="radio" name="q28" value="111"><span>Menos comunicação</span></label>
+                <label class="opcao"><input type="radio" name="q28" value="112"><span>Redução de cerimônias</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 29 -->
+            <h2>29. Quando o Scrum NÃO é a melhor escolha?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q29" value="113"><span>Projetos com requisitos mutáveis</span></label>
+                <label class="opcao"><input type="radio" name="q29" value="114"><span>Projetos complexos</span></label>
+                <label class="opcao"><input type="radio" name="q29" value="115"><span>Projetos exploratórios</span></label>
+                <label class="opcao"><input type="radio" name="q29" value="correto116"><span>Projetos com requisitos fixos e totalmente conhecidos</span></label>
+            </div>
+        </div>
+        <div class="exercise-card">
+            <!-- 30 -->
+            <h2>30. Por que o Scrum aumenta previsibilidade?</h2>
+            <div class="opcoes">
+                <label class="opcao"><input type="radio" name="q30" value="117"><span>Porque impede mudanças</span></label>
+                <label class="opcao"><input type="radio" name="q30" value="correto118"><span>Porque usa Sprints curtos com inspeção frequente</span></label>
+                <label class="opcao"><input type="radio" name="q30" value="119"><span>Porque exige documentação detalhada</span></label>
+                <label class="opcao"><input type="radio" name="q30" value="120"><span>Porque define todo o projeto no início</span></label>
+            </div>
+        </div>
+        <p class="erro"></p>
+        <div class="exercise-actions">
+            <button class="btn-verificar">Verificar Respostas</button>
+            <button class="btn-refazer">Refazer Exercício</button>
+        </div>
+    </section>
+</div>
+
+
+
+{% endblock %}

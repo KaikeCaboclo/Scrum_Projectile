@@ -128,7 +128,9 @@ div.nav-links div a:hover {
   font-style: bold !important;
   text-shadow:2px 2px 2px lightgreen;
   color:green !important;
-  margin-bottom:0px !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  
 }
 
 .page-container {
