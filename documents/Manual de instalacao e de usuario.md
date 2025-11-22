@@ -3,13 +3,13 @@
 <h1 align="center">SCRUM ACADEMY</h1>
 <br>
 <p align="center">
-  <a href="#-pré-requisitos">Pré-requisitos</a> •
-  <a href="#-instalação-passo-a-passo">Instalação</a> •
-  <a href="#-verificação">Verificação</a> •
-  <a href="#-solução-de-problemas-comuns">Problemas</a> •
-  <a href="#-funcionalidades-do-sistema">Funcionalidades</a> •
-  <a href="#-como-usar-o-sistema">Como Usar</a> •
-  <a href="#-parar-a-aplicação">Parar</a>
+  <a href="#-pre-requisitos">Pré-requisitos</a> •
+  <a href="#-instalacao">Instalação</a> •
+  <a href="#-verificacao">Verificação</a> •
+  <a href="#-solucao">Problemas</a> •
+  <a href="#-funcionalidade">Funcionalidades</a> •
+  <a href="#-como-usar">Como Usar</a> •
+  <a href="#-parar">Parar</a>
 </p>
 
 <br>
@@ -17,10 +17,18 @@
 ---
 
 <h2 id="pre-requisitos">📋 <strong>Pré-requisitos</strong></h2>
-- Python 3.8+ instalado
-- Git instalado
-- Navegador web moderno
-- Conexão com internet (para download de dependências)
+<p>
+Para utilizar o sistema SCRUM Academy, é necessário ter instalado:
+</p>
+
+<ul>
+  <li><strong>Python 3.8+</strong></li>
+  <li><strong>Git</strong></li>
+  <li>Navegador web moderno</li>
+  <li>Conexão com internet (para dependências)</li>
+</ul>
+
+<br/>
 
 ---
 
@@ -58,7 +66,7 @@ pip install -r requirements.txt
 pip list
 ```
 
-Você deve ver:
+  Você deve ver:
 ```
 blinker==1.9.0
 charset-normalizer==3.4.4
@@ -88,16 +96,20 @@ http://localhost:5000
 ---
 
 <h2 id="verificacao">🧪 <strong>Verificação</strong></h2>
-**Testar Funcionalidades Principais:**
-✅ Navegação entre os 9 módulos
-✅ Sistema de exercícios
-✅ Acompanhamento de progresso
-✅ Exame final
-✅ Geração de certificado PDF
+
+<p>Certifique-se de que as funcionalidades principais estão funcionando:</p> 
+<ul> 
+  <li>✅ Navegação entre os 9 módulos</li> 
+  <li>✅ Sistema de exercícios</li> 
+  <li>✅ Acompanhamento de progresso</li> 
+  <li>✅ Exame final</li> 
+  <li>✅ Geração de certificado PDF</li> 
+</ul>
 
 ---
 
 <h2 id="problemas">🐛 <strong>Solução de Problemas Comuns</strong></h2>
+
 **❌ Erro: "ModuleNotFoundError"**
 Solução possivel:
 ```
@@ -129,35 +141,44 @@ Solução possivel:
 
 ---
 
-<h2 id="funcionalidades">📊 <strong>Funcionalidades do Sistema</strong></h2>
-|Módulo|Conteúdo|Exercícios|
-|---|---|---|
-|Módulo 1|Fundamentos do Scrum|✅|
-|Módulo 2|Agile vs Tradicional|✅|
-|Módulo 3|Papéis do Scrum|✅|
-|Módulo 4|Eventos do Scrum|✅|
-|Módulo 5|Artefatos|✅|
-|Módulo 6|Técnicas de Planejamento|✅|
-|Módulo 7|Scrum Board|✅|
-|Módulo 8|Soft Skills|✅|
-|Módulo 9|Simulação e Dicas|✅|
+<h2 id="funcionalidade">📊 <strong>Funcionalidades do Sistema</strong></h2>
+<table>
+  <tr>
+    <th>Módulo</th>
+    <th>Conteúdo</th>
+    <th>Exercícios</th>
+  </tr>
+  <tr><td>Módulo 1</td><td>Fundamentos do Scrum</td><td>✅</td></tr>
+  <tr><td>Módulo 2</td><td>Agile vs Tradicional</td><td>✅</td></tr>
+  <tr><td>Módulo 3</td><td>Papéis do Scrum</td><td>✅</td></tr>
+  <tr><td>Módulo 4</td><td>Eventos do Scrum</td><td>✅</td></tr>
+  <tr><td>Módulo 5</td><td>Artefatos</td><td>✅</td></tr>
+  <tr><td>Módulo 6</td><td>Técnicas de Planejamento</td><td>✅</td></tr>
+  <tr><td>Módulo 7</td><td>Scrum Board</td><td>✅</td></tr>
+  <tr><td>Módulo 8</td><td>Soft Skills</td><td>✅</td></tr>
+  <tr><td>Módulo 9</td><td>Simulação e Dicas</td><td>✅</td></tr>
+</table>
 
-**Recursos Extras:**
+<h3>Recursos Extras:</h3>
+<ul>
+  <li>📈 Sistema de progresso</li>
+  <li>📝 Exame final</li>
+  <li>🏆 Certificado</li>
+  <li>💾 Armazenamento local</li>
+</ul>
 
-- 📈 Sistema de progresso
-- 📝 Exame final
-- 🏆 Geração de certificado
-- 💾 Armazenamento local
-
+<hr>
 
 <h2 id="como-usar">🎓 <strong>Como Usar o Sistema</strong></h2>
-1. Navegue pelos Módulos: 9 módulos completos sobre Scrum
-2. Complete Exercícios: Exercícios ao final de cada módulo
-3. Acompanhe Progresso: Sistema de tracking de progresso
-4. Faça o Exame Final: Teste seus conhecimentos
-5. Gere Certificado: Obtenha certificado ao cumprir requisitos
+<ol>
+  <li>Navegue pelos 9 módulos</li>
+  <li>Complete os exercícios</li>
+  <li>Acompanhe seu progresso</li>
+  <li>Realize o exame final</li>
+  <li>Gere o certificado</li>
+</ol>
 
----
+<hr>
 
 <h2 id="parar">🛑 <strong>Parar a Aplicação</strong></h2>
 No terminal, pressione:
