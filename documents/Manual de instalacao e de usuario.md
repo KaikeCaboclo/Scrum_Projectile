@@ -3,16 +3,14 @@
 <h1 align="center">SCRUM ACADEMY</h1>
 <br>
 <p align="center">
-  <a href="#-pre-requisitos">Pré-requisitos</a> •
-  <a href="#-instalacao">Instalação</a> •
-  <a href="#-verificacao">Verificação</a> •
-  <a href="#-solucao">Problemas</a> •
-  <a href="#-funcionalidade">Funcionalidades</a> •
-  <a href="#-como-usar">Como Usar</a> •
-  <a href="#-parar">Parar</a>
+  <a href="#pre-requisitos">Pré-requisitos</a> •
+  <a href="#instalacao">Instalação</a> •
+  <a href="#verificacao">Verificação</a> •
+  <a href="#solucao">Problemas</a> •
+  <a href="#funcionalidade">Funcionalidades</a> •
+  <a href="#como-usar">Como Usar</a> •
+  <a href="#parar">Parar</a>
 </p>
-
-<br>
 
 ---
 
