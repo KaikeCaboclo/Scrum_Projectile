@@ -572,356 +572,664 @@ footer {
 
 
 /* CERTIFICADO */
+.certificado-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
 
+.certificado-section:not(.certificado-bloqueado) {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    animation: pulse-success 2s infinite;
+}
+
+@keyframes pulse-success {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+/* CABEÇALHO DO CERTIFICADO */
+.certificado-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.certificado-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.certificado-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.certificado-descricao {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* PROGRESSO VISUAL */
+.certificado-progresso-visual {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.progresso-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.progresso-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.progresso-numero {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.progresso-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.progresso-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(10px);
+    min-width: 250px;
+}
+
+.info-icon {
+    font-size: 2rem;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-content strong {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+}
+
+.info-content span {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ORIENTAÇÃO */
+.certificado-orientacao {
+    margin: 2rem 0;
+}
+
+.orientacao-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    text-align: left;
+}
+
+.orientacao-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.orientacao-lista {
+    list-style: none;
+    counter-reset: step-counter;
+    padding: 0;
+}
+
+.orientacao-lista li {
+    counter-increment: step-counter;
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.orientacao-lista li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(255,255,255,0.2);
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* DETALHES DOS MÓDULOS */
+.modulos-detalhes {
+    margin: 2rem 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 0.8rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.modulos-detalhes summary {
+    font-weight: bold;
+    padding: 0.5rem;
+    user-select: none;
+    list-style: none;
+    text-align: center;
+}
+
+.modulos-detalhes summary::-webkit-details-marker {
+    display: none;
+}
+
+.modulos-detalhes summary:hover {
+    opacity: 0.8;
+}
+
+.modulos-detalhes[open] summary::after {
+    content: " ▲";
+}
+
+.modulos-detalhes:not([open]) summary::after {
+    content: " ▼";
+}
+
+.modulos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.modulo-mini {
+    background: rgba(255,255,255,0.15);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: transform 0.2s;
+}
+
+.modulo-mini:hover {
+    transform: translateY(-2px);
+}
+
+.modulo-numero {
+    background: rgba(255,255,255,0.2);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.modulo-nome {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.modulo-nota {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* BOTÃO DO CERTIFICADO */
+.btn-certificado {
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 2rem;
+}
+
+.btn-bloqueado {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    cursor: not-allowed;
+}
+
+.btn-certificado:not(:disabled) {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1f2937;
+    cursor: pointer;
+    animation: pulse-button 2s infinite;
+}
+
+.btn-certificado:not(:disabled):hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4);
+}
+
+@keyframes pulse-button {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7); }
+    50% { box-shadow: 0 0 0 15px rgba(251, 191, 36, 0); }
+}
+
+.btn-icon {
+    font-size: 2rem;
+}
+
+.btn-texto {
+    font-size: 1.3rem;
+}
+
+.btn-subtexto {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .certificado-section {
+        padding: 1.5rem;
+    }
+    
+    .certificado-progresso-visual {
+        flex-direction: column;
+    }
+    
+    .progresso-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .progresso-numero {
+        font-size: 2rem;
+    }
+    
+    .info-item {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .modulos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .certificado-title {
+        font-size: 1.5rem;
+    }
+    
+    .certificado-descricao {
+        font-size: 1rem;
+    }
+    
+    .orientacao-lista li {
+        padding-left: 2rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificado-icon {
+        font-size: 3rem;
+    }
+    
+    .progresso-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .progresso-numero {
+        font-size: 1.5rem;
+    }
+    
+    .info-content strong {
+        font-size: 1.1rem;
+    }
+    
+    .btn-certificado {
+        padding: 1.2rem;
+    }
+    
+    .btn-texto {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* ===== PÁGINA DO CERTIFICADO (VISUALIZAÇÃO E DOWNLOAD) ===== */
+
+.certificado-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.parabens {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-left: 5px solid #f59e0b;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.parabens h2 {
+    color: #92400e;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.parabens p {
+    color: #78350f;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.input-nome {
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem auto;
+    display: block;
+    text-align: center;
+}
+
+.certificado-preview {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 4rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+.certificado-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6, #1e3a8a);
+}
+
+.selo-qualidade {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    transform: rotate(15deg);
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+    animation: pulse-selo 2s infinite;
+}
+
+@keyframes pulse-selo {
+    0%, 100% {
+        transform: rotate(15deg) scale(1);
+    }
+    50% {
+        transform: rotate(15deg) scale(1.05);
+    }
+}
+
+.certificado-preview .certificado-header {
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.certificado-preview .certificado-header h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.certificado-preview .certificado-header h2 {
+    font-size: 1.8rem;
+    color: #3b82f6;
+    font-weight: 300;
+}
+
+.certificado-body {
+    padding: 2rem 0;
+    color: #1f2937;
+    line-height: 2;
+}
+
+.certificado-body p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.nome-aluno {
+    font-size: 2.5rem;
+    color: #3b82f6;
+    font-weight: bold;
+    margin: 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.curso-nome {
+    font-size: 1.8rem;
+    color: #1e3a8a;
+    font-weight: bold;
+    margin: 1.5rem 0;
+}
+
+.data-conclusao {
+    font-size: 1rem;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+.certificado-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e5e7eb;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.assinatura {
+    text-align: center;
+    min-width: 200px;
+}
+
+.assinatura-linha {
+    width: 200px;
+    height: 2px;
+    background: #1e3a8a;
+    margin: 0 auto 10px;
+}
+
+.assinatura p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #6b7280;
+}
+
+.acoes-certificado {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn-acao {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-download {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: white;
+}
+
+.btn-download:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+}
+
+.btn-compartilhar {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.btn-compartilhar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+.btn-voltar {
+    background: #6b7280;
+    color: white;
+}
+
+.btn-voltar:hover {
+    background: #4b5563;
+}
+
+/* RESPONSIVO - PÁGINA DO CERTIFICADO */
+@media (max-width: 768px) {
     .certificado-container {
-        max-width: 1200px;
-        margin: 2rem auto;
-        padding: 2rem;
-        text-align: center;
+        padding: 1rem;
     }
 
     .certificado-preview {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        padding: 4rem;
-        margin: 2rem auto;
-        max-width: 900px;
-        position: relative;
-        overflow: hidden;
+        padding: 2rem 1rem;
     }
 
-    .certificado-preview::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 20px;
-        background: linear-gradient(90deg, #1e3a8a, #3b82f6, #1e3a8a);
+    .certificado-preview .certificado-header h1 {
+        font-size: 2.5rem;
     }
 
-    .certificado-header {
-        color: #1e3a8a;
-        margin-bottom: 2rem;
-    }
-
-    .certificado-header h1 {
-        font-size: 3.5rem;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-        letter-spacing: 2px;
-    }
-
-    .certificado-header h2 {
-        font-size: 1.8rem;
-        color: #3b82f6;
-        font-weight: 300;
-    }
-
-    .certificado-body {
-        padding: 2rem 0;
-        color: #1f2937;
-        line-height: 2;
-    }
-
-    .certificado-body p {
-        font-size: 1.2rem;
-        margin: 1rem 0;
+    .certificado-preview .certificado-header h2 {
+        font-size: 1.3rem;
     }
 
     .nome-aluno {
-        font-size: 2.5rem;
-        color: #3b82f6;
-        font-weight: bold;
-        margin: 2rem 0;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        font-size: 1.8rem;
     }
 
     .curso-nome {
-        font-size: 1.8rem;
-        color: #1e3a8a;
-        font-weight: bold;
-        margin: 1.5rem 0;
+        font-size: 1.4rem;
     }
 
     .certificado-footer {
-        margin-top: 3rem;
-        padding-top: 2rem;
-        border-top: 2px solid #e5e7eb;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-    }
-
-    .assinatura {
-        text-align: center;
-        min-width: 200px;
-    }
-
-    .assinatura-linha {
-        width: 200px;
-        height: 2px;
-        background: #1e3a8a;
-        margin: 0 auto 10px;
-    }
-
-    .assinatura p {
-        font-size: 0.9rem;
-        margin: 5px 0;
-        color: #6b7280;
-    }
-
-    .data-conclusao {
-        font-size: 1rem;
-        color: #6b7280;
-        font-style: italic;
-        margin-top: 2rem;
-    }
-
-    .acoes-certificado {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 2rem;
-    }
-
-    .btn-acao {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        font-weight: bold;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .btn-download {
-        background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-        color: white;
-    }
-
-    .btn-download:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
-    }
-
-    .btn-compartilhar {
-        background: linear-gradient(135deg, #10b981, #059669);
-        color: white;
-    }
-
-    .btn-compartilhar:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
-    }
-
-    .btn-voltar {
-        background: #6b7280;
-        color: white;
-    }
-
-    .btn-voltar:hover {
-        background: #4b5563;
-    }
-
-    .parabens {
-        background: linear-gradient(135deg, #fef3c7, #fde68a);
-        border-left: 5px solid #f59e0b;
-        padding: 2rem;
-        border-radius: 10px;
-        margin-bottom: 2rem;
-    }
-
-    .parabens h2 {
-        color: #92400e;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .parabens p {
-        color: #78350f;
-        font-size: 1.1rem;
-        line-height: 1.6;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     .selo-qualidade {
-        position: absolute;
-        top: 50px;
-        right: 50px;
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(135deg, #f59e0b, #d97706);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: bold;
-        font-size: 0.8rem;
-        text-align: center;
-        transform: rotate(15deg);
-        box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
-        animation: pulse 2s infinite;
+        top: 20px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        font-size: 0.7rem;
     }
 
-    @keyframes pulse {
-        0%, 100% {
-            transform: rotate(15deg) scale(1);
-        }
-        50% {
-            transform: rotate(15deg) scale(1.05);
-        }
+    .acoes-certificado {
+        flex-direction: column;
     }
 
-    .input-nome {
-        padding: 0.8rem;
-        font-size: 1.1rem;
-        border: 2px solid #3b82f6;
-        border-radius: 8px;
+    .btn-acao {
         width: 100%;
-        max-width: 400px;
-        margin: 1rem auto;
-        display: block;
-        text-align: center;
-    }
-
-    @media print {
-        .acoes-certificado,
-        .parabens,
-        .navbar,
-        footer {
-            display: none !important;
-        }
-        
-        .certificado-preview {
-            box-shadow: none;
-            page-break-inside: avoid;
-        }
-    }
-
-      
-    .certificado-section {
-        text-align: center;
-        padding: 3rem 2rem;
-        margin: 3rem auto;
-        max-width: 900px;
-        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        color: white;
-    }
-
-    .certificado-bloqueado {
-        background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
-        opacity: 0.7;
-    }
-
-    .certificado-icon {
-        font-size: 5rem;
-        margin-bottom: 1rem;
-        animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-    }
-
-    .certificado-title {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .certificado-descricao {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-        line-height: 1.6;
-    }
-
-    .certificado-requisitos {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        padding: 1.5rem;
-        margin: 2rem 0;
-        backdrop-filter: blur(10px);
-    }
-
-    .requisito-item {
-        display: flex;
-        align-items: center;
         justify-content: center;
-        gap: 10px;
-        margin: 0.5rem 0;
-        font-size: 1rem;
     }
+}
 
-    .requisito-check {
-        font-size: 1.5rem;
+@media print {
+    .acoes-certificado,
+    .parabens,
+    .navbar,
+    footer {
+        display: none !important;
     }
-
-    .btn-certificado {
-        background-color: white;
-        color: #1e3a8a;
-        border: none;
-        padding: 1rem 3rem;
-        font-size: 1.2rem;
-        font-weight: bold;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        text-decoration: none;
-        display: inline-block;
+    
+    .certificado-preview {
+        box-shadow: none;
+        page-break-inside: avoid;
     }
-
-    .btn-certificado:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-certificado:disabled {
-        background-color: #d1d5db;
-        color: #6b7280;
-        cursor: not-allowed;
-        opacity: 0.6;
-    }
-
-    .btn-certificado:disabled:hover {
-        transform: none;
-    }
-
-    .progresso-total {
-        font-size: 1.3rem;
-        font-weight: bold;
-        margin-top: 1rem;
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-    }
-
-    .shake {
-        animation: shake 0.5s;
-    }
-
-    @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        25% { transform: translateX(-10px); }
-        75% { transform: translateX(10px); }
-    }
-
-     @keyframes fall {
-        to {
-            transform: translateY(100vh) rotate(360deg);
-            opacity: 0;
-        }
-
-   }
+}

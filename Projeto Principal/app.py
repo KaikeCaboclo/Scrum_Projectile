@@ -273,20 +273,19 @@ def exameFinal():
 def verificar_certificado():
     """Verifica se o usuário pode acessar o certificado"""
     data = request.json
-    notas = data.get('notas', {})
+    progresso_curso = data.get('progressoCurso', 0)
+    nota_exame_final = data.get('notaExameFinal', 0)
     
-    # Verifica se todas as 8 notas (módulos com exercícios) estão acima de 70
-    modulos_com_nota = ['modulo1', 'modulo2', 'modulo3', 'modulo4', 
-                        'modulo5', 'modulo6', 'modulo7', 'modulo8']
+    # Verifica se o curso está 100% completo E o exame final >= 70%
+    elegivel = progresso_curso == 100 and nota_exame_final >= 70
     
-    elegivel = True
-    for modulo in modulos_com_nota:
-        nota = notas.get(f'progresso_{modulo}')
-        if nota is None or float(nota) < 70:
-            elegivel = False
-            break
-    
-    return jsonify({'elegivel': elegivel})
+    return jsonify({
+        'elegivel': elegivel,
+        'requisitos': {
+            'progressoCurso': progresso_curso,
+            'notaExameFinal': nota_exame_final
+        }
+    })
 
 # NOVA ROTA: Página do certificado
 @app.route('/certificado')
@@ -296,7 +295,7 @@ def certificado():
 # NOVA ROTA: Gerar PDF do certificado
 @app.route('/api/gerar-certificado', methods=['POST'])
 def gerar_certificado():
-    """Gera o PDF do certificado"""
+    """Gera o PDF do certificado com design melhorado"""
     data = request.json
     nome_aluno = data.get('nome', 'Aluno')
     data_conclusao = datetime.now().strftime('%d/%m/%Y')
@@ -308,60 +307,145 @@ def gerar_certificado():
     c = canvas.Canvas(buffer, pagesize=landscape(letter))
     width, height = landscape(letter)
     
-    # Cor de fundo azul gradiente
-    c.setFillColor(HexColor('#1e3a8a'))
-    c.rect(0, 0, width, height, fill=1, stroke=0)
+    # ========== FUNDO GRADIENTE AZUL ==========
+    # Criar gradiente usando retângulos sobrepostos
+    num_retangulos = 50
+    for i in range(num_retangulos):
+        # Gradiente de azul escuro para azul claro
+        r = int(30 + (59 - 30) * (i / num_retangulos))
+        g = int(58 + (130 - 58) * (i / num_retangulos))
+        b = int(138 + (246 - 138) * (i / num_retangulos))
+        
+        cor = HexColor('#%02x%02x%02x' % (r, g, b))
+        c.setFillColor(cor)
+        c.rect(0, height - (height / num_retangulos) * (i + 1), width, height / num_retangulos, fill=1, stroke=0)
     
-    # Borda decorativa
+    # ========== BORDAS DECORATIVAS ==========
+    # Borda externa branca
     c.setStrokeColor(HexColor('#ffffff'))
-    c.setLineWidth(8)
-    c.rect(30, 30, width-60, height-60, fill=0, stroke=1)
+    c.setLineWidth(10)
+    c.roundRect(25, 25, width-50, height-50, 15, fill=0, stroke=1)
     
-    c.setStrokeColor(HexColor('#3b82f6'))
+    # Borda interna azul clara
+    c.setStrokeColor(HexColor('#60a5fa'))
     c.setLineWidth(3)
-    c.rect(40, 40, width-80, height-80, fill=0, stroke=1)
+    c.roundRect(35, 35, width-70, height-70, 10, fill=0, stroke=1)
     
-    # Título
+    # Detalhes decorativos nos cantos
+    c.setStrokeColor(HexColor('#fbbf24'))
+    c.setLineWidth(2)
+    # Canto superior esquerdo
+    c.line(45, height-45, 120, height-45)
+    c.line(45, height-45, 45, height-120)
+    # Canto superior direito
+    c.line(width-45, height-45, width-120, height-45)
+    c.line(width-45, height-45, width-45, height-120)
+    # Canto inferior esquerdo
+    c.line(45, 45, 120, 45)
+    c.line(45, 45, 45, 120)
+    # Canto inferior direito
+    c.line(width-45, 45, width-120, 45)
+    c.line(width-45, 45, width-45, 120)
+    
+    # ========== SELO DE QUALIDADE ==========
+    # Círculo dourado no canto superior direito
+    c.setFillColor(HexColor('#f59e0b'))
+    c.circle(width-100, height-100, 40, fill=1, stroke=0)
+    c.setFillColor(HexColor('#fbbf24'))
+    c.circle(width-100, height-100, 35, fill=1, stroke=0)
+    
+    # Texto do selo
+    c.setFillColor(HexColor('#78350f'))
+    c.setFont("Helvetica-Bold", 10)
+    c.drawCentredString(width-100, height-105, "★")
+    c.setFont("Helvetica-Bold", 7)
+    c.drawCentredString(width-100, height-95, "SCRUM")
+    c.drawCentredString(width-100, height-88, "ACADEMY")
+    
+    # ========== TÍTULO DO CERTIFICADO ==========
     c.setFillColor(HexColor('#ffffff'))
-    c.setFont("Helvetica-Bold", 48)
-    c.drawCentredString(width/2, height-120, "CERTIFICADO")
+    c.setFont("Helvetica-Bold", 56)
+    c.drawCentredString(width/2, height-110, "CERTIFICADO")
     
-    c.setFont("Helvetica", 24)
-    c.drawCentredString(width/2, height-160, "DE CONCLUSÃO")
+    # Linha decorativa sob o título
+    c.setStrokeColor(HexColor('#fbbf24'))
+    c.setLineWidth(3)
+    c.line(width/2 - 150, height-125, width/2 + 150, height-125)
     
-    # Texto principal
-    c.setFont("Helvetica", 18)
-    c.drawCentredString(width/2, height-230, "Certificamos que")
+    c.setFont("Helvetica", 22)
+    c.setFillColor(HexColor('#dbeafe'))
+    c.drawCentredString(width/2, height-150, "de Conclusão")
     
-    # Nome do aluno
-    c.setFont("Helvetica-Bold", 32)
-    c.setFillColor(HexColor('#3b82f6'))
-    c.drawCentredString(width/2, height-280, nome_aluno.upper())
-    
-    # Descrição do curso
-    c.setFillColor(HexColor('#ffffff'))
+    # ========== CORPO DO CERTIFICADO ==========
     c.setFont("Helvetica", 16)
-    texto1 = "concluiu com êxito o curso de"
-    c.drawCentredString(width/2, height-330, texto1)
+    c.setFillColor(HexColor('#ffffff'))
+    c.drawCentredString(width/2, height-200, "Certificamos que")
     
-    c.setFont("Helvetica-Bold", 22)
-    c.drawCentredString(width/2, height-365, "METODOLOGIA SCRUM")
+    # Nome do aluno com destaque
+    # Fundo semi-transparente para o nome
+    c.setFillColor(HexColor('#1e40af'))
+    c.roundRect(width/2 - 300, height-255, 600, 50, 10, fill=1, stroke=0)
     
-    c.setFont("Helvetica", 14)
-    texto2 = "com carga horária de 40 horas, demonstrando proficiência"
-    c.drawCentredString(width/2, height-395, texto2)
-    texto3 = "em todos os módulos do programa SCRUM ACADEMY."
-    c.drawCentredString(width/2, height-415, texto3)
+    c.setFont("Helvetica-Bold", 36)
+    c.setFillColor(HexColor('#fbbf24'))
+    c.drawCentredString(width/2, height-240, nome_aluno.upper())
     
-    # Data
-    c.setFont("Helvetica-Oblique", 12)
-    c.drawCentredString(width/2, 100, f"Concluído em: {data_conclusao}")
+    # Texto descritivo
+    c.setFillColor(HexColor('#ffffff'))
+    c.setFont("Helvetica", 15)
+    c.drawCentredString(width/2, height-290, "concluiu com êxito o curso de")
     
-    # Assinaturas (simuladas)
-    c.setFont("Helvetica", 10)
-    c.line(150, 140, 300, 140)
-    c.drawCentredString(225, 125, "SCRUM ACADEMY")
-    c.drawCentredString(225, 110, "Coordenação do Curso")
+    # Nome do curso com destaque
+    c.setFont("Helvetica-Bold", 26)
+    c.setFillColor(HexColor('#dbeafe'))
+    c.drawCentredString(width/2, height-325, "METODOLOGIA SCRUM")
+    
+    # Linha decorativa
+    c.setStrokeColor(HexColor('#60a5fa'))
+    c.setLineWidth(2)
+    c.line(width/2 - 200, height-335, width/2 + 200, height-335)
+    
+    # Informações do curso
+    c.setFont("Helvetica", 13)
+    c.setFillColor(HexColor('#e0e7ff'))
+    c.drawCentredString(width/2, height-360, "com carga horária de 40 horas, demonstrando proficiência")
+    c.drawCentredString(width/2, height-380, "em todos os módulos do programa SCRUM ACADEMY,")
+    c.drawCentredString(width/2, height-400, "incluindo fundamentos ágeis, papéis, eventos, artefatos e boas práticas.")
+    
+    # ========== DATA E ID ==========
+    c.setFont("Helvetica-Oblique", 11)
+    c.setFillColor(HexColor('#cbd5e1'))
+    c.drawCentredString(width/2, 130, f"Concluído em: {data_conclusao}")
+    
+    import random
+    cert_id = f"SA-2025-{random.randint(1000, 9999)}"
+    c.drawCentredString(width/2, 115, f"ID do Certificado: {cert_id}")
+    
+    # ========== ASSINATURAS ==========
+    c.setFont("Helvetica", 9)
+    c.setFillColor(HexColor('#ffffff'))
+    c.setStrokeColor(HexColor('#dbeafe'))
+    c.setLineWidth(1.5)
+    
+    # Assinatura esquerda
+    c.line(120, 80, 280, 80)
+    c.setFont("Helvetica-Bold", 10)
+    c.drawCentredString(200, 65, "SCRUM ACADEMY")
+    c.setFont("Helvetica", 8)
+    c.drawCentredString(200, 53, "Coordenação do Curso")
+    
+    # Assinatura direita
+    c.line(width-280, 80, width-120, 80)
+    c.setFont("Helvetica-Bold", 10)
+    c.drawCentredString(width-200, 65, "Certificação Digital")
+    c.setFont("Helvetica", 8)
+    c.drawCentredString(width-200, 53, "Validação Oficial")
+    
+    # ========== RODAPÉ ==========
+    c.setFont("Helvetica", 7)
+    c.setFillColor(HexColor('#94a3b8'))
+    c.drawCentredString(width/2, 25, "Este certificado comprova a conclusão bem-sucedida do curso de Metodologia Scrum")
+    c.drawCentredString(width/2, 15, "Para validar este certificado, visite: www.scrumacademy.com/validar")
     
     # Finalizar o PDF
     c.showPage()

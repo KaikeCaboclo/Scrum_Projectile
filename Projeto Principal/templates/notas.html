@@ -51,188 +51,359 @@
 
 <!-- SEÇÃO DO CERTIFICADO -->
 <section id="certificado-section" class="certificado-section certificado-bloqueado">
-    <div class="certificado-icon">🏆</div>
-    <h2 class="certificado-title">Certificado de Conclusão</h2>
-    <p class="certificado-descricao">
-        Complete todos os módulos com nota mínima de 70% para desbloquear seu certificado oficial!
-    </p>
+    <div class="certificado-header">
+        <div class="certificado-icon">🏆</div>
+        <h2 class="certificado-title">Certificado de Conclusão</h2>
+        <p class="certificado-descricao">
+            Complete 100% do curso e o Exame Final para desbloquear seu certificado oficial da SCRUM ACADEMY!
+        </p>
+    </div>
     
-    <div class="certificado-requisitos">
-        <h3 style="margin-bottom: 1rem;">Requisitos:</h3>
-        <div class="requisito-item">
-            <span class="requisito-check" id="check-modulo1">⭕</span>
-            <span>Módulo 1: <span id="nota-modulo1">0%</span></span>
+    <!-- PROGRESSO VISUAL -->
+    <div class="certificado-progresso-visual">
+        <div class="progresso-circle">
+            <canvas id="grafico-progresso-certificado"></canvas>
+            <div class="progresso-texto">
+                <span class="progresso-numero" id="progresso-percent-display">0%</span>
+                <span class="progresso-label">Completo</span>
+            </div>
         </div>
-        <div class="requisito-item">
-            <span class="requisito-check" id="check-modulo2">⭕</span>
-            <span>Módulo 2: <span id="nota-modulo2">0%</span></span>
-        </div>
-        <div class="requisito-item">
-            <span class="requisito-check" id="check-modulo3">⭕</span>
-            <span>Módulo 3: <span id="nota-modulo3">0%</span></span>
-        </div>
-        <div class="requisito-item">
-            <span class="requisito-check" id="check-modulo4">⭕</span>
-            <span>Módulo 4: <span id="nota-modulo4">0%</span></span>
-        </div>
-        <div class="requisito-item">
-            <span class="requisito-check" id="check-modulo5">⭕</span>
-            <span>Módulo 5: <span id="nota-modulo5">0%</span></span>
-        </div>
-        <div class="requisito-item">
-            <span class="requisito-check" id="check-modulo6">⭕</span>
-            <span>Módulo 6: <span id="nota-modulo6">0%</span></span>
-        </div>
-        <div class="requisito-item">
-            <span class="requisito-check" id="check-modulo7">⭕</span>
-            <span>Módulo 7: <span id="nota-modulo7">0%</span></span>
-        </div>
-        <div class="requisito-item">
-            <span class="requisito-check" id="check-modulo8">⭕</span>
-            <span>Módulo 8: <span id="nota-modulo8">0%</span></span>
+        
+        <div class="progresso-info">
+            <div class="info-item">
+                <span class="info-icon">📚</span>
+                <div class="info-content">
+                    <strong id="topicos-concluidos">0/43</strong>
+                    <span>Tópicos Concluídos</span>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <span class="info-icon">✏️</span>
+                <div class="info-content">
+                    <strong id="exercicios-aprovados">0/8</strong>
+                    <span>Exercícios Aprovados</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-icon" id="exame-final-icon">⏳</span>
+                <div class="info-content">
+                    <strong id="exame-final-nota">0%</strong>
+                    <span>Exame Final</span>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <span class="info-icon" id="status-icon">⏳</span>
+                <div class="info-content">
+                    <strong id="status-texto">Em Progresso</strong>
+                    <span id="status-mensagem">Continue estudando!</span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="progresso-total">
-        <p>Módulos Aprovados: <span id="modulos-aprovados">0/8</span></p>
+    <!-- MENSAGEM DE ORIENTAÇÃO -->
+    <div class="certificado-orientacao">
+        <div class="orientacao-card">
+            <h3>📋 Como desbloquear o certificado?</h3>
+            <ol class="orientacao-lista">
+                <li>
+                    <strong>Estude todo o conteúdo:</strong> Leia cada tópico dos 9 módulos disponíveis
+                </li>
+                <li>
+                    <strong>Marque as checkboxes:</strong> Ao finalizar cada tópico, marque a checkbox ao lado para registrar seu progresso
+                </li>
+                <li>
+                    <strong>Complete os exercícios:</strong> Faça os questionários de cada módulo (recomendado: nota ≥ 70%)
+                </li>
+                <li>
+                    <strong>Exame Final:</strong> Complete o Exame Final com nota mínima de 70%!
+                </li>
+            </ol>
+        </div>
     </div>
 
-    <button id="btn-acessar-certificado" class="btn-certificado" disabled>
-        🔒 Certificado Bloqueado
+    <!-- DETALHES DOS MÓDULOS (OPCIONAL - MOSTRA PROGRESSO POR MÓDULO) -->
+    <details class="modulos-detalhes">
+        <summary>📊 Ver progresso detalhado por módulo</summary>
+        <div class="modulos-grid">
+            <div class="modulo-mini" id="mini-modulo1">
+                <span class="modulo-numero">1</span>
+                <span class="modulo-nome">Introdução ao Scrum</span>
+                <span class="modulo-nota" id="nota-modulo1">0%</span>
+            </div>
+            <div class="modulo-mini" id="mini-modulo2">
+                <span class="modulo-numero">2</span>
+                <span class="modulo-nome">Fundamentos do Agile</span>
+                <span class="modulo-nota" id="nota-modulo2">0%</span>
+            </div>
+            <div class="modulo-mini" id="mini-modulo3">
+                <span class="modulo-numero">3</span>
+                <span class="modulo-nome">Papéis</span>
+                <span class="modulo-nota" id="nota-modulo3">0%</span>
+            </div>
+            <div class="modulo-mini" id="mini-modulo4">
+                <span class="modulo-numero">4</span>
+                <span class="modulo-nome">Eventos e Cerimônias</span>
+                <span class="modulo-nota" id="nota-modulo4">0%</span>
+            </div>
+            <div class="modulo-mini" id="mini-modulo5">
+                <span class="modulo-numero">5</span>
+                <span class="modulo-nome">Artefatos</span>
+                <span class="modulo-nota" id="nota-modulo5">0%</span>
+            </div>
+            <div class="modulo-mini" id="mini-modulo6">
+                <span class="modulo-numero">6</span>
+                <span class="modulo-nome">Estimativa e Planejamento</span>
+                <span class="modulo-nota" id="nota-modulo6">0%</span>
+            </div>
+            <div class="modulo-mini" id="mini-modulo7">
+                <span class="modulo-numero">7</span>
+                <span class="modulo-nome">Scrum Board e Ferramentas</span>
+                <span class="modulo-nota" id="nota-modulo7">0%</span>
+            </div>
+            <div class="modulo-mini" id="mini-modulo8">
+                <span class="modulo-numero">8</span>
+                <span class="modulo-nome">Boas Práticas</span>
+                <span class="modulo-nota" id="nota-modulo8">0%</span>
+            </div>
+        </div>
+    </details>
+
+    <!-- BOTÃO DE ACESSO AO CERTIFICADO -->
+    <button id="btn-acessar-certificado" class="btn-certificado btn-bloqueado" disabled>
+        <span class="btn-icon">🔒</span>
+        <span class="btn-texto">Certificado Bloqueado</span>
+        <span class="btn-subtexto">Complete 100% do curso + Exame Final</span>
     </button>
 </section>
 
 
 <script>
-    // Verificar elegibilidade do certificado
-    const memoria = {
-        modulo1: { porcentagemAcertos: 'modulo1Acertos' },
-        modulo2: { porcentagemAcertos: 'modulo2Acertos' },
-        modulo3: { porcentagemAcertos: 'modulo3Acertos' },
-        modulo4: { porcentagemAcertos: 'modulo4Acertos' },
-        modulo5: { porcentagemAcertos: 'modulo5Acertos' },
-        modulo6: { porcentagemAcertos: 'modulo6Acertos' },
-        modulo7: { porcentagemAcertos: 'modulo7Acertos' },
-        modulo8: { porcentagemAcertos: 'modulo8Acertos' }
-    };
+    // USAR AS MESMAS CHAVES DO main-script.js
+const memoria = {
+    exameFinal: { porcentagemAcertos: 'acertosExame' },
+    modulo1: { porcentagemAcertos: 'modulo1Acertos' },
+    modulo2: { porcentagemAcertos: 'modulo2Acertos' },
+    modulo3: { porcentagemAcertos: 'modulo3Acertos' },
+    modulo4: { porcentagemAcertos: 'modulo4Acertos' },
+    modulo5: { porcentagemAcertos: 'modulo5Acertos' },
+    modulo6: { porcentagemAcertos: 'modulo6Acertos' },
+    modulo7: { porcentagemAcertos: 'modulo7Acertos' },
+    modulo8: { porcentagemAcertos: 'modulo8Acertos' }
+};
 
-    const gerenciador = {
-        getStorage(chave) {
-            return JSON.parse(localStorage.getItem(chave));
-        }
-    };
+const gerenciador = {
+    getStorage(chave) {
+        return JSON.parse(localStorage.getItem(chave));
+    }
+};
 
-    // Verificar certificado quando a página carregar
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('=== DEBUG: Verificando Certificado ===');
-        verificarCertificado();
-    });
+// Verificar certificado quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('=== DEBUG: Verificando Certificado ===');
+    verificarCertificado();
+});
 
-    function verificarCertificado() {
-        const modulos = ['modulo1', 'modulo2', 'modulo3', 'modulo4', 
-                        'modulo5', 'modulo6', 'modulo7', 'modulo8'];
-        
-        let aprovados = 0;
-        let todasNotasAcima70 = true;
-
-        modulos.forEach((modulo) => {
-            
-            const chaveNota = memoria[modulo].porcentagemAcertos;
-            const nota = parseFloat(gerenciador.getStorage(chaveNota)) || 0;
-            
-            console.log(`${modulo}: ${nota}% (chave: ${chaveNota})`);
-            
-            const notaElement = document.getElementById(`nota-${modulo}`);
-            const checkElement = document.getElementById(`check-${modulo}`);
-            
-            if (notaElement) {
-                notaElement.textContent = nota.toFixed(0) + '%';
-            }
-            
-            if (nota >= 70) {
-                aprovados++;
-                if (checkElement) {
-                    checkElement.textContent = '✅';
-                    checkElement.style.color = '#10b981';
-                }
-            } else {
-                todasNotasAcima70 = false;
-                if (checkElement) {
-                    checkElement.textContent = '❌';
-                    checkElement.style.color = '#ef4444';
-                }
+function verificarCertificado() {
+    // Verificar progresso do curso
+    const progressoCurso = parseInt(gerenciador.getStorage('porcentagemProgresso')) || 0;
+    const checkboxesMarcadas = gerenciador.getStorage('checkboxesValue') || [];
+    const totalCheckboxes = 43;
+    
+    // Verificar nota do Exame Final
+    const notaExameFinal = parseFloat(gerenciador.getStorage(memoria.exameFinal.porcentagemAcertos)) || 0;
+    
+    console.log(`Progresso do curso: ${progressoCurso}%`);
+    console.log(`Checkboxes marcadas: ${checkboxesMarcadas.length}/${totalCheckboxes}`);
+    console.log(`Nota do Exame Final: ${notaExameFinal}%`);
+    
+    // Atualizar gráfico de progresso circular
+    const graficoCanvas = document.getElementById('grafico-progresso-certificado');
+    if (graficoCanvas) {
+        new Chart(graficoCanvas, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [progressoCurso, 100 - progressoCurso],
+                    backgroundColor: [
+                        'rgba(255, 255, 255, 0.9)',
+                        'rgba(255, 255, 255, 0.2)'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                },
+                cutout: '75%'
             }
         });
-
-        // Atualizar contador
-        document.getElementById('modulos-aprovados').textContent = `${aprovados}/8`;
-
-        // Atualizar botão e seção
-        const btnCertificado = document.getElementById('btn-acessar-certificado');
-        const certificadoSection = document.getElementById('certificado-section');
-
-        if (todasNotasAcima70) {
-            btnCertificado.disabled = false;
-            btnCertificado.textContent = '🎓 Acessar Meu Certificado';
-            btnCertificado.onclick = () => window.location.href = '{{ url_for("certificado") }}';
-            certificadoSection.classList.remove('certificado-bloqueado');
+    }
+    
+    // Atualizar informações visuais
+    document.getElementById('progresso-percent-display').textContent = progressoCurso + '%';
+    document.getElementById('topicos-concluidos').textContent = `${checkboxesMarcadas.length}/${totalCheckboxes}`;
+    
+    // Contar exercícios aprovados
+    const modulos = ['modulo1', 'modulo2', 'modulo3', 'modulo4', 
+                    'modulo5', 'modulo6', 'modulo7', 'modulo8'];
+    
+    let aprovados = 0;
+    
+    modulos.forEach((modulo) => {
+        const chaveNota = memoria[modulo].porcentagemAcertos;
+        const nota = parseFloat(gerenciador.getStorage(chaveNota)) || 0;
+        
+        console.log(`${modulo}: ${nota}%`);
+        
+        // Atualizar nota no detalhe dos módulos
+        const notaElement = document.getElementById(`nota-${modulo}`);
+        if (notaElement) {
+            notaElement.textContent = nota.toFixed(0) + '%';
             
-            // Adicionar animação de comemoração
-            setTimeout(() => {
-                confetti();
-            }, 500);
+            // Adicionar cor baseada na nota
+            const moduloMini = notaElement.closest('.modulo-mini');
+            if (nota >= 70) {
+                moduloMini.style.background = 'rgba(16, 185, 129, 0.3)';
+                aprovados++;
+            } else if (nota > 0) {
+                moduloMini.style.background = 'rgba(251, 191, 36, 0.3)';
+            } else {
+                moduloMini.style.background = 'rgba(255, 255, 255, 0.15)';
+            }
+        }
+    });
+
+    document.getElementById('exercicios-aprovados').textContent = `${aprovados}/8`;
+    
+    // Atualizar informação do Exame Final
+    const exameFinalElement = document.getElementById('exame-final-nota');
+    const exameFinalIcon = document.getElementById('exame-final-icon');
+    if (exameFinalElement) {
+        exameFinalElement.textContent = notaExameFinal.toFixed(0) + '%';
+        if (notaExameFinal >= 70) {
+            exameFinalIcon.textContent = '✅';
+            exameFinalIcon.style.color = '#10b981';
+        } else if (notaExameFinal > 0) {
+            exameFinalIcon.textContent = '❌';
+            exameFinalIcon.style.color = '#ef4444';
         } else {
-            btnCertificado.disabled = true;
-            btnCertificado.textContent = '🔒 Certificado Bloqueado';
-            btnCertificado.onclick = () => {
-                btnCertificado.classList.add('shake');
-                setTimeout(() => btnCertificado.classList.remove('shake'), 500);
-            };
+            exameFinalIcon.textContent = '⏳';
+            exameFinalIcon.style.color = '#f59e0b';
         }
     }
+    
+    // Atualizar status
+    const statusIcon = document.getElementById('status-icon');
+    const statusTexto = document.getElementById('status-texto');
+    const statusMensagem = document.getElementById('status-mensagem');
+    
+    // NOVA LÓGICA: Curso completo = 100% progresso + Exame Final >= 70%
+    const cursoCompleto = progressoCurso === 100 && 
+                          checkboxesMarcadas.length === totalCheckboxes && 
+                          notaExameFinal >= 70;
+    
+    if (cursoCompleto) {
+        statusIcon.textContent = '🎉';
+        statusTexto.textContent = 'Concluído!';
+        statusMensagem.textContent = 'Parabéns pela conquista!';
+    } else if (progressoCurso === 100 && notaExameFinal < 70) {
+        statusIcon.textContent = '📝';
+        statusTexto.textContent = 'Falta o Exame Final!';
+        statusMensagem.textContent = 'Complete o exame com 70% de acertos ou mais';
+    } else if (progressoCurso >= 75) {
+        statusIcon.textContent = '🔥';
+        statusTexto.textContent = 'Quase lá!';
+        statusMensagem.textContent = `Faltam ${100 - progressoCurso}%`;
+    } else if (progressoCurso >= 50) {
+        statusIcon.textContent = '💪';
+        statusTexto.textContent = 'Ótimo progresso!';
+        statusMensagem.textContent = 'Continue assim!';
+    } else if (progressoCurso > 0) {
+        statusIcon.textContent = '🚀';
+        statusTexto.textContent = 'Em andamento';
+        statusMensagem.textContent = 'Você está indo bem!';
+    } else {
+        statusIcon.textContent = '⏳';
+        statusTexto.textContent = 'Não iniciado';
+        statusMensagem.textContent = 'Comece agora!';
+    }
 
-    // Função simples de confetti (opcional)
-    function confetti() {
-        const duration = 3000;
-        const end = Date.now() + duration;
+    // Atualizar botão e seção do certificado
+    const btnCertificado = document.getElementById('btn-acessar-certificado');
+    const certificadoSection = document.getElementById('certificado-section');
 
-        (function frame() {
-            const timeLeft = end - Date.now();
-            if (timeLeft <= 0) return;
+    if (cursoCompleto) {
+        btnCertificado.disabled = false;
+        btnCertificado.classList.remove('btn-bloqueado');
+        btnCertificado.querySelector('.btn-icon').textContent = '🎓';
+        btnCertificado.querySelector('.btn-texto').textContent = 'Acessar Meu Certificado';
+        btnCertificado.querySelector('.btn-subtexto').textContent = 'Clique para baixar';
+        btnCertificado.onclick = () => window.location.href = '/certificado';
+        certificadoSection.classList.remove('certificado-bloqueado');
+        
+        // Confetti
+        setTimeout(() => {
+            confetti();
+        }, 500);
+    } else {
+        btnCertificado.disabled = true;
+        btnCertificado.classList.add('btn-bloqueado');
+        btnCertificado.querySelector('.btn-icon').textContent = '🔒';
+        btnCertificado.querySelector('.btn-texto').textContent = 'Certificado Bloqueado';
+        
+        // Mensagem dinâmica no botão
+        if (progressoCurso === 100 && notaExameFinal < 70) {
+            btnCertificado.querySelector('.btn-subtexto').textContent = 'Complete o Exame Final com 70% ou mais';
+        } else {
+            btnCertificado.querySelector('.btn-subtexto').textContent = 'Complete 100% do curso + Exame Final';
+        }
+        
+        btnCertificado.onclick = () => {
+            btnCertificado.classList.add('shake');
+            setTimeout(() => btnCertificado.classList.remove('shake'), 500);
+        };
+    }
+}
 
-            const particleCount = 2;
+// Função de confetti
+function confetti() {
+    const duration = 3000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+        const timeLeft = end - Date.now();
+        if (timeLeft <= 0) return;
+
+        const particleCount = 2;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = '-10px';
+            particle.style.width = '10px';
+            particle.style.height = '10px';
+            particle.style.backgroundColor = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444'][Math.floor(Math.random() * 4)];
+            particle.style.borderRadius = '50%';
+            particle.style.zIndex = '9999';
+            particle.style.animation = 'fall 3s linear';
             
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.style.position = 'fixed';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = '-10px';
-                particle.style.width = '10px';
-                particle.style.height = '10px';
-                particle.style.backgroundColor = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444'][Math.floor(Math.random() * 4)];
-                particle.style.borderRadius = '50%';
-                particle.style.zIndex = '9999';
-                particle.style.animation = 'fall 3s linear';
-                
-                document.body.appendChild(particle);
-                
-                setTimeout(() => particle.remove(), 3000);
-            }
-
-            requestAnimationFrame(frame);
-        }());
-    }
-
-    // CSS da animação de queda
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
+            document.body.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 3000);
         }
-    `;
-    document.head.appendChild(style);
+
+        requestAnimationFrame(frame);
+    }());
+}
+
 </script>
 {% endblock %}

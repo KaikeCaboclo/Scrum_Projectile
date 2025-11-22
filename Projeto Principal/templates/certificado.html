@@ -186,26 +186,53 @@ Todos os módulos completos com notas acima de 70%! 💪
     document.addEventListener('DOMContentLoaded', function() {
         console.log('=== VERIFICANDO ACESSO AO CERTIFICADO ===');
         
-        const modulos = ['modulo1', 'modulo2', 'modulo3', 'modulo4', 
-                        'modulo5', 'modulo6', 'modulo7', 'modulo8'];
+        const memoria = {
+            exameFinal: { porcentagemAcertos: 'acertosExame' }
+        };
         
-        let todasAprovado = true;
-        
-        modulos.forEach(modulo => {
-            const chaveNota = memoria[modulo].porcentagemAcertos;
-            const nota = parseFloat(gerenciador.getStorage(chaveNota)) || 0;
-            console.log(`${modulo}: ${nota}% (chave: ${chaveNota})`);
-            
-            if (nota < 70) {
-                todasAprovado = false;
+        const gerenciador = {
+            getStorage(chave) {
+                return JSON.parse(localStorage.getItem(chave));
             }
-        });
+        };
+        
+        const progressoCurso = parseInt(gerenciador.getStorage('porcentagemProgresso')) || 0;
+        const checkboxesMarcadas = gerenciador.getStorage('checkboxesValue') || [];
+        const totalCheckboxes = 43;
+        const notaExameFinal = parseFloat(gerenciador.getStorage(memoria.exameFinal.porcentagemAcertos)) || 0;
+        
+        console.log(`Progresso: ${progressoCurso}%`);
+        console.log(`Checkboxes: ${checkboxesMarcadas.length}/${totalCheckboxes}`);
+        console.log(`Exame Final: ${notaExameFinal}%`);
+        
+        const cursoCompleto = progressoCurso === 100 && 
+                            checkboxesMarcadas.length === totalCheckboxes && 
+                            notaExameFinal >= 70;
+        
+        console.log(`Acesso permitido: ${cursoCompleto}`);
 
-        console.log(`Acesso permitido: ${todasAprovado}`);
-
-        if (!todasAprovado) {
-            alert('⚠️ Você ainda não completou todos os requisitos para o certificado!\n\nVocê precisa ter nota mínima de 70% em todos os 8 módulos.');
-            window.location.href = '{{ url_for("notas") }}';
+        if (!cursoCompleto) {
+            let mensagemErro = '⚠️ Você ainda não completou todos os requisitos para o certificado!\n\n';
+            
+            if (progressoCurso < 100) {
+                mensagemErro += `📚 Progresso atual: ${progressoCurso}%\n`;
+                mensagemErro += `   Tópicos concluídos: ${checkboxesMarcadas.length}/${totalCheckboxes}\n\n`;
+            }
+            
+            if (notaExameFinal < 70) {
+                if (notaExameFinal === 0) {
+                    mensagemErro += '📝 Exame Final: NÃO REALIZADO\n';
+                    mensagemErro += '   Você precisa fazer o Exame Final e obter pelo menos 70%\n\n';
+                } else {
+                    mensagemErro += `📝 Exame Final: ${notaExameFinal.toFixed(0)}% (necessário: 70%)\n`;
+                    mensagemErro += '   Refaça o exame para melhorar sua nota\n\n';
+                }
+            }
+            
+            mensagemErro += 'Complete todos os requisitos para desbloquear o certificado.';
+            
+            alert(mensagemErro);
+            window.location.href = '/notas';
         } else {
             console.log('✅ Acesso permitido! Exibindo certificado.');
         }
