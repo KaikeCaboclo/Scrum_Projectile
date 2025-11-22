@@ -408,7 +408,7 @@ def gerar_certificado():
     # Informações do curso
     c.setFont("Helvetica", 13)
     c.setFillColor(HexColor('#e0e7ff'))
-    c.drawCentredString(width/2, height-360, "com carga horária de 40 horas, demonstrando proficiência")
+    c.drawCentredString(width/2, height-360, "com carga horária de 20 horas, demonstrando proficiência")
     c.drawCentredString(width/2, height-380, "em todos os módulos do programa SCRUM ACADEMY,")
     c.drawCentredString(width/2, height-400, "incluindo fundamentos ágeis, papéis, eventos, artefatos e boas práticas.")
     

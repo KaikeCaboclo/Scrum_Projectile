@@ -6,6 +6,7 @@
   <a href = "#desafio"> Desafio </a>  |
   <a href = "#mvp"> MVP </a>  |
   <a href = "#objetivo"> Objetivo da Sprint </a>  |
+  <a href = "#video"> Demonstração em Video </a>  |
   <a href = "#backlog"> Backlog da Sprint </a>  | 
 </p>
 <br>
@@ -46,6 +47,13 @@ Entregar a devida certificação e garantir o polimento da aplicação, com isso
 - Experimentar uma página voltada a visualização do progresso no treinamento
 - Incrementos visuais para os módulos
 <br>
+
+## 🎬 Demonstração da Sprint 2
+<a id="video"></a>
+Veja aqui a demonstração em vídeo dos incrementos desenvolvidos nesta sprint:
+
+[![Assista!](https://img.youtube.com/vi/Qi7iOcmg4j4/0.jpg)](https://www.youtube.com/watch?v=Qi7iOcmg4j4)
+
 
 ## Backlog da Sprint
 <a id="backlog"></a>
