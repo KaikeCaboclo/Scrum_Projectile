@@ -12,7 +12,7 @@ export function animacaoGraficoDeProgresso(){
     mensagem.style.display='block'
     mensagem.style.left=evento.pageX+'px'
     mensagem.style.top=evento.pageY+30+'px'
-    document.querySelector('#mensagem').textContent=`Curso ${parseInt(gerenciador.getStorage('porcentagemProgresso'))}% concluído.`
+    document.querySelector('#mensagem').textContent=`Curso ${parseInt(gerenciador.getStorage('porcentagemProgresso')||0)}% concluído.`
         
     }
 
