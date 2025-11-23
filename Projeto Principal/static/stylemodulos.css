@@ -73,6 +73,45 @@ div.nav-links div a:hover {
   background-color: var(--blue-light);
 }
 
+
+/* ========================= */
+/*        MEDIA QUERY        */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3%;
+  }
+
+  .logo-area {
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+  }
+
+  div.nav-links div {
+    margin: 10px 0;
+  }
+
+  div.nav-links div:last-child {
+    margin-right: 0;
+  }
+
+  div.nav-links div a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+
+
 .content {
   padding: 100px 20px 0;
   padding-bottom: 19rem;
