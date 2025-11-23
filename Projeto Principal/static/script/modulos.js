@@ -93,7 +93,7 @@ export function notas(){
     graficos(document.getElementById('grafico_modulo6'), gerenciador.getStorage(memoria.modulo6.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo6.porcentagemAcertos)|| 0, 25, 'black', 0)
     graficos(document.getElementById('grafico_modulo7'), gerenciador.getStorage(memoria.modulo7.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo7.porcentagemAcertos)|| 0, 25, 'black', 0)
     graficos(document.getElementById('grafico_modulo8'), gerenciador.getStorage(memoria.modulo8.porcentagemAcertos) || 0, 100-gerenciador.getStorage(memoria.modulo8.porcentagemAcertos)|| 0, 25, 'black', 0)
-
+    graficos(document.getElementById('ExameFinalNotas'), gerenciador.getStorage(memoria.exameFinal.porcentagemAcertos)||0, 100-gerenciador.getStorage(memoria.exameFinal.porcentagemAcertos)||0, 25, 'black', 0)
 }
 
 export function exameFinal(){
