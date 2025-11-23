@@ -65,8 +65,8 @@ export function animacaoBloqueioBoxExercicios(evento){
         clearTimeout(timeout)
         }
         erro.style.display='block'
-        erro.style.top=evento.pageY+10+'px'
-        erro.style.left=evento.pageX+10+'px'
+        erro.style.top=evento.pageY+20+'px'
+        erro.style.left=evento.pageX-110+'px'
         timeout=setTimeout(()=>{
         erro.style.display='none'
         }, 3500)

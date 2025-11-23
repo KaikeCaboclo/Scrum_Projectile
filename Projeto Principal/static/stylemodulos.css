@@ -332,6 +332,12 @@ div.nav-links div a:hover {
   min-height: calc(100vh - 150px);
 }
 
+@media(max-width:900px){
+  .artigo{
+    margin-top: 100px;
+  }
+}
+
 .titles {
   color: #1e3a8a;
   font-size: 2rem;
