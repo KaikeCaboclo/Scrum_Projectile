@@ -589,7 +589,7 @@ footer {
 
 @keyframes pulse-success {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
+    50% { transform: scale(1.0); }
 }
 
 /* CABEÇALHO DO CERTIFICADO */
@@ -847,7 +847,7 @@ footer {
 }
 
 .btn-certificado:not(:disabled):hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4);
 }
 
