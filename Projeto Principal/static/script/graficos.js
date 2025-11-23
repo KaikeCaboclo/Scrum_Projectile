@@ -20,7 +20,8 @@
 
 
         
-        porcentagem=parseInt(porcentagem)
+    porcentagem=parseInt(porcentagem)
+    resto=parseInt(resto)
         
     mychart = new Chart(novo_grafico, {
         type: 'doughnut',
