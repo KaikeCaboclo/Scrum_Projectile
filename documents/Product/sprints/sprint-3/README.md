@@ -48,7 +48,7 @@ Entregar a devida certificação e garantir o polimento da aplicação, com isso
 - Incrementos visuais para os módulos
 <br>
 
-## 🎬 Demonstração da Sprint 2
+## 🎬 Demonstração da Sprint 3
 <a id="video"></a>
 Veja aqui a demonstração em vídeo dos incrementos desenvolvidos nesta sprint:
 
@@ -62,8 +62,8 @@ Veja aqui a demonstração em vídeo dos incrementos desenvolvidos nesta sprint:
 
 | Rank | Prioridade | User Stories                                                                                                                                                                                                             | Esforço | Sprint |
 | ---- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------ |
-| 1    | Baixa       | Certificação ao terminar o curso.                                                              | 13      | 1      |
-| 2    | Média      | Como contratante, quero que seja possível que meus funcionários acompanhem seu progresso dos módulos iniciados/completados.                             | 20      | 1      |
+| 1    | Baixa       | Certificação ao terminar o curso.                                                              | 13      | 3      |
+| 2    | Média      | Como contratante, quero que seja possível que meus funcionários acompanhem seu progresso dos módulos iniciados/completados.                             | 20      | 3      |
 
 
 
